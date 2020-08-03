@@ -317,3 +317,401 @@ main {
   color: #1d1d1f;
   font-size: 14px;
 }
+
+.specs-tyre-img-container {
+  position: relative;
+  width: 40vw;
+  height: 60vh;
+  top: 5%;
+  left: 5%;
+}
+
+.specs-tyre-img {
+  width: 100%;
+  height: 100%;
+}
+.specs-tyre-sub-title {
+  position: relative;
+  left: 50%;
+  width: 50vw;
+  top: -60%;
+}
+
+.specs-tyre-sub-title-text {
+  color: #1d1d1f;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: left;
+}
+
+.specs-tyre-spec-container {
+  width: 50vw;
+  position: relative;
+  left: 50%;
+  top: -60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.specs-tyre-spec-dimension-unit {
+  font-weight: 700;
+  font-size: 44px;
+  text-align: center;
+}
+
+.specs-tyre-spec-dimension-unit > span {
+  font-weight: 400;
+  font-size: 18px;
+}
+.specs-tyre-spec-dimension-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.specs-tyre-spec-pressure-container {
+  border: 1px solid black;
+  width: 130px;
+  height: 80px;
+  position: relative;
+  top: 0px;
+}
+
+.specs-tyre-spec-pressure-unit {
+  position: relative;
+  font-weight: 700;
+  font-size: 44px;
+  text-align: center;
+  top: -15px;
+}
+
+.specs-tyre-spec-pressure-unit > span {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.specs-tyre-spec-pressure-text {
+  font-weight: 400;
+  font-size: 14px;
+  position: relative;
+  top: 15px;
+}
+
+.specs-tyre-title {
+  position: relative;
+  left: 8%;
+  top: 7%;
+}
+.specs-tyre-title-text {
+  font-weight: 700;
+  color: #686868;
+  font-size: 48px;
+}
+
+.specs-battery-title {
+  position: relative;
+  top: 30%;
+  left: 5%;
+  width: 40vw;
+}
+
+.specs-battery-title-text {
+  color: #1d1d1f;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.specs-battery-title-two {
+  position: relative;
+  top: -10%;
+  left: 50%;
+}
+
+.specs-battery-title-two-text {
+  color: #686868;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.specs-battery-sub-title {
+  position: relative;
+  top: -10%;
+  left: 50%;
+  width: 45vw;
+}
+
+.specs-battery-sub-title-text {
+  color: #686868;
+  font-weight: 500;
+  font-size: 28px;
+}
+.specs-battery-two-spec-container {
+  position: relative;
+  left: 50%;
+  top: 10%;
+  width: 40vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.specs-battery-two-spec-capacity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.specs-battery-two-spec-capacity-unit {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.specs-battery-two-spec-capacity-unit > span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.specs-battery-two-spec-capacity-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.specs-battery-two-spec-range {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.specs-battery-two-spec-range-unit {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.specs-battery-two-spec-range-unit > span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.specs-battery-two-spec-range-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.specs-smart-system-title {
+  position: relative;
+  top: 70%;
+  left: 5%;
+  width: 35vw;
+}
+
+.specs-smart-system-title-text {
+  color: #686868;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.specs-smart-system-sub-title {
+  position: relative;
+  top: -15%;
+  left: 55%;
+  width: 40vw;
+}
+
+.specs-smart-system-sub-title-text {
+  color: #1d1d1f;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.specs-smart-system-two-sub-title {
+  position: relative;
+  top: 50%;
+  left: 55%;
+  width: 45vw;
+}
+
+.specs-smart-system-two-sub-title-text {
+  color: #1d1d1f;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.specs-smart-lock-title {
+  position: relative;
+  top: 5%;
+  left: 5%;
+  width: 35vw;
+}
+.specs-smart-lock-title-text {
+  color: #1d1d1f;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.specs-smart-lock-sub-title {
+  position: relative;
+  top: 5%;
+  left: 5%;
+  width: 45vw;
+}
+
+.specs-smart-lock-sub-title-text {
+  color: #1d1d1f;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.specs-sense-title {
+  position: relative;
+  top: 5%;
+  left: 5%;
+}
+
+.specs-sense-title-text {
+  color: #686868;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.specs-sense-sub-title {
+  position: relative;
+  top: 5%;
+  left: 5%;
+  width: 45vw;
+}
+
+.specs-sense-sub-title-text {
+  color: #1d1d1f;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.specs-sense-img-container {
+  position: relative;
+  left: 50%;
+  top: -50%;
+  width: 40vw;
+  height: 90vh;
+}
+
+.specs-sense-img {
+  width: 100%;
+  height: 100%;
+}
+
+.specs-phone-img-container {
+  position: relative;
+  left: 5%;
+  top: 0%;
+  width: 40vw;
+  height: 90vh;
+}
+
+.specs-phone-img {
+  width: 100%;
+  height: 100%;
+}
+
+.specs-phone-title {
+  position: relative;
+  left: 50%;
+  top: -70%;
+  width: 40vw;
+}
+
+.specs-phone-title-text {
+  color: #1d1d1f;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.specs-phone-sub-title {
+  position: relative;
+  left: 50%;
+  top: -70%;
+  width: 40vw;
+}
+
+.specs-phone-sub-title-text {
+  color: #1d1d1f;
+  font-weight: 500;
+  font-size: 28px;
+}
+.specs-build-premium-container {
+  position: relative;
+  top: 20%;
+  left: 20%;
+  background-color: black;
+  width: 25vw;
+  height: 50vh;
+  border-radius: 50px;
+}
+.specs-build-premium-text-container {
+  position: relative;
+  left: 30px;
+  top: 10px;
+}
+
+.specs-build-premium-text {
+  font-weight: 600;
+  font-size: 22px;
+  color: #cfb53b;
+}
+
+.specs-build-premium-features-container {
+  position: relative;
+  left: -30px;
+}
+
+.specs-build-premium-feature {
+  list-style: none;
+}
+.specs-build-premium-feature-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+}
+.specs-build-premium-feature-text-container {
+  width: 15vw;
+}
+.specs-build-premium-feature-text {
+  font-weight: 500;
+  font-size: 18px;
+  color: #d8d8d8;
+}
+
+.specs-build-premium-build-text-container {
+  position: relative;
+  margin-left: 60%;
+  top: -20%;
+  width: 20vw;
+}
+.specs-build-premium-build-text {
+  color: #1d1d1f;
+  font-weight: 700;
+  font-size: 36px;
+}
+.specs-build-premium-build-btn-container {
+  position: relative;
+  margin-left: 60%;
+  top: -20%;
+}
+
+.specs-build-premium-build-btn {
+  background-color: #1d1d1f;
+  color: #d8d8d8;
+  padding: 5px 5px;
+  font-size: 22px;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.specs-build-premium-build-btn:focus {
+  outline: none;
+}
