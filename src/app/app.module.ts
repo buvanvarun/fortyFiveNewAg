@@ -10,9 +10,10 @@ import { PreOrderComponent } from './pre-order/pre-order.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ThreeloaderComponent } from './build/threeloader/threeloader.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SpecsComponent, BuildComponent, PreOrderComponent, BlogComponent, ContactUsComponent, NavigationComponent],
+  declarations: [AppComponent, HomeComponent, SpecsComponent, BuildComponent, PreOrderComponent, BlogComponent, ContactUsComponent, NavigationComponent, ThreeloaderComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
