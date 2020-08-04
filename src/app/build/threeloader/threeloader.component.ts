@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -9,30 +9,28 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
   styleUrls: ['./threeloader.component.css'],
 })
 export class ThreeloaderComponent implements OnInit {
+  @Input() bikeColor;
   constructor() {}
 
   ngOnInit(): void {
     this.bike();
   }
-
   bike = () => {
-    window.addEventListener('resize', onWindowResize);
+    window.addEventListener('click', (e) => {
+      let id = (<HTMLButtonElement>e.target).id;
+      if (id === 'gray') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({ color: 0x767676 });
+        initFrame(bike, frame);
+      }
+      if (id === 'black') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({ color: 0x000000 });
+        initFrame(bike, frame);
+      }
+    });
 
-    function changeFrameColor(e) {
-      let element = e.target.id;
-      let frame;
-      if (element === 'black') {
-        frame = new THREE.MeshPhongMaterial({
-          color: 0x000000,
-        });
-      }
-      if (element === 'light') {
-        frame = new THREE.MeshPhongMaterial({
-          color: 0x767676,
-        });
-      }
-      initFrame(bike, frame);
-    }
+    window.addEventListener('resize', onWindowResize);
 
     var camera, scene, renderer, bike;
 

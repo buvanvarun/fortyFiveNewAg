@@ -6,3 +6,102 @@ main {
   top: 0;
   left: 0;
 }
+
+.build-options-container {
+  position: absolute;
+  top: 5vh;
+  left: 20vw;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.vl {
+  border-left: 1.5px solid black;
+  height: 5vh;
+}
+
+.build-options-btn {
+  background-color: transparent;
+  border: none;
+  color: #1d1d1f;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.build-options-btn:focus {
+  outline: none;
+}
+
+.build-choice-container {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.build-choice-range-container {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.build-choice-range-text {
+  font-weight: 500;
+  font-size: 28px;
+  color: #1d1d1f;
+}
+.build-choice-range-text > span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1d1d1f;
+}
+.build-choice-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.build-choice-btn:focus {
+  outline: none;
+}
+
+.build-price-container {
+  position: absolute;
+  top: 80%;
+  left: 85%;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.build-buy-btn {
+  background-color: transparent;
+  border: none;
+  color: #686868;
+  cursor: pointer;
+}
+.build-buy-price-container {
+  background-color: transparent;
+  border: 1px solid #686868;
+  border-radius: 12px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.build-buy-price-container:focus {
+  outline: none;
+}
+.build-buy-price {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.build-buy-rupee {
+  width: 20px;
+}

@@ -5,3 +5,61 @@
   width: 60vw;
   height: 65vh;
 }
+.color-btn {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  width: 10vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.black {
+  border: none;
+  border-radius: 50%;
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.black:focus {
+  outline: none;
+}
+.gray {
+  border: none;
+  border-radius: 50%;
+  background-color: #78787878;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.gray:focus {
+  outline: none;
+}
+.color-black {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.color-btn-container {
+  border-radius: 50%;
+  border: 1px solid black;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+}
+
+.color-gray {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+canvas:focus {
+  outline: none !important;
+}
