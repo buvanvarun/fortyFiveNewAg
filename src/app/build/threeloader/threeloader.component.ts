@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-threeloader',
   templateUrl: './threeloader.component.html',
@@ -10,10 +11,11 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 })
 export class ThreeloaderComponent implements OnInit {
   @Input() bikeColor;
-  constructor() {}
+  constructor(private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
     this.bike();
+    this.spinner.show();
   }
   bike = () => {
     window.addEventListener('click', (e) => {
@@ -48,6 +50,7 @@ export class ThreeloaderComponent implements OnInit {
 
     renderer = new THREE.WebGLRenderer({
       antialias: true,
+      alpha: true,
     });
     renderer.shadowMap.enabled = true;
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -58,6 +61,7 @@ export class ThreeloaderComponent implements OnInit {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFShadowMap;
     container.appendChild(renderer.domElement);
+    document.querySelector('canvas').style.outline = 'none';
 
     // camera
 
@@ -163,44 +167,49 @@ export class ThreeloaderComponent implements OnInit {
     dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 
     loader.setDRACOLoader(dracoLoader);
-    loader.loadAsync(url).then(function (gltf) {
-      bike = gltf.scene;
+    loader
+      .loadAsync(url)
+      .then(function (gltf) {
+        bike = gltf.scene;
 
-      bike.traverse((o) => {
-        if (o.isMesh) {
-          o.castShadow = true;
-          o.receiveShadow = true;
-          if (o.material.map) {
-            o.material.map.anisotropy = 16;
+        bike.traverse((o) => {
+          if (o.isMesh) {
+            o.castShadow = true;
+            o.receiveShadow = true;
+            if (o.material.map) {
+              o.material.map.anisotropy = 16;
+            }
           }
-        }
+        });
+
+        const boundingBox = new THREE.Box3();
+        boundingBox.setFromObject(bike);
+        const center = new THREE.Vector3();
+        boundingBox.getCenter(center);
+        camera.position.y = center.y - 500;
+        camera.position.x = center.x + 700;
+        camera.updateProjectionMatrix();
+        const size = new THREE.Vector3();
+        boundingBox.getSize(size);
+
+        const fov = camera.fov * (Math.PI / 180);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2));
+
+        camera.position.z = cameraZ + 550;
+        camera.updateProjectionMatrix();
+        bike.position.setY(-500);
+        bike.position.setZ(-50);
+        camera.lookAt(center);
+
+        initColor(bike, TYRE_MTL);
+        initFrame(bike, FRAME_MTL);
+
+        scene.add(gltf.scene);
+      })
+      .then(() => {
+        this.spinner.hide();
       });
-
-      const boundingBox = new THREE.Box3();
-      boundingBox.setFromObject(bike);
-      const center = new THREE.Vector3();
-      boundingBox.getCenter(center);
-      camera.position.y = center.y - 500;
-      camera.position.x = center.x + 700;
-      camera.updateProjectionMatrix();
-      const size = new THREE.Vector3();
-      boundingBox.getSize(size);
-
-      const fov = camera.fov * (Math.PI / 180);
-      const maxDim = Math.max(size.x, size.y, size.z);
-      let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2));
-
-      camera.position.z = cameraZ + 550;
-      camera.updateProjectionMatrix();
-      bike.position.setY(-500);
-      bike.position.setZ(-50);
-      camera.lookAt(center);
-
-      initColor(bike, TYRE_MTL);
-      initFrame(bike, FRAME_MTL);
-
-      scene.add(gltf.scene);
-    });
 
     function initFrame(parent, mtl) {
       parent.traverse((o) => {

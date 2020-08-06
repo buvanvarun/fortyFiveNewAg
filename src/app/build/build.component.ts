@@ -11,6 +11,18 @@ export class BuildComponent implements OnInit {
   total = 35000;
   constructor() {}
 
+  basics = [
+    'Bike with the selected options',
+    'Mobile App',
+    '2 years Warrenty on motor and battery',
+  ];
+
+  premiums = [
+    'Over the air updates & remote diagnostics',
+    'Theft detection notifications',
+    '2 Years maintenance & warranty on motor & battery',
+  ];
+
   changeDisplay = (index) => {
     this.display.forEach((el, i) => {
       if (i === index) {

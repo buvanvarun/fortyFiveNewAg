@@ -1,5 +1,8 @@
 <main>
-  <app-threeloader [bikeColor]="display[0]"></app-threeloader>
+  <app-threeloader
+    [ngStyle]="{ display: display[5] ? 'none' : 'block' }"
+    [bikeColor]="display[0]"
+  ></app-threeloader>
   <div class="build-options-container">
     <div class="build-options-color-container">
       <button (click)="changeDisplay(0)" class="build-options-btn">
@@ -78,14 +81,67 @@
         <h2 class="build-choice-range-text">No</h2>
       </button>
     </div>
-    <div *ngIf="display[5]" class="build-choice-range-container">
-      <button (click)="setChoice(5, 0)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">No Service</h2>
-      </button>
-      <div class="vl"></div>
-      <button (click)="setChoice(5, 1)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">Premium Service</h2>
-      </button>
+    <div *ngIf="display[5]" class="build-choice-service-container">
+      <div (click)="setChoice(5, 0)" class="build-choice-service-btn">
+        <h1 class="build-basic-head-text">Basic</h1>
+        <ul class="build-basic-features">
+          <li *ngFor="let basic of basics" class="build-basic-feature">
+            <div class="build-basic-feature-container">
+              <div class="build-basic-feature-svg-container">
+                <svg
+                  width="2rem"
+                  height="2rem"
+                  viewBox="0 0 16 16"
+                  class="bi bi-check2"
+                  fill="green"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+                  />
+                </svg>
+              </div>
+              <div class="build-basic-feature-text-container">
+                <h1 class="build-basic-feature-text">
+                  {{ basic }}
+                </h1>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h1 class="build-basic-price-text">FREE</h1>
+      </div>
+      <div (click)="setChoice(5, 1)" class="build-choice-service-btn">
+        <h1 class="build-basic-head-text">Premium/ll years</h1>
+        <ul class="build-basic-features">
+          <li *ngFor="let premium of premiums" class="build-basic-feature">
+            <div class="build-basic-feature-container">
+              <div class="build-basic-feature-svg-container">
+                <svg
+                  width="2rem"
+                  height="2rem"
+                  viewBox="0 0 16 16"
+                  class="bi bi-check2"
+                  fill="green"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+                  />
+                </svg>
+              </div>
+              <div class="build-basic-feature-text-container">
+                <h1 class="build-basic-feature-text">
+                  {{ premium }}
+                </h1>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h1 class="build-premium-price-text">Rs.6500/-</h1>
+      </div>
     </div>
     <div *ngIf="display[6]" class="build-choice-range-container">
       <button (click)="setChoice(6, 1)" class="build-choice-btn">
@@ -109,5 +165,8 @@
       />
       <h2 class="build-buy-price">{{ formatter.format(total) }}</h2>
     </button>
+  </div>
+  <div class="build-buy-modal-bg">
+    <div class="build-buy-modal"></div>
   </div>
 </main>
