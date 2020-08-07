@@ -9,6 +9,7 @@ export class BuildComponent implements OnInit {
   display = [false, false, false, false, false, false, false];
   choices = [0, 0, 0, 0, 0, 0, 0];
   total = 35000;
+  summary = false;
   constructor() {}
 
   basics = [
@@ -49,6 +50,14 @@ export class BuildComponent implements OnInit {
     currency: 'INR',
   });
 
+  setSummary() {
+    this.summary = true;
+  }
+
+  onCross() {
+    this.summary = false;
+  }
+
   calculatePrice = (index, el) => {
     if (el === 'add') {
       if (index === 1) {
@@ -63,6 +72,8 @@ export class BuildComponent implements OnInit {
         this.total += 6500;
       } else if (index === 6) {
         this.total += 3000;
+      } else {
+        this.total += 0;
       }
     } else if (el === 'sub') {
       if (index === 1) {
@@ -77,6 +88,8 @@ export class BuildComponent implements OnInit {
         this.total -= 6500;
       } else if (index === 6) {
         this.total -= 3000;
+      } else {
+        this.total += 0;
       }
     }
   };

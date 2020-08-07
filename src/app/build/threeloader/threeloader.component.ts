@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -12,10 +12,15 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ThreeloaderComponent implements OnInit {
   @Input() bikeColor;
   constructor(private spinner: NgxSpinnerService) {}
-
+  // 0 is black
+  @Output() sendColor = new EventEmitter();
   ngOnInit(): void {
     this.bike();
     this.spinner.show();
+  }
+
+  setColor(val) {
+    this.sendColor.emit(val);
   }
   bike = () => {
     window.addEventListener('click', (e) => {
