@@ -1,0 +1,504 @@
+<main>
+  <div *ngIf="summary" class="build-buy-modal-bg">
+    <div class="build-buy-modal">
+      <div class="build-buy-summary-components-container">
+        <div class="build-buy-summary-head-text-container">
+          <h1 class="build-buy-summary-head-text">fortyfive</h1>
+          <div class="underline"></div>
+        </div>
+        <div class="build-buy-summary-components">
+          <div class="build-buy-summary-essentials">
+            <div class="build-buy-summary-essentials-top">
+              <div class="build-buy-essential-unit-container">
+                <div class="build-buy-essential-unit">
+                  <h1 class="build-buy-essential-unit-text">
+                    550<span>wh</span>
+                  </h1>
+                </div>
+                <h1 class="build-buy-essential-text">Battery</h1>
+              </div>
+              <div class="build-buy-essential-unit-container">
+                <div class="build-buy-essential-unit">
+                  <h1 class="build-buy-essential-unit-text">
+                    {{ !choices[2] ? "2.5" : "75"
+                    }}<span>{{ !choices[2] ? "hrs" : "mins" }}</span>
+                  </h1>
+                </div>
+                <h1 class="build-buy-essential-text">Charging</h1>
+              </div>
+              <div class="build-buy-essential-unit-container">
+                <div class="build-buy-essential-unit">
+                  <h1 class="build-buy-essential-unit-text">
+                    75<span>Nm</span>
+                  </h1>
+                </div>
+                <h1 class="build-buy-essential-text">Torque</h1>
+              </div>
+            </div>
+            <div class="build-buy-summary-essentials-bottom">
+              <div class="build-buy-essential-unit-container">
+                <div class="build-buy-essential-unit">
+                  <h1 class="build-buy-essential-unit-text">
+                    25<span>kmph</span>
+                  </h1>
+                </div>
+                <h1 class="build-buy-essential-text">Speed</h1>
+              </div>
+              <div class="build-buy-essential-unit-container">
+                <div class="build-buy-essential-unit">
+                  <h1 class="build-buy-essential-unit-text">
+                    {{ !choices[1] ? "43" : "65" }}<span>Km</span>
+                  </h1>
+                </div>
+                <h1 class="build-buy-essential-text">Range</h1>
+              </div>
+            </div>
+          </div>
+          <div class="build-buy-summary-feature">
+            <div class="build-buy-summary-feature-top">
+              <div class="build-buy-summary-feature-container">
+                <div class="build-buy-summary-feature-svg">
+                  <svg
+                    width="4rem"
+                    height="4rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 100 125"
+                    enable-background="new 0 0 100 100"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M74.581,42.815c0.001-0.084,0.012-0.166,0.012-0.249V29.593c0-6.55-2.564-12.719-7.219-17.374C62.72,7.564,56.549,5,50,5   C36.439,5,25.407,16.033,25.407,29.593v12.972c0,0.084,0.011,0.165,0.012,0.249c-4.563,5.518-7.309,12.591-7.309,20.294   C18.11,80.694,32.415,95,50,95s31.89-14.306,31.89-31.89C81.89,55.406,79.145,48.333,74.581,42.815z M50,14.729   c3.95,0,7.677,1.552,10.495,4.371c2.817,2.817,4.369,6.543,4.369,10.494v5.314c-4.442-2.351-9.499-3.688-14.864-3.688   s-10.422,1.338-14.864,3.688v-5.314C35.136,21.397,41.804,14.729,50,14.729z M50,85.271c-12.22,0-22.161-9.941-22.161-22.161   S37.78,40.948,50,40.948S72.161,50.89,72.161,63.11S62.22,85.271,50,85.271z"
+                      />
+                      <circle cx="50" cy="59.056" r="3" />
+                      <path
+                        d="M50,46.893c-8.941,0-16.215,7.274-16.215,16.215c0,8.941,7.274,16.216,16.215,16.216s16.215-7.274,16.215-16.216   C66.215,54.168,58.941,46.893,50,46.893z M52.961,64.452v5.904c0,1.636-1.326,2.961-2.961,2.961h0   c-1.636,0-2.961-1.326-2.961-2.961v-5.904c-2.157-1.187-3.528-3.628-3.123-6.342c0.401-2.694,2.641-4.851,5.346-5.166   c3.73-0.434,6.894,2.47,6.894,6.112C56.155,61.381,54.865,63.405,52.961,64.452z"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <h1 class="build-buy-summary-feature-text">
+                  {{ choices[3] ? "Smart Lock" : "Cable Lock" }}
+                </h1>
+              </div>
+              <div class="build-buy-summary-feature-container">
+                <div class="build-buy-summary-feature-svg">
+                  <svg
+                    width="4rem"
+                    height="4rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-name="Layer 1"
+                    viewBox="0 0 100 125"
+                    x="0px"
+                    y="0px"
+                  >
+                    <title>Artboard 2</title>
+                    <path
+                      d="M20.74,31.18A29.68,29.68,0,0,1,48,4.85a29.22,29.22,0,0,1,22.17,7.85,29.46,29.46,0,0,1-2.87,45.43v4.78a2.5,2.5,0,0,1-5,0V57.78a4.4,4.4,0,0,1,1.88-3.57,24.46,24.46,0,0,0,2.58-37.86A24.24,24.24,0,0,0,48.31,9.83,24.46,24.46,0,0,0,35.92,54.2a4.42,4.42,0,0,1,1.9,3.58v5.12a2.5,2.5,0,0,1-5,0V58.13A29.6,29.6,0,0,1,20.74,31.18ZM35.32,70.09H64.77a2.5,2.5,0,0,1,2.5,2.5v6.57A10,10,0,0,1,61,88.35v1a5.88,5.88,0,0,1-5.87,5.87H45a5.88,5.88,0,0,1-5.87-5.87v-1a10,10,0,0,1-6.29-9.19V72.59A2.5,2.5,0,0,1,35.32,70.09Zm2.5,9.07A4.9,4.9,0,0,0,42,84a2.5,2.5,0,0,1,2.13,2.47v2.91a.87.87,0,0,0,.87.87H55.1a.87.87,0,0,0,.87-.87V86.45A2.5,2.5,0,0,1,58.11,84a4.9,4.9,0,0,0,4.16-4.82V75.09H37.82ZM12,36.78a2.5,2.5,0,0,0,0-5H4a2.5,2.5,0,1,0,0,5ZM9.17,14.68l7.47,4.9a2.5,2.5,0,0,0,2.74-4.18l-7.47-4.9a2.5,2.5,0,1,0-2.74,4.18Zm1.37,43.79a2.49,2.49,0,0,0,1.37-.41l7.47-4.9A2.5,2.5,0,1,0,16.64,49l-7.47,4.9a2.5,2.5,0,0,0,1.37,4.59Zm75-24.19a2.5,2.5,0,0,0,2.5,2.5h8a2.5,2.5,0,0,0,0-5H88A2.5,2.5,0,0,0,85.5,34.28ZM82,20a2.49,2.49,0,0,0,1.37-.41l7.47-4.9a2.5,2.5,0,0,0-2.74-4.18l-7.47,4.9A2.5,2.5,0,0,0,82,20Zm6.1,38.07a2.5,2.5,0,0,0,2.74-4.18L83.36,49a2.5,2.5,0,0,0-2.74,4.18ZM50.1,21.4a2.5,2.5,0,0,0-3.22,1.47l-4.46,12a2.5,2.5,0,0,0,2.34,3.37h7l-3.21,8.62a2.5,2.5,0,1,0,4.69,1.74l4.46-12a2.5,2.5,0,0,0-2.34-3.37h-7l3.21-8.62A2.5,2.5,0,0,0,50.1,21.4Z"
+                    />
+                  </svg>
+                </div>
+                <h1 class="build-buy-summary-feature-text">
+                  Intelligent System
+                </h1>
+              </div>
+              <div class="build-buy-summary-feature-container">
+                <div class="build-buy-summary-feature-svg">
+                  <svg
+                    width="4rem"
+                    height="4rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 40"
+                    x="0px"
+                    y="0px"
+                  >
+                    <title>12-map</title>
+                    <g data-name="Layer 13">
+                      <path
+                        d="M29,8H20.1A8.076,8.076,0,0,0,21,5,5,5,0,0,0,11,5a8.076,8.076,0,0,0,.9,3H3a3,3,0,0,0-3,3V29a3,3,0,0,0,3,3H29a3,3,0,0,0,3-3V11A3,3,0,0,0,29,8ZM16,2a3,3,0,0,1,3,3c0,1.092-1.561,3.943-3,6.192C14.561,8.943,13,6.093,13,5A3,3,0,0,1,16,2ZM3,10H9.586l-4,4H2V11A1,1,0,0,1,3,10ZM2,29V20H18.657L9.073,30H3A1,1,0,0,1,2,29Zm9.843,1,9.879-10.308A1,1,0,0,0,21,18H2V16H6a1,1,0,0,0,.707-.293L12.414,10h.524c.926,1.636,1.9,3.083,2.239,3.568a1,1,0,0,0,1.646,0c.335-.485,1.313-1.932,2.239-3.568H29a1,1,0,0,1,1,1v3H19a1,1,0,0,0,0,2H30v2H27a1,1,0,0,0-.722.308L15.073,30ZM29,30H17.844l9.583-10H30v9A1,1,0,0,1,29,30Z"
+                      />
+                      <circle cx="16" cy="5" r="1" />
+                    </g>
+                  </svg>
+                </div>
+                <h1 class="build-buy-summary-feature-text">
+                  GPS Tracking
+                </h1>
+              </div>
+            </div>
+            <div
+              *ngIf="choices[4] || choices[6]"
+              class="build-buy-summary-feature-bottom"
+            >
+              <div
+                *ngIf="choices[6]"
+                class="build-buy-summary-feature-container"
+              >
+                <div class="build-buy-summary-feature-svg">
+                  <svg
+                    width="4rem"
+                    height="4rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 512 640"
+                    enable-background="new 0 0 512 512"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M383,78.2h-40.6c-5.6,0-10.2-4.5-10.2-10.2V12.2C332.2,6.5,327.7,2,322,2H190c-5.6,0-10.2,4.5-10.2,10.2V68  c0,5.6-4.5,10.2-10.2,10.2H129c-14,0-25.4,11.4-25.4,25.4v381c0,14,11.4,25.4,25.4,25.4h254c14,0,25.4-11.4,25.4-25.4v-381  C408.4,89.6,397,78.2,383,78.2z M331,271.2l-81.9,156.9c-5.1,9-18.8,5.4-18.8-5V316.9c0-5.6-4.5-10.1-10.1-10.1h-30.1  c-7.7,0-12.6-8.4-8.7-15.2l80.5-158c5.1-9,18.8-5.4,18.8,5v107.3c0,5.6,4.5,10.1,10.1,10.1h31.6C330,256.1,334.9,264.5,331,271.2z"
+                    />
+                  </svg>
+                </div>
+                <h1 class="build-buy-summary-feature-text">
+                  TPMS
+                </h1>
+              </div>
+              <div
+                *ngIf="choices[4]"
+                class="build-buy-summary-feature-container"
+              >
+                <div class="build-buy-summary-feature-svg">
+                  <svg
+                    width="4rem"
+                    height="4rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xml:space="preserve"
+                    version="1.1"
+                    style="
+                      shape-rendering: geometricPrecision;
+                      text-rendering: geometricPrecision;
+                      image-rendering: optimizeQuality;
+                    "
+                    viewBox="0 0 50000 62500"
+                    x="0px"
+                    y="0px"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  >
+                    <defs>
+                      <style type="text/css">
+                        .str1 {
+                          stroke: black;
+                          stroke-width: 458.61;
+                        }
+                        .str2 {
+                          stroke: black;
+                          stroke-width: 564.44;
+                        }
+                        .str0 {
+                          stroke: black;
+                          stroke-width: 352.77;
+                        }
+                        .fil0 {
+                          fill: none;
+                        }
+                        .fil1 {
+                          fill: black;
+                        }
+                      </style>
+                    </defs>
+                    <g>
+                      <g>
+                        <path
+                          class="fil0 str0"
+                          d="M25715 23937c0,0 3893,4057 6687,6527 344,304 5040,4676 5033,5061 -22,1095 1191,662 788,-58 -79,-141 -275,-212 -318,-323 -951,-2496 -1719,-11175 -1899,-14064 -234,-3750 -651,-10491 -651,-10491"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M30746 12422c-516,6563 -441,15921 106,22349 34,411 36,459 236,811 634,808 -1006,1302 -766,97 9,-42 -24,-304 -50,-349 -1944,-3379 -3731,-6250 -6257,-9212"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M12256 27124l6635 4107m3542 2192l2105 1303 1035 677 751 494 29 -39 -1044 -2789"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M19207 13107l2312 7903m2081 6623l1738 5527"
+                        />
+                        <line
+                          class="fil0 str0"
+                          x1="10821"
+                          y1="29113"
+                          x2="16347"
+                          y2="34806"
+                        />
+                        <line
+                          class="fil0 str0"
+                          x1="16347"
+                          y1="34806"
+                          x2="15272"
+                          y2="16830"
+                        />
+                        <path
+                          class="fil0 str1"
+                          d="M15791 41775c-7,27 19,53 29,79 901,2381 4529,1551 5030,691 708,-1216 1211,-3191 1185,-6113 -1,-130 -39,-167 -101,-81 -15,19 -31,38 -51,57 -510,490 -2741,656 -3648,-98 -815,1822 -1820,3044 -2444,5465z"
+                        />
+                        <path
+                          class="fil0 str1"
+                          d="M18260 36330c-194,795 67,2045 1062,2174 1275,164 2230,-912 2587,-1971"
+                        />
+                        <path
+                          class="fil1 str0"
+                          d="M25234 34591c64,-69 344,-391 344,-391 0,0 646,1423 551,1391 -96,-32 -1073,-527 -1073,-527l178 -473z"
+                        />
+                        <ellipse
+                          class="fil1 str0"
+                          cx="26507"
+                          cy="36089"
+                          rx="458"
+                          ry="577"
+                        />
+                        <path
+                          class="fil1 str0"
+                          d="M15349 33607c185,-179 575,-390 805,-550l63 1439 -868 -889z"
+                        />
+                        <ellipse
+                          class="fil1 str0"
+                          cx="16461"
+                          cy="34983"
+                          rx="458"
+                          ry="577"
+                        />
+                        <path
+                          class="fil0 str2"
+                          d="M21909 36533c478,-3541 1310,-8065 2723,-12469m517 -1530c1996,-5611 4999,-10811 9496,-13254m1257 -593c334,-135 676,-255 1026,-360 6654,-1997 10505,9223 11354,13904 302,1307 -2536,1318 -2519,41 -251,-3168 -2776,-13911 -8835,-13945"
+                        />
+                        <path
+                          class="fil0 str2"
+                          d="M47662 19499c-2692,-9606 -6016,-12742 -10462,-12906 -12815,-472 -17876,17970 -18951,29858"
+                        />
+                        <path
+                          class="fil0 str2"
+                          d="M9189 36759c537,-2349 1319,-5728 2335,-9370m375 -1310c1438,-4855 3412,-9948 6175,-13442m1111 -1271c1694,-1738 3655,-2878 5930,-3081 29,-3 59,-6 89,-8 1013,-78 1641,24 2348,225 31,8 64,-43 64,-43 -990,-1288 -3751,-1477 -4154,-1477 -59,0 -118,4 -178,6 -1114,52 -2232,335 -3288,757 -10224,4085 -13103,21143 -14374,28673"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M12487 26864c0,-64 -734,-922 -734,-922l-960 -346c-237,-71 -305,-71 -393,176l-295 925c-67,178 32,338 172,384l993 328 1002 -79 215 -466z"
+                        />
+                        <path
+                          class="fil0 str1"
+                          d="M1701 41609c-14,27 4,54 7,80 231,2415 4053,1726 4788,886 1037,-1187 2084,-3142 2869,-6062 35,-131 8,-169 -78,-86 -19,19 -41,38 -65,55 -641,471 -2896,550 -3585,-239 -1312,1789 -2646,2971 -3936,5366z"
+                        />
+                        <path
+                          class="fil0 str1"
+                          d="M5656 36264c-413,787 -501,2047 448,2213 1217,214 2461,-825 3108,-1868"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M8119 24831l-438 -126c-237,-71 -420,7 -509,254l-264 897c-67,178 32,337 171,383l599 187"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M25868 23731c13,-63 -531,-1053 -531,-1053l-871 -533c-217,-118 -283,-132 -420,92l-476 846c-102,161 -37,337 90,411l905 523 998 127 305 -413z"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M21005 22359l-344 -213c-185,-119 -333,-78 -410,150l-235 838c-58,163 16,342 125,415l470 306"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M35679 10533c46,-11 262,-1117 262,-1117l-47 -993c-21,-252 -21,-429 -250,-376l-816 326c-155,52 -236,153 -226,302l6 541 17 697 202 685c51,244 109,190 271,136l581 -201z"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M19491 12750c44,-23 -148,-870 -148,-870 -87,-263 -211,-1422 -592,-1095l-726 785c-292,396 -93,618 106,1148l483 699c111,209 157,143 308,46l569 -713z"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M30921 8119l-3 -344c-4,-220 -120,-370 -352,-308l-838 389c-194,90 -275,303 -276,435l6 520"
+                        />
+                        <path
+                          class="fil0 str0"
+                          d="M15241 11101l-3 -634c-4,-221 -120,-321 -352,-259l-867 890c-247,222 -246,433 -247,564l6 910"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <h1 class="build-buy-summary-feature-text">
+                  Fenders
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="build-buy-summary-bike-image-container">
+          <img
+            class="build-buy-summary-bike-image"
+            src="/assets/images/fortyfive-summary.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="build-buy-summary-features-container">
+        <ul *ngIf="!choices[5]" class="build-basic-features-summary">
+          <li *ngFor="let basic of basics" class="build-basic-feature">
+            <div class="build-basic-feature-container">
+              <div class="build-basic-feature-svg-container">
+                <svg
+                  width="2rem"
+                  height="2rem"
+                  viewBox="0 0 16 16"
+                  class="bi bi-check2"
+                  fill="green"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+                  />
+                </svg>
+              </div>
+              <div class="build-basic-feature-text-container">
+                <h1 class="build-basic-feature-text">
+                  {{ basic }}
+                </h1>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul *ngIf="choices[5]" class="build-basic-features-summary">
+          <li *ngFor="let premium of premiums" class="build-basic-feature">
+            <div class="build-basic-feature-container">
+              <div class="build-basic-feature-svg-container">
+                <svg
+                  width="2rem"
+                  height="2rem"
+                  viewBox="0 0 16 16"
+                  class="bi bi-check2"
+                  fill="green"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+                  />
+                </svg>
+              </div>
+              <div class="build-basic-feature-text-container">
+                <h1 class="build-basic-feature-text">
+                  {{ premium }}
+                </h1>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="build-price-container-summary">
+          <div class="build-buy-btn-container">
+            <button (click)="setSummary(false)" class="build-buy-btn">
+              Proceed to Buy>>
+            </button>
+          </div>
+          <button class="build-buy-price-container">
+            <img
+              class="build-buy-rupee"
+              src="/assets/images/rupee-indian.png"
+              alt="rupee"
+            />
+            <h2 class="build-buy-price">{{ formatter.format(total) }}</h2>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- <span (click)="setSummary(true)" class="cross">X</span> -->
+  </div>
+  <div *ngIf="!summary" class="build-buy-modal-bg">
+    <div class="buy-modal">
+      <div class="buy-personal-note">
+        <div class="build-buy-summary-head-text-container">
+          <h1 class="build-buy-summary-head-text">fortyfive</h1>
+          <div class="underline"></div>
+        </div>
+        <div class="buy-personal-text-container">
+          <p class="buy-personal-text">
+            hi there, <br /><br />Uton Energia is about the way people move in
+            cities. <br /><br />The appeal of what we're trying to do is that
+            we're getting everybody on an electric bike as a commuting tool
+            We’ve carefully curated the bike to take out every problem, whenever
+            you choose to ride be more resilient with less need of constant
+            service and is tested many miles to achieve the goal of bringing the
+            bike in for maintenance once a year. <br /><br />thank you for
+            purchasing super cool product and we hope you’ll have unlimited
+            experiences with us.
+          </p>
+        </div>
+      </div>
+      <div class="buy-personal-details">
+        <div class="buy-details-container">
+          <div class="name-section">
+            <input
+              [(ngModel)]="name"
+              type="text"
+              name="name"
+              autocomplete="off"
+              required
+            />
+            <label for="name" class="label-name">
+              <span class="content-name">Name</span>
+            </label>
+          </div>
+          <div class="name-section">
+            <input
+              [(ngModel)]="email"
+              type="email"
+              name="email"
+              autocomplete="off"
+              required
+            />
+            <label for="email" class="label-name">
+              <span class="content-name">Email</span>
+            </label>
+          </div>
+          <div class="name-section">
+            <input
+              [(ngModel)]="phone"
+              type="text"
+              name="phone"
+              autocomplete="off"
+              required
+            />
+            <label for="phone" class="label-name">
+              <span class="content-name">Phone Number</span>
+            </label>
+          </div>
+          <div class="name-section">
+            <input
+              [(ngModel)]="address"
+              type="text"
+              name="address"
+              autocomplete="off"
+              required
+            />
+            <label for="address" class="label-name">
+              <span class="content-name">Address</span>
+            </label>
+          </div>
+        </div>
+        <div class="buy-price-container-summary">
+          <div class="build-buy-btn-container">
+            <button (click)="buyProduct()" class="build-buy-btn">
+              Proceed to Buy>>
+            </button>
+          </div>
+          <button class="build-buy-price-container">
+            <img
+              class="build-buy-rupee"
+              src="/assets/images/rupee-indian.png"
+              alt="rupee"
+            />
+            <h2 class="build-buy-price">{{ formatter.format(total) }}</h2>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

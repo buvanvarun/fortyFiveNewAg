@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ThreeloaderComponent } from './build/threeloader/threeloader.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { BuyComponent } from './buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ContactUsComponent,
     NavigationComponent,
     ThreeloaderComponent,
+    BuyComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,

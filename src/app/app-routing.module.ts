@@ -7,6 +7,7 @@ import { BuildComponent } from './build/build.component';
 import { PreOrderComponent } from './pre-order/pre-order.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { BuyComponent } from './buy/buy.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'specs', component: SpecsComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'preorder', component: PreOrderComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contactus', component: ContactUsComponent },
+  { path: 'buy/:id', component: BuyComponent },
 ];
 
 @NgModule({

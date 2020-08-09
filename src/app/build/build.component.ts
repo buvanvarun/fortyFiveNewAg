@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-build',
@@ -10,7 +11,8 @@ export class BuildComponent implements OnInit {
   choices = [0, 0, 0, 0, 0, 0, 0];
   total = 35000;
   summary = false;
-  constructor() {}
+  buyUrl = '0000000';
+  constructor(private router: Router) {}
 
   basics = [
     'Bike with the selected options',
@@ -33,6 +35,11 @@ export class BuildComponent implements OnInit {
       }
     });
   };
+
+  generateBuyUrl() {
+    let url = this.choices.toString();
+    this.buyUrl = url.replace(/,/g, '');
+  }
   setChoice = (index, e) => {
     this.choices.forEach((el, i) => {
       if (i === index && this.choices[i] != e) {
@@ -42,6 +49,7 @@ export class BuildComponent implements OnInit {
           this.calculatePrice(i, 'sub');
         }
         this.choices[i] = e;
+        this.generateBuyUrl();
       }
     });
   };
