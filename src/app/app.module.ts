@@ -15,6 +15,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ThreeloaderComponent } from './build/threeloader/threeloader.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BuyComponent } from './buy/buy.component';
+import { CareerApplicationComponent } from './career-application/career-application.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BuyComponent } from './buy/buy.component';
     NavigationComponent,
     ThreeloaderComponent,
     BuyComponent,
+    CareerApplicationComponent,
   ],
   imports: [
     BrowserModule,
