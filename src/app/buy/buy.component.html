@@ -1,5 +1,5 @@
 <main>
-  <div *ngIf="summary" class="build-buy-modal-bg">
+  <div class="build-buy-modal-bg">
     <div class="build-buy-modal">
       <div class="build-buy-summary-components-container">
         <div class="build-buy-summary-head-text-container">
@@ -393,97 +393,6 @@
           </li>
         </ul>
         <div class="build-price-container-summary">
-          <div class="build-buy-btn-container">
-            <button (click)="setSummary(false)" class="build-buy-btn">
-              Proceed to Buy>>
-            </button>
-          </div>
-          <button class="build-buy-price-container">
-            <img
-              class="build-buy-rupee"
-              src="/assets/images/rupee-indian.png"
-              alt="rupee"
-            />
-            <h2 class="build-buy-price">{{ formatter.format(total) }}</h2>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- <span (click)="setSummary(true)" class="cross">X</span> -->
-  </div>
-  <div *ngIf="!summary" class="build-buy-modal-bg">
-    <div class="buy-modal">
-      <div class="buy-personal-note">
-        <div class="build-buy-summary-head-text-container">
-          <h1 class="build-buy-summary-head-text">fortyfive</h1>
-          <div class="underline"></div>
-        </div>
-        <div class="buy-personal-text-container">
-          <p class="buy-personal-text">
-            hi there, <br /><br />Uton Energia is about the way people move in
-            cities. <br /><br />The appeal of what we're trying to do is that
-            we're getting everybody on an electric bike as a commuting tool
-            We’ve carefully curated the bike to take out every problem, whenever
-            you choose to ride be more resilient with less need of constant
-            service and is tested many miles to achieve the goal of bringing the
-            bike in for maintenance once a year. <br /><br />thank you for
-            purchasing super cool product and we hope you’ll have unlimited
-            experiences with us.
-          </p>
-        </div>
-      </div>
-      <div class="buy-personal-details">
-        <div class="buy-details-container">
-          <div class="name-section">
-            <input
-              [(ngModel)]="name"
-              type="text"
-              name="name"
-              autocomplete="off"
-              required
-            />
-            <label for="name" class="label-name">
-              <span class="content-name">Name</span>
-            </label>
-          </div>
-          <div class="name-section">
-            <input
-              [(ngModel)]="email"
-              type="email"
-              name="email"
-              autocomplete="off"
-              required
-            />
-            <label for="email" class="label-name">
-              <span class="content-name">Email</span>
-            </label>
-          </div>
-          <div class="name-section">
-            <input
-              [(ngModel)]="phone"
-              type="text"
-              name="phone"
-              autocomplete="off"
-              required
-            />
-            <label for="phone" class="label-name">
-              <span class="content-name">Phone Number</span>
-            </label>
-          </div>
-          <div class="name-section">
-            <input
-              [(ngModel)]="address"
-              type="text"
-              name="address"
-              autocomplete="off"
-              required
-            />
-            <label for="address" class="label-name">
-              <span class="content-name">Address</span>
-            </label>
-          </div>
-        </div>
-        <div class="buy-price-container-summary">
           <div class="build-buy-btn-container">
             <button (click)="buyProduct()" class="build-buy-btn">
               Proceed to Buy>>

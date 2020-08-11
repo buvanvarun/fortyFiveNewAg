@@ -49,18 +49,30 @@
           </div>
           <div class="vb"></div>
           <div>
-            <h1 class="contact-career-option-text">Apply</h1>
+            <h1
+              (click)="onApply(true, 'power')"
+              class="contact-career-option-text"
+            >
+              Apply
+            </h1>
           </div>
         </div>
         <div class="contact-career-option">
           <div class="power-text">
-            <h1 class="contact-career-option-text">Marketing Intern</h1>
+            <h1 class="contact-career-option-text">
+              Marketing Intern
+            </h1>
           </div>
 
           <div class="vb"></div>
           <h1 class="contact-career-option-text">Hyderabad</h1>
           <div class="vb"></div>
-          <h1 class="contact-career-option-text">Apply</h1>
+          <h1
+            (click)="onApply(true, 'marketing')"
+            class="contact-career-option-text"
+          >
+            Apply
+          </h1>
         </div>
       </div>
       <div class="other-role">
@@ -69,6 +81,139 @@
           <a href="mailto:info@utonenergia.com">info@utonenergia.com</a> <br />
           We’ll get in touch with you
         </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="apply" class="build-buy-modal-bg">
+    <div class="buy-modal">
+      <div class="buy-personal-note">
+        <div class="build-buy-summary-head-text-container">
+          <h1 class="build-buy-summary-head-text">
+            {{
+              degree === "power"
+                ? "Power Electronics Engineer"
+                : "Marketing Intern"
+            }}
+          </h1>
+          <div
+            class="{{ degree === 'power' ? 'underline' : 'underline-m' }}"
+          ></div>
+        </div>
+        <div class="buy-personal-text-container">
+          <p *ngIf="degree === 'power'" class="buy-personal-text">
+            To design/ develop/ modify BMS hardware, working with protection
+            logics, driving algorithms continuous interaction with firmware/
+            integration to ensure the design and development quality in desired
+            cost and committed time <br /><br />
+            - Hardware design and module development for EV battery management
+            systems <br />
+            - Strong understanding of battery protection logics, SOH
+            calculations and driving algorithms for the same <br />
+            - Should have knowledge of electronic components Mosfets, Op AMPs,
+            ADC, microcontrollers <br />
+            - Testing/ Debugging circuits/ Logics independently <br />
+            <br />
+            Develop function safety critical BMS embedded control functions such
+            as battery state estimation, fault detection, balancing control,
+            temperature control, and charging control, using model based control
+            development <br /><br />
+            | Trouble shooting and analysis of system level defects <br />
+            | Analyze data and generate reports and make design changes <br />
+            | Determine battery management system design strategy to connect it
+            to batteries in parallel <br />
+            | Apt at using test tools like CROs, data loggers, using scripts
+            <br />
+          </p>
+          <p *ngIf="degree === 'marketing'" class="buy-personal-text">
+            To (MARKETING INTERN) design/ develop/ modify BMS hardware, working
+            with protection logics, driving algorithms continuous interaction
+            with firmware/ integration to ensure the design and development
+            quality in desired cost and committed time <br /><br />
+            - Hardware design and module development for EV battery management
+            systems <br />
+            - S trong understanding of battery protection logics, SOH
+            calculations and driving algorithms for the same <br />
+            - Should have knowledge of electronic components Mosfets, Op AMPs,
+            ADC, microcontrollers <br />
+            - Testing/ Debugging circuits/ Logics independently Develop <br />
+            <br />
+            function safety critical BMS embedded control functions such as
+            battery state estimation, fault detection, balancing control,
+            temperature control, and charging control, using model based control
+            development <br /><br />
+            | Trouble shooting and analysis of system level defects <br />
+            | Analyze data and generate reports and make design changes <br />
+            | Determine battery management system design strategy to connect it
+            to batteries in parallel <br />
+            | Apt at using test tools like CROs, data loggers, using scripts
+            <br />
+          </p>
+        </div>
+      </div>
+      <div class="buy-personal-details">
+        <div class="buy-details-container">
+          <div class="name-section">
+            <input
+              [(ngModel)]="name"
+              type="text"
+              name="name"
+              autocomplete="off"
+              required
+            />
+            <label for="name" class="label-name">
+              <span class="content-name">Name</span>
+            </label>
+          </div>
+          <div class="name-section">
+            <input
+              [(ngModel)]="email"
+              type="email"
+              name="email"
+              autocomplete="off"
+              required
+            />
+            <label for="email" class="label-name">
+              <span class="content-name">Email</span>
+            </label>
+          </div>
+          <div class="name-section">
+            <input
+              [(ngModel)]="yearsOfExp"
+              type="text"
+              name="experience"
+              autocomplete="off"
+              required
+            />
+            <label for="experience" class="label-name">
+              <span class="content-name">Years Of Experience</span>
+            </label>
+          </div>
+          <div class="name-section">
+            <input
+              [(ngModel)]="currentOrg"
+              type="text"
+              name="organisation"
+              autocomplete="off"
+              required
+            />
+            <label for="organisation" class="label-name">
+              <span class="content-name">Current Organisation</span>
+            </label>
+          </div>
+          <div class="resume-section">
+            <input
+              type="file"
+              id="resume"
+              name="resume"
+              style="display: none;"
+            />
+            <label class="resume-label" for="resume">RESUME</label>
+          </div>
+        </div>
+        <div class="buy-price-container-summary">
+          <button class="apply">APPLY</button>
+        </div>
+        <span (click)="onApply(false)" class="cross">X</span>
       </div>
     </div>
   </div>

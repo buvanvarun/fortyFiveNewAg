@@ -45,7 +45,7 @@ export class BuyComponent implements OnInit {
   buyProduct = () => {
     const color = this.choices[0] ? 'Grey' : 'Black';
     const goToUrl = `https://pages.razorpay.com/fortyfivebike?name=${this.name}&email=${this.email}&phone=${this.phone}&address=${this.address}&bike_color=${color}&range_plus=${this.choices[1]}&charging_plus=${this.choices[2]}&electronic_locking=${this.choices[3]}&intelligent_systems_service=${this.choices[5]}&tyre_pressure_monitoring=${this.choices[6]}&fenders=${this.choices[4]}`;
-    window.open(goToUrl);
+    window.open(goToUrl, '_self');
   };
 
   calculateTotal = () => {
