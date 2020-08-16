@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Color } from 'three';
 @Component({
   selector: 'app-threeloader',
   templateUrl: './threeloader.component.html',
@@ -51,6 +52,8 @@ export class ThreeloaderComponent implements OnInit {
 
     scene.background = new THREE.Color(0xd8d8d8);
 
+    // scene.background = new THREE.Color(0xffffff);
+
     // renderer
 
     renderer = new THREE.WebGLRenderer({
@@ -64,9 +67,11 @@ export class ThreeloaderComponent implements OnInit {
     renderer.toneMapping = THREE.ReinhardToneMapping;
     renderer.toneMappingExposure = 2.3;
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFShadowMap;
+    renderer.shadowMap.renderSingleSided = false;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
     document.querySelector('canvas').style.outline = 'none';
+    document.querySelector('canvas').style.cursor = 'grab';
 
     // camera
 
@@ -74,14 +79,11 @@ export class ThreeloaderComponent implements OnInit {
       60,
       container.clientWidth / container.clientHeight,
       5,
-      17000
+      7000
     );
     scene.add(camera);
     let controls = new OrbitControls(camera, renderer.domElement);
     controls.update();
-    // controls.enableDamping = true;
-    // controls.dampingFactor = 0.;
-    // controls.rotateSpeed = 0.7;
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.maxPolarAngle = Math.PI / 2;
@@ -171,12 +173,25 @@ export class ThreeloaderComponent implements OnInit {
     dracoLoader.setDecoderConfig({ type: 'js' });
     dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 
+    let bike_position;
+
+    var axesHelper = new THREE.AxesHelper(500);
+    scene.add(axesHelper);
+
     loader.setDRACOLoader(dracoLoader);
     loader
       .loadAsync(url)
       .then(function (gltf) {
         bike = gltf.scene;
-
+        bike.children[0].castShadow = true;
+        bike.children[0].receiveShadow = true;
+        bike.children[0].children[0].castShadow = true;
+        bike.children[0].children[0].receiveShadow = true;
+        bike.traverse((o) => {
+          o.castShadow = true;
+          o.receiveShadow = true;
+        });
+        console.log(bike.children[0]);
         bike.traverse((o) => {
           if (o.isMesh) {
             o.castShadow = true;
@@ -191,8 +206,8 @@ export class ThreeloaderComponent implements OnInit {
         boundingBox.setFromObject(bike);
         const center = new THREE.Vector3();
         boundingBox.getCenter(center);
-        camera.position.y = center.y - 500;
-        camera.position.x = center.x + 700;
+        camera.position.y = center.y - 400;
+        camera.position.x = center.x + 1300;
         camera.updateProjectionMatrix();
         const size = new THREE.Vector3();
         boundingBox.getSize(size);
@@ -201,16 +216,21 @@ export class ThreeloaderComponent implements OnInit {
         const maxDim = Math.max(size.x, size.y, size.z);
         let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2));
 
-        camera.position.z = cameraZ + 550;
+        camera.position.z = 1340;
+
         camera.updateProjectionMatrix();
         bike.position.setY(-500);
-        bike.position.setZ(-50);
+        // bike.position.setZ(-500);
+        // bike.position.y
+        // bike_position = bike.position.y;
+        // console.log(bike_position);
         camera.lookAt(center);
 
         initColor(bike, TYRE_MTL);
         initFrame(bike, FRAME_MTL);
 
         scene.add(gltf.scene);
+        animate();
       })
       .then(() => {
         this.spinner.hide();
@@ -228,6 +248,7 @@ export class ThreeloaderComponent implements OnInit {
           o.material = mtl;
         }
       });
+      console.log(parent);
     }
 
     function initColor(parent, mtl) {
@@ -370,13 +391,18 @@ export class ThreeloaderComponent implements OnInit {
       });
     }
 
-    let dirLight = new THREE.DirectionalLight(0xffffff, 0.3);
-    dirLight.position.set(0, 900, 0);
-    dirLight.castShadow = true;
-    scene.add(dirLight);
-
     let ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(ambientLight);
+
+    let dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(0, 1300, 0);
+    const d = 1000;
+    dirLight.shadowCameraLeft = -d;
+    dirLight.shadowCameraRight = d;
+    dirLight.shadowCameraTop = d;
+    dirLight.shadowCameraBottom = -d;
+    dirLight.castShadow = true;
+    scene.add(dirLight);
 
     let l1 = new THREE.PointLight(0xc4c4c4, 1);
     l1.position.set(0, 300, 500);
@@ -394,18 +420,35 @@ export class ThreeloaderComponent implements OnInit {
     l4.position.set(-500, 300, 0);
     scene.add(l4);
 
+    var planeGeometry = new THREE.PlaneBufferGeometry(1800, 1800, 1, 1);
+    // planeGeometry.rotateX(-Math.PI / 2);
+    // planeGeometry.rotateY(Math.PI / 2);
+    var planeMaterial = new THREE.MeshPhongMaterial({
+      color: 0xefefef,
+      side: THREE.DoubleSide,
+    });
+    var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.translateY(-500);
+    plane.rotation.x = Math.PI * -0.5;
+    plane.receiveShadow = true;
     function animate() {
       requestAnimationFrame(animate);
+      bike.rotation.y += 0.006;
+      // camera.position.z = 1640;
+      // console.log(camera.position.z);
       renderer.render(scene, camera);
+      // setInterval(() => {
+      //   camera.position.z = 1640;
+      // }, 9000);
+      // camera.position.z = bike.rotation.y + Math.sin(Date.now() / 1000) * 50;
+      // camera.position.z
+      // camera.lookAt(targetPosition);
       controls.update();
     }
-
-    animate();
 
     function onWindowResize() {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
-
       renderer.setSize(container.clientWidth, container.clientHeight);
     }
   };

@@ -26,7 +26,7 @@ main {
 .specs-wrapper {
   display: flex;
   flex-direction: row;
-  width: 1500vw;
+  width: 1470vw;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
@@ -47,6 +47,7 @@ main {
   font-weight: 700;
   color: #686868;
   font-size: 64px;
+  line-height: 5rem;
 }
 
 .specs-landing-sub-title {
@@ -60,6 +61,7 @@ main {
   font-weight: 600;
   font-size: 42px;
   color: #1d1d1f;
+  line-height: 3.5rem;
 }
 
 .specs-landing-img-container {
@@ -75,11 +77,16 @@ main {
   height: 100%;
 }
 
+.specs-landing-two-container {
+  width: 60vw;
+  height: 100vh;
+}
+
 .specs-landing-two-img-container {
   position: relative;
   left: 8%;
-  top: 10%;
-  width: 40vw;
+  top: -30%;
+  width: 50vw;
   height: 90vh;
 }
 
@@ -90,15 +97,15 @@ main {
 
 .specs-landing-two-title {
   position: relative;
-  left: 50%;
-  top: -70%;
+  left: 10%;
+  top: 10%;
   width: 50vw;
 }
 
 .specs-landing-two-sub-title {
   position: relative;
-  left: 50%;
-  top: -70%;
+  left: 10%;
+  top: 10%;
   width: 48vw;
 }
 
@@ -271,9 +278,10 @@ main {
 }
 .specs-motor-sub-title-text {
   color: #1d1d1f;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 32px;
   text-align: left;
+  line-height: 2.5rem;
 }
 
 .specs-motor-img-container {
@@ -342,6 +350,7 @@ main {
   font-weight: 600;
   font-size: 28px;
   text-align: left;
+  line-height: 2.5rem;
 }
 
 .specs-tyre-spec-container {
@@ -420,6 +429,7 @@ main {
   color: #1d1d1f;
   font-weight: 700;
   font-size: 48px;
+  line-height: 3.5rem;
 }
 
 .specs-battery-title-two {
@@ -432,6 +442,7 @@ main {
   color: #686868;
   font-weight: 600;
   font-size: 36px;
+  line-height: 2.5rem;
 }
 
 .specs-battery-sub-title {
@@ -510,11 +521,12 @@ main {
   color: #686868;
   font-size: 48px;
   font-weight: 700;
+  line-height: 3.5rem;
 }
 
 .specs-smart-system-sub-title {
   position: relative;
-  top: -15%;
+  top: 15%;
   left: 55%;
   width: 40vw;
 }
@@ -523,6 +535,7 @@ main {
   color: #1d1d1f;
   font-size: 32px;
   font-weight: 500;
+  line-height: 2.5rem;
 }
 
 .specs-smart-system-two-sub-title {
@@ -548,6 +561,7 @@ main {
   color: #1d1d1f;
   font-weight: 700;
   font-size: 48px;
+  line-height: 3.5rem;
 }
 
 .specs-smart-lock-sub-title {
@@ -561,6 +575,7 @@ main {
   color: #1d1d1f;
   font-weight: 500;
   font-size: 28px;
+  line-height: 2.3rem;
 }
 
 .specs-sense-title {
@@ -586,6 +601,7 @@ main {
   color: #1d1d1f;
   font-weight: 500;
   font-size: 28px;
+  line-height: 2.3rem;
 }
 
 .specs-sense-img-container {
