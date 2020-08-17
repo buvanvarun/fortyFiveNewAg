@@ -28,12 +28,20 @@ export class ThreeloaderComponent implements OnInit {
       let id = (<HTMLButtonElement>e.target).id;
       if (id === 'gray') {
         let frame;
-        frame = new THREE.MeshPhongMaterial({ color: 0x767676 });
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x767676,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+        });
         initFrame(bike, frame);
       }
       if (id === 'black') {
         let frame;
-        frame = new THREE.MeshPhongMaterial({ color: 0x000000 });
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x000000,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+        });
         initFrame(bike, frame);
       }
     });
@@ -67,7 +75,6 @@ export class ThreeloaderComponent implements OnInit {
     renderer.toneMapping = THREE.ReinhardToneMapping;
     renderer.toneMappingExposure = 2.3;
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.renderSingleSided = false;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
     document.querySelector('canvas').style.outline = 'none';
@@ -76,7 +83,7 @@ export class ThreeloaderComponent implements OnInit {
     // camera
 
     camera = new THREE.PerspectiveCamera(
-      60,
+      50,
       container.clientWidth / container.clientHeight,
       5,
       7000
@@ -92,91 +99,117 @@ export class ThreeloaderComponent implements OnInit {
 
     const TYRE_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
     const FRAME_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
     // tmps are dust caps in tyre
     const TMPS_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     const LOCK_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // glass
 
     const GLASS_MTL = new THREE.MeshPhongMaterial({
       color: 0xffffff,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // front panel
 
     const FRONT_PANEL_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // front lock
 
     const FRONT_LOCK_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // mud gaurd center mount
 
     const MUDGUARD_MOUNT_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // mid frame color
 
     const MID_FRAME_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // chain link color
 
     const CHAINLINK_MTL = new THREE.MeshPhongMaterial({
       color: 0x808080,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // front mudgaurd mount cad
     const FRONT_MUDCAD_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // battery lock
     const BATTERY_LOCK_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // disc
 
     const DISC_MTL = new THREE.MeshPhongMaterial({
       color: 0xc0c0c0,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // rim material
 
     const RIM_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
     // reflector material
 
     const REFLECTOR_MTL = new THREE.MeshPhongMaterial({
       color: 0xcc0000,
+      side: THREE.DoubleSide,
+      shadowSide: THREE.FrontSide,
     });
 
+    camera.position.set(10, 10, 10);
     let dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderConfig({ type: 'js' });
     dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
-
-    let bike_position;
-
-    var axesHelper = new THREE.AxesHelper(500);
-    scene.add(axesHelper);
 
     loader.setDRACOLoader(dracoLoader);
     loader
@@ -196,6 +229,7 @@ export class ThreeloaderComponent implements OnInit {
           if (o.isMesh) {
             o.castShadow = true;
             o.receiveShadow = true;
+
             if (o.material.map) {
               o.material.map.anisotropy = 16;
             }
@@ -207,7 +241,7 @@ export class ThreeloaderComponent implements OnInit {
         const center = new THREE.Vector3();
         boundingBox.getCenter(center);
         camera.position.y = center.y - 400;
-        camera.position.x = center.x + 1300;
+        camera.position.x = center.x + 1200;
         camera.updateProjectionMatrix();
         const size = new THREE.Vector3();
         boundingBox.getSize(size);
@@ -216,7 +250,7 @@ export class ThreeloaderComponent implements OnInit {
         const maxDim = Math.max(size.x, size.y, size.z);
         let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2));
 
-        camera.position.z = 1340;
+        camera.position.z = 1540;
 
         camera.updateProjectionMatrix();
         bike.position.setY(-500);
@@ -248,7 +282,9 @@ export class ThreeloaderComponent implements OnInit {
           o.material = mtl;
         }
       });
-      console.log(parent);
+      // parent.castShadow = true;
+      // parent.receiveShadow = true;
+      console.log(parent.parent);
     }
 
     function initColor(parent, mtl) {
@@ -397,6 +433,8 @@ export class ThreeloaderComponent implements OnInit {
     let dirLight = new THREE.DirectionalLight(0xffffff, 1);
     dirLight.position.set(0, 1300, 0);
     const d = 1000;
+    dirLight.shadowMapHeight = 1024;
+    dirLight.shadowMapWidth = 1024;
     dirLight.shadowCameraLeft = -d;
     dirLight.shadowCameraRight = d;
     dirLight.shadowCameraTop = d;
@@ -405,20 +443,42 @@ export class ThreeloaderComponent implements OnInit {
     scene.add(dirLight);
 
     let l1 = new THREE.PointLight(0xc4c4c4, 1);
-    l1.position.set(0, 300, 500);
-    scene.add(l1);
+    const l1helper = new THREE.CameraHelper(l1.shadow.camera);
+    // scene.add(l1helper);
+    l1.position.set(-100, -200, 0);
+    // scene.add(l1);
+
+    let s1 = new THREE.SpotLight(0xc4c4c4, 1);
+    s1.shadowCameraLeft = 1000;
+    s1.castShadow = true;
+    const sphelp = new THREE.SpotLightHelper(s1);
+    scene.add(sphelp);
+    const s1helper = new THREE.CameraHelper(s1.shadow.camera);
+    scene.add(s1helper);
+    s1.position.set(700, 700, 0);
+    scene.add(s1);
+
+    let s2 = new THREE.SpotLight(0xc4c4c4, 1);
+    s2.shadowCameraLeft = 1000;
+    s2.castShadow = true;
+    const sp2help = new THREE.SpotLightHelper(s2);
+    scene.add(sp2help);
+    const s12helper = new THREE.CameraHelper(s2.shadow.camera);
+    scene.add(s12helper);
+    s2.position.set(400, 1000, 1700);
+    scene.add(s2);
 
     let l2 = new THREE.PointLight(0xc4c4c4, 1);
     l2.position.set(500, 100, 0);
-    scene.add(l2);
+    // scene.add(l2);
 
     let l3 = new THREE.PointLight(0xc4c4c4, 1);
     l3.position.set(0, 100, -500);
-    scene.add(l3);
+    // scene.add(l3);
 
     let l4 = new THREE.PointLight(0xc4c4c4, 1);
     l4.position.set(-500, 300, 0);
-    scene.add(l4);
+    // scene.add(l4);
 
     var planeGeometry = new THREE.PlaneBufferGeometry(1800, 1800, 1, 1);
     // planeGeometry.rotateX(-Math.PI / 2);
@@ -434,15 +494,9 @@ export class ThreeloaderComponent implements OnInit {
     function animate() {
       requestAnimationFrame(animate);
       bike.rotation.y += 0.006;
-      // camera.position.z = 1640;
-      // console.log(camera.position.z);
+
       renderer.render(scene, camera);
-      // setInterval(() => {
-      //   camera.position.z = 1640;
-      // }, 9000);
-      // camera.position.z = bike.rotation.y + Math.sin(Date.now() / 1000) * 50;
-      // camera.position.z
-      // camera.lookAt(targetPosition);
+
       controls.update();
     }
 

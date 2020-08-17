@@ -1,7 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("//db.onlinewebfonts.com/c/9b62dc86f936227b3f7b367bd0b6c05e?family=Tw+Cen+MT");
+
+@font-face {
+  font-family: "Tw Cen MT";
+  src: url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.eot");
+  src: url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.svg#Tw Cen MT")
+      format("svg");
+}
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Tw Cen MT";
 }
