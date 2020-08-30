@@ -26,18 +26,19 @@ main {
 .specs-wrapper {
   display: flex;
   flex-direction: row;
-  width: 1470vw;
+  width: 1440vw;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
 }
 
 .container {
+  position: relative;
   width: 100vw;
   height: 100vh;
 }
 
 .specs-landing-title {
-  position: relative;
+  position: absolute;
   top: 15%;
   left: 5%;
   width: 45vw;
@@ -51,8 +52,8 @@ main {
 }
 
 .specs-landing-sub-title {
-  position: relative;
-  top: 15%;
+  position: absolute;
+  top: 40%;
   left: 5%;
   width: 55vw;
 }
@@ -65,11 +66,11 @@ main {
 }
 
 .specs-landing-img-container {
-  position: relative;
+  position: absolute;
   left: 60%;
-  top: -65%;
-  width: 40vw;
-  height: 90vh;
+  top: 10%;
+  width: 35vw;
+  height: 80vh;
 }
 
 .specs-landing-img {
@@ -78,12 +79,13 @@ main {
 }
 
 .specs-landing-two-container {
-  width: 60vw;
+  position: relative;
+  width: 50vw;
   height: 100vh;
 }
 
 .specs-landing-two-img-container {
-  position: relative;
+  position: absolute;
   left: 8%;
   top: -30%;
   width: 50vw;
@@ -96,16 +98,16 @@ main {
 }
 
 .specs-landing-two-title {
-  position: relative;
-  left: 10%;
-  top: 10%;
+  position: absolute;
+  left: -5%;
+  top: 15%;
   width: 50vw;
 }
 
 .specs-landing-two-sub-title {
-  position: relative;
-  left: 10%;
-  top: 10%;
+  position: absolute;
+  left: -5%;
+  top: 43%;
   width: 48vw;
 }
 
@@ -117,9 +119,9 @@ main {
 }
 
 .specs-body-img-container {
-  position: relative;
-  left: 5%;
-  top: 15%;
+  position: absolute;
+  left: -2%;
+  top: 10%;
   width: 55vw;
   height: 70vh;
 }
@@ -130,15 +132,15 @@ main {
 }
 
 .specs-body-title {
-  position: relative;
-  top: -50%;
-  left: 60%;
+  position: absolute;
+  top: 15%;
+  left: 55%;
   width: 30vw;
 }
 .specs-body-sub-title {
-  position: relative;
-  top: -52%;
-  left: 60%;
+  position: absolute;
+  top: 43%;
+  left: 55%;
   width: 40vw;
 }
 .specs-body-sub-title-text {
@@ -149,8 +151,8 @@ main {
 }
 
 .specs-body-two-img-container {
-  position: relative;
-  left: 5%;
+  position: absolute;
+  left: -1%;
   top: 20%;
   width: 55vw;
   height: 70vh;
@@ -162,8 +164,8 @@ main {
 }
 
 .specs-body-two-sub-title {
-  position: relative;
-  top: -55%;
+  position: absolute;
+  top: 15%;
   left: 60%;
   width: 35vw;
 }
@@ -175,9 +177,9 @@ main {
 }
 
 .specs-body-two-spec-container {
-  position: relative;
+  position: absolute;
   left: 60%;
-  top: -50%;
+  top: 40%;
   width: 40vw;
   height: 40vh;
   display: flex;
@@ -193,32 +195,32 @@ main {
 }
 
 .specs-body-two-element {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 120px;
   border: 1px solid black;
 }
 
 .specs-body-two-element-number {
-  position: relative;
+  position: absolute;
   left: 10px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .specs-body-two-element-symbol {
-  position: relative;
-  left: 50px;
-  transform: translateX(-10px);
-  font-size: 18px;
+  position: absolute;
+  left: 60px;
+  top: 50px;
+  transform: translate(-10px, -30px);
   font-weight: 400;
 }
 
 .specs-body-two-element-name {
-  position: relative;
-  top: -2px;
-  left: 60%;
-  transform: translateX(-54%);
-  font-size: 16px;
+  position: absolute;
+  top: 80px;
+  left: 70px;
+  transform: translateX(-35px);
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -230,7 +232,7 @@ main {
 .specs-body-two-element-text > h1 {
   font-weight: 400;
   color: #1d1d1f;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .specs-body-two-spec-weight-container {
@@ -243,16 +245,16 @@ main {
 .specs-body-two-weight {
   position: relative;
   width: 10px;
-  height: 100px;
+  height: 120px;
 }
 .specs-body-two-weight-quantity {
   font-weight: 700;
   color: #1d1d1f;
-  font-size: 44px;
+  font-size: 48px;
 }
 .specs-body-two-weight-quantity > span {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .specs-body-two-weight-text {
@@ -263,31 +265,30 @@ main {
 .specs-body-two-weight-text > h1 {
   font-weight: 400;
   color: #1d1d1f;
-  font-size: 14px;
+  font-size: 18px;
 }
 .specs-motor-title {
-  position: relative;
+  position: absolute;
   top: 15%;
   left: 5%;
 }
 .specs-motor-sub-title {
-  position: relative;
-  top: 10%;
+  position: absolute;
+  top: 32%;
   left: 5%;
-  width: 50vw;
+  width: 40vw;
 }
 .specs-motor-sub-title-text {
   color: #1d1d1f;
-  font-weight: 500;
-  font-size: 32px;
+  font-weight: 600;
+  font-size: 22px;
   text-align: left;
-  line-height: 2.5rem;
 }
 
 .specs-motor-img-container {
-  position: relative;
-  top: -30%;
-  left: 55%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
   width: 40vw;
   height: 60vh;
 }
@@ -298,11 +299,11 @@ main {
 }
 
 .specs-motor-two-spec-container {
-  position: relative;
+  position: absolute;
   top: 50%;
-  left: 10%;
+  left: 0%;
   transform: translateY(-50%);
-  width: 80vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -311,25 +312,25 @@ main {
 .specs-motor-two-power {
   font-weight: 700;
   color: #1d1d1f;
-  font-size: 44px;
+  font-size: 48px;
   text-align: center;
 }
 .specs-motor-two-power > span {
   font-weight: 400;
   color: #1d1d1f;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 .specs-motor-two-power-text {
   font-weight: 400;
   color: #1d1d1f;
-  font-size: 14px;
+  font-size: 24px;
 }
 
 .specs-tyre-img-container {
-  position: relative;
-  width: 40vw;
-  height: 60vh;
+  position: absolute;
+  width: 30vw;
+  height: 70vh;
   top: 5%;
   left: 5%;
 }
@@ -339,25 +340,24 @@ main {
   height: 100%;
 }
 .specs-tyre-sub-title {
-  position: relative;
+  position: absolute;
   left: 50%;
-  width: 50vw;
-  top: -60%;
+  width: 40vw;
+  top: 20%;
 }
 
 .specs-tyre-sub-title-text {
   color: #1d1d1f;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 22px;
   text-align: left;
-  line-height: 2.5rem;
 }
 
 .specs-tyre-spec-container {
-  width: 50vw;
-  position: relative;
+  width: 40vw;
+  position: absolute;
   left: 50%;
-  top: -60%;
+  top: 40%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -366,7 +366,7 @@ main {
 
 .specs-tyre-spec-dimension-unit {
   font-weight: 700;
-  font-size: 44px;
+  font-size: 48px;
   text-align: center;
 }
 
@@ -375,7 +375,7 @@ main {
   font-size: 18px;
 }
 .specs-tyre-spec-dimension-text {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -384,15 +384,16 @@ main {
   width: 130px;
   height: 80px;
   position: relative;
-  top: 0px;
+  /* top: 0px; */
 }
 
 .specs-tyre-spec-pressure-unit {
-  position: relative;
+  position: absolute;
   font-weight: 700;
-  font-size: 44px;
+  font-size: 48px;
   text-align: center;
   top: -15px;
+  left: 30px;
 }
 
 .specs-tyre-spec-pressure-unit > span {
@@ -402,15 +403,15 @@ main {
 
 .specs-tyre-spec-pressure-text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   position: relative;
   top: 15px;
 }
 
 .specs-tyre-title {
-  position: relative;
-  left: 8%;
-  top: 7%;
+  position: absolute;
+  left: 10%;
+  top: 70%;
 }
 .specs-tyre-title-text {
   font-weight: 700;
@@ -419,7 +420,7 @@ main {
 }
 
 .specs-battery-title {
-  position: relative;
+  position: absolute;
   top: 30%;
   left: 5%;
   width: 40vw;
@@ -433,8 +434,8 @@ main {
 }
 
 .specs-battery-title-two {
-  position: relative;
-  top: -10%;
+  position: absolute;
+  top: 20%;
   left: 50%;
 }
 
@@ -446,8 +447,8 @@ main {
 }
 
 .specs-battery-sub-title {
-  position: relative;
-  top: -10%;
+  position: absolute;
+  top: 27%;
   left: 50%;
   width: 45vw;
 }
@@ -480,12 +481,12 @@ main {
 }
 
 .specs-battery-two-spec-capacity-unit > span {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
 .specs-battery-two-spec-capacity-text {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -501,19 +502,32 @@ main {
 }
 
 .specs-battery-two-spec-range-unit > span {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
 .specs-battery-two-spec-range-text {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
+.specs-smart-img-container {
+  position: absolute;
+  width: 40vw;
+  height: 60vh;
+  top: 8%;
+  left: 35%;
+}
+
+.specs-tyre-img {
+  width: 100%;
+  height: 100%;
+}
+
 .specs-smart-system-title {
-  position: relative;
-  top: 70%;
-  left: 5%;
+  position: absolute;
+  top: 20%;
+  left: 0%;
   width: 35vw;
 }
 
@@ -525,9 +539,9 @@ main {
 }
 
 .specs-smart-system-sub-title {
-  position: relative;
-  top: 15%;
-  left: 55%;
+  position: absolute;
+  top: 40%;
+  left: 0%;
   width: 40vw;
 }
 
@@ -535,26 +549,50 @@ main {
   color: #1d1d1f;
   font-size: 32px;
   font-weight: 500;
-  line-height: 2.5rem;
+}
+.specs-smart-two-img-container {
+  position: absolute;
+  width: 35vw;
+  height: 80vh;
+  top: 10%;
+  left: 0%;
+}
+
+.specs-smart-two-img {
+  width: 100%;
+  height: 100%;
 }
 
 .specs-smart-system-two-sub-title {
-  position: relative;
+  position: absolute;
   top: 50%;
-  left: 55%;
+  left: 40%;
   width: 45vw;
 }
 
 .specs-smart-system-two-sub-title-text {
   color: #1d1d1f;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.specs-smart-lock-img-container {
+  position: absolute;
+  width: 40vw;
+  height: 70vh;
+  top: 10%;
+  left: 40%;
+}
+
+.specs-smart-lock-img {
+  width: 100%;
+  height: 100%;
 }
 
 .specs-smart-lock-title {
-  position: relative;
-  top: 5%;
-  left: 5%;
+  position: absolute;
+  top: 10%;
+  left: 0%;
   width: 35vw;
 }
 .specs-smart-lock-title-text {
@@ -565,17 +603,16 @@ main {
 }
 
 .specs-smart-lock-sub-title {
-  position: relative;
-  top: 5%;
-  left: 5%;
+  position: absolute;
+  top: 35%;
+  left: 0%;
   width: 45vw;
 }
 
 .specs-smart-lock-sub-title-text {
   color: #1d1d1f;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 2.3rem;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .specs-sense-title {
