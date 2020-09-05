@@ -71,3 +71,12 @@
     top: 10%;
   }
 }
+
+@media screen and (min-width: 596px) and (max-width: 1220px) {
+  .loader {
+    width: 100vw;
+    height: 90vh;
+    left: 0;
+    top: 10%;
+  }
+}

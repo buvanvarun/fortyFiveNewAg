@@ -241,7 +241,12 @@ export class ThreeloaderComponent implements OnInit {
         const center = new THREE.Vector3();
         boundingBox.getCenter(center);
         camera.position.y = center.y - 400;
-        camera.position.x = center.x + 1200;
+        if (window.innerWidth < 595) {
+          camera.position.x = center.x + 600;
+        } else {
+          camera.position.x = center.x + 1200;
+        }
+
         camera.updateProjectionMatrix();
         const size = new THREE.Vector3();
         boundingBox.getSize(size);
@@ -250,7 +255,12 @@ export class ThreeloaderComponent implements OnInit {
         const maxDim = Math.max(size.x, size.y, size.z);
         let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2));
 
-        camera.position.z = 1540;
+        if (window.innerWidth < 595) {
+          camera.position.z = 2940;
+          console.log(window.innerWidth < 595);
+        } else {
+          camera.position.z = 1540;
+        }
 
         camera.updateProjectionMatrix();
         bike.position.setY(-500);
@@ -474,7 +484,7 @@ export class ThreeloaderComponent implements OnInit {
     scene.add(plane);
     function animate() {
       requestAnimationFrame(animate);
-      bike.rotation.y += 0.006;
+      bike.rotation.y += 0.008;
 
       renderer.render(scene, camera);
 
