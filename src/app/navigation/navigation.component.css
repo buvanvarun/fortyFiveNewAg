@@ -125,6 +125,9 @@ h3 {
     z-index: 5;
     list-style: none;
     width: 60vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .nav-container {

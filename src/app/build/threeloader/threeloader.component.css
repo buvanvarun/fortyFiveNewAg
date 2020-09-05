@@ -1,22 +1,11 @@
 .loader {
-  position: absolute;
-  top: 10vh;
-  left: 15vw;
+  position: absolute !important;
+  top: 10%;
+  left: 15%;
   width: 70vw;
   height: 90vh;
   outline: none;
   border: none;
-}
-canvas {
-  outline: none;
-  border: none;
-  overflow: hidden;
-  cursor: grab;
-}
-canvas:focus,
-canvas:active {
-  outline: none !important;
-  border: none !important;
 }
 .color-btn {
   position: absolute;
@@ -72,4 +61,13 @@ canvas:active {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+@media screen and (max-width: 595px) {
+  .loader {
+    width: 100vw;
+    height: 90vh;
+    left: 0;
+    top: 10%;
+  }
 }

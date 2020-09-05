@@ -26,6 +26,7 @@ export class ThreeloaderComponent implements OnInit {
   bike = () => {
     window.addEventListener('click', (e) => {
       let id = (<HTMLButtonElement>e.target).id;
+      console.log(id);
       if (id === 'gray') {
         let frame;
         frame = new THREE.MeshPhongMaterial({
