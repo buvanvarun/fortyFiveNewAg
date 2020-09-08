@@ -45,7 +45,11 @@ export class ThreeloaderComponent implements OnInit {
       if (id === 'gray') {
         let frame;
         frame = new THREE.MeshPhongMaterial({
-          color: 0x787878,
+          color: 0x181818,
+          emissive: 0x0,
+          shininess: 40,
+          specular: 0x111111,
+          reflectivity: 1,
           side: THREE.DoubleSide,
           shadowSide: THREE.FrontSide,
         });
@@ -61,15 +65,18 @@ export class ThreeloaderComponent implements OnInit {
         initFrame(bike, frame);
       }
       if (id === 'cable') {
-        console.log('clicked cable');
         let frame;
         frame = new THREE.MeshPhongMaterial({
-          color: 0x000000,
+          color: 0x72544c,
           side: THREE.DoubleSide,
           shadowSide: THREE.FrontSide,
           visible: true,
         });
         initComponent(bike, frame, 'lock_1');
+        frame = new THREE.MeshPhongMaterial({
+          visible: false,
+        });
+        initComponent(bike, frame, 'lock');
       }
       if (id === 'smart') {
         let frame;
@@ -77,11 +84,26 @@ export class ThreeloaderComponent implements OnInit {
           visible: false,
         });
         initComponent(bike, frame, 'lock_1');
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x72544c,
+          emissive: 0x0,
+          shininess: 40,
+          specular: 0x111111,
+          reflectivity: 1,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+          visible: true,
+        });
+        initComponent(bike, frame, 'lock');
       }
       if (id === 'tpms-yes') {
         let frame;
         frame = new THREE.MeshPhongMaterial({
-          color: 0x000000,
+          color: 0x72544c,
+          emissive: 0x0,
+          shininess: 40,
+          specular: 0x111111,
+          reflectivity: 1,
           side: THREE.DoubleSide,
           shadowSide: THREE.FrontSide,
         });
@@ -101,12 +123,20 @@ export class ThreeloaderComponent implements OnInit {
         let frame;
         frame = new THREE.MeshPhongMaterial({
           color: 0x000000,
+          emissive: 0x0,
+          shininess: 40,
+          specular: 0x111111,
+          reflectivity: 1,
           side: THREE.DoubleSide,
           shadowSide: THREE.FrontSide,
           visible: true,
         });
         const REFLECTOR_MTL = new THREE.MeshPhongMaterial({
-          color: 0xcc0000,
+          color: 0xff0000,
+          emissive: 0x0,
+          shininess: 40,
+          specular: 0x111111,
+          reflectivity: 1,
           visible: true,
         });
         initComponent(bike, frame, 'fenders');
@@ -364,6 +394,7 @@ export class ThreeloaderComponent implements OnInit {
       parent.traverse((o) => {
         if (o.name === 'frame') {
           o.material = mtl;
+          console.log(o);
         }
         if (o.name === 'handle') {
           o.material = mtl;
@@ -375,7 +406,6 @@ export class ThreeloaderComponent implements OnInit {
     }
     function initComponent(parent, mtl, name) {
       if (name === 'fenders') {
-        console.log('inside init');
         parent.traverse((o) => {
           if (o.name === 'front_mudguard_center_mount_20') {
             o.material = mtl;
@@ -440,7 +470,7 @@ export class ThreeloaderComponent implements OnInit {
           o.material = FRONT_PANEL_MTL;
         }
         if (o.name === 'lock') {
-          o.material = FRONT_LOCK_MTL;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'front_mudguard_center_mount_20') {
           o.material = INVISIBLE_MTL;
@@ -486,7 +516,7 @@ export class ThreeloaderComponent implements OnInit {
         }
 
         if (o.name === 'rear_mudguard_center_mount_20') {
-          o.material = MUDGUARD_MOUNT_MTL;
+          o.material = INVISIBLE_MTL;
         }
 
         if (o.name === 'mudguard_front_3') {
@@ -559,7 +589,7 @@ export class ThreeloaderComponent implements OnInit {
       });
     }
 
-    let ambientLight = new THREE.AmbientLight(0xffffff);
+    let ambientLight = new THREE.AmbientLight(0x111111);
     scene.add(ambientLight);
 
     let dirLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -600,12 +630,10 @@ export class ThreeloaderComponent implements OnInit {
     var planeGeometry = new THREE.PlaneBufferGeometry(1800, 1800, 1, 1);
     var planeMaterial = new THREE.ShadowMaterial();
     planeMaterial.opacity = 0.1;
-    console.log(planeMaterial);
     var plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.translateY(-500);
     plane.rotation.x = Math.PI * -0.5;
     plane.receiveShadow = true;
-    console.log(plane);
     scene.add(plane);
     function animate() {
       requestAnimationFrame(animate);
