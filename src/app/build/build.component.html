@@ -1,8 +1,14 @@
 <main>
   <app-threeloader
     (sendColor)="setChoice(0, $event)"
+    (sendFenders)="setChoice(4, $event)"
+    (sendTpms)="setChoice(6, $event)"
+    (sendLock)="setChoice(3, $event)"
     [ngStyle]="{ display: display[5] ? 'none' : 'block' }"
     [bikeColor]="display[0]"
+    [fenders]="display[4]"
+    [tpms]="display[6]"
+    [lock]="display[3]"
   ></app-threeloader>
   <div class="build-options-container">
     <div class="build-options-color-container">
@@ -64,7 +70,7 @@
         <h2 class="build-choice-range-text">75<span>mins</span></h2>
       </button>
     </div>
-    <div *ngIf="display[3]" class="build-choice-range-container">
+    <!-- <div *ngIf="display[3]" class="build-choice-range-container">
       <button (click)="setChoice(3, 0)" class="build-choice-btn">
         <h2 class="build-choice-range-text">Cable Lock</h2>
       </button>
@@ -72,8 +78,8 @@
       <button (click)="setChoice(3, 1)" class="build-choice-btn">
         <h2 class="build-choice-range-text">Smart Lock</h2>
       </button>
-    </div>
-    <div *ngIf="display[4]" class="build-choice-range-container">
+    </div> -->
+    <!-- <div *ngIf="display[4]" class="build-choice-range-container">
       <button (click)="setChoice(4, 1)" class="build-choice-btn">
         <h2 class="build-choice-range-text">Yes</h2>
       </button>
@@ -81,7 +87,7 @@
       <button (click)="setChoice(4, 0)" class="build-choice-btn">
         <h2 class="build-choice-range-text">No</h2>
       </button>
-    </div>
+    </div> -->
     <div *ngIf="display[5]" class="build-choice-service-container">
       <div (click)="setChoice(5, 0)" class="build-choice-service-btn">
         <h1 class="build-basic-head-text">Basic</h1>
@@ -144,7 +150,7 @@
         <h1 class="build-premium-price-text">Rs.6500/-</h1>
       </div>
     </div>
-    <div *ngIf="display[6]" class="build-choice-range-container">
+    <!-- <div *ngIf="display[6]" class="build-choice-range-container">
       <button (click)="setChoice(6, 1)" class="build-choice-btn">
         <h2 class="build-choice-range-text">Yes</h2>
       </button>
@@ -152,7 +158,7 @@
       <button (click)="setChoice(6, 0)" class="build-choice-btn">
         <h2 class="build-choice-range-text">No</h2>
       </button>
-    </div>
+    </div> -->
   </div>
   <div class="build-price-container">
     <div class="build-buy-btn-container">

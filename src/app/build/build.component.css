@@ -57,20 +57,25 @@ app-threeloader {
   justify-content: space-evenly;
   align-items: center;
 }
-.build-choice-range-text {
+/* .build-choice-range-text {
   font-weight: 500;
   font-size: 28px;
   color: #1d1d1f;
-}
-.build-choice-range-text > span {
+  pointer-events: none;
+} */
+/* .build-choice-range-text > span {
   font-weight: 400;
   font-size: 14px;
   color: #1d1d1f;
-}
+  pointer-events: none;
+} */
 .build-choice-btn {
   border: none;
   background-color: transparent;
-  cursor: pointer;
+  font-weight: 500;
+  font-size: 28px;
+  color: #1d1d1f;
+  /* cursor: pointer; */
 }
 
 .build-choice-btn:focus {

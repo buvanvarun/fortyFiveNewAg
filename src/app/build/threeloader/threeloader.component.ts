@@ -12,9 +12,15 @@ import { Color } from 'three';
 })
 export class ThreeloaderComponent implements OnInit {
   @Input() bikeColor;
+  @Input() fenders;
+  @Input() lock;
+  @Input() tpms;
   constructor(private spinner: NgxSpinnerService) {}
   // 0 is black
   @Output() sendColor = new EventEmitter();
+  @Output() sendFenders = new EventEmitter();
+  @Output() sendTpms = new EventEmitter();
+  @Output() sendLock = new EventEmitter();
   ngOnInit(): void {
     this.bike();
     this.spinner.show();
@@ -23,6 +29,15 @@ export class ThreeloaderComponent implements OnInit {
   setColor(val) {
     this.sendColor.emit(val);
   }
+  setFenders(val) {
+    this.sendFenders.emit(val);
+  }
+  setTpms(val) {
+    this.sendTpms.emit(val);
+  }
+  setLock(val) {
+    this.sendLock.emit(val);
+  }
   bike = () => {
     window.addEventListener('click', (e) => {
       let id = (<HTMLButtonElement>e.target).id;
@@ -30,7 +45,7 @@ export class ThreeloaderComponent implements OnInit {
       if (id === 'gray') {
         let frame;
         frame = new THREE.MeshPhongMaterial({
-          color: 0x767676,
+          color: 0x787878,
           side: THREE.DoubleSide,
           shadowSide: THREE.FrontSide,
         });
@@ -44,6 +59,66 @@ export class ThreeloaderComponent implements OnInit {
           shadowSide: THREE.FrontSide,
         });
         initFrame(bike, frame);
+      }
+      if (id === 'cable') {
+        console.log('clicked cable');
+        let frame;
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x000000,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+          visible: true,
+        });
+        initComponent(bike, frame, 'lock_1');
+      }
+      if (id === 'smart') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({
+          visible: false,
+        });
+        initComponent(bike, frame, 'lock_1');
+      }
+      if (id === 'tpms-yes') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x000000,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+        });
+        initComponent(bike, frame, 'tmps');
+      }
+      if (id === 'tpms-no') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x000000,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+          visible: false,
+        });
+        initComponent(bike, frame, 'tmps');
+      }
+      if (id === 'fender-yes') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({
+          color: 0x000000,
+          side: THREE.DoubleSide,
+          shadowSide: THREE.FrontSide,
+          visible: true,
+        });
+        const REFLECTOR_MTL = new THREE.MeshPhongMaterial({
+          color: 0xcc0000,
+          visible: true,
+        });
+        initComponent(bike, frame, 'fenders');
+        initComponent(bike, REFLECTOR_MTL, 'Reflector');
+      }
+      if (id === 'fender-no') {
+        let frame;
+        frame = new THREE.MeshPhongMaterial({
+          visible: false,
+        });
+        initComponent(bike, frame, 'fenders');
+        initComponent(bike, frame, 'Reflector');
       }
     });
 
@@ -207,6 +282,10 @@ export class ThreeloaderComponent implements OnInit {
       // shadowSide: THREE.FrontSide,
     });
 
+    const INVISIBLE_MTL = new THREE.MeshPhongMaterial({
+      visible: false,
+    });
+
     camera.position.set(10, 10, 10);
     let dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderConfig({ type: 'js' });
@@ -256,8 +335,7 @@ export class ThreeloaderComponent implements OnInit {
         let cameraZ = Math.abs((maxDim / 4) * Math.tan(fov * 2));
 
         if (window.innerWidth < 595) {
-          camera.position.z = 2940;
-          console.log(window.innerWidth < 595);
+          camera.position.z = 3740;
         } else {
           camera.position.z = 1540;
         }
@@ -272,6 +350,8 @@ export class ThreeloaderComponent implements OnInit {
 
         initColor(bike, TYRE_MTL);
         initFrame(bike, FRAME_MTL);
+        // initComponent(bike, INVISIBLE_MTL, 'tmps');
+        // initComponent(bike, INVISIBLE_MTL, 'lock_1');
 
         scene.add(gltf.scene);
         animate();
@@ -293,6 +373,50 @@ export class ThreeloaderComponent implements OnInit {
         }
       });
     }
+    function initComponent(parent, mtl, name) {
+      if (name === 'fenders') {
+        console.log('inside init');
+        parent.traverse((o) => {
+          if (o.name === 'front_mudguard_center_mount_20') {
+            o.material = mtl;
+          }
+          if (o.name === 'front_mudguard_mount_1') {
+            o.material = mtl;
+          }
+          if (o.name === 'front_mudguard_mount_cad') {
+            o.material = mtl;
+          }
+          if (o.name === 'rear_mudguard_center_mount_20') {
+            o.material = mtl;
+          }
+
+          if (o.name === 'mudguard_front_3') {
+            o.material = mtl;
+          }
+          if (o.name === 'mudguard_rear_3') {
+            o.material = mtl;
+          }
+          if (o.name === 'rear_mudguard_mount_cad') {
+            o.material = mtl;
+          }
+          if (o.name === 'socket_head_cap_screw_am') {
+            // lot of screws
+            o.material = mtl;
+          }
+          if (o.name === 'socket_head_cap_screw_is') {
+            o.material = mtl;
+          }
+          if (o.name === 'mudguard_rear_mount_2') {
+            o.material = mtl;
+          }
+        });
+      }
+      parent.traverse((o) => {
+        if (o.name === name) {
+          o.material = mtl;
+        }
+      });
+    }
 
     function initColor(parent, mtl) {
       parent.traverse((o) => {
@@ -304,10 +428,10 @@ export class ThreeloaderComponent implements OnInit {
           o.material.visible = false;
         }
         if (o.name === 'tmps') {
-          o.material = TMPS_MTL;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'lock_1') {
-          o.material = LOCK_MTL;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'glass') {
           o.material = GLASS_MTL;
@@ -319,7 +443,7 @@ export class ThreeloaderComponent implements OnInit {
           o.material = FRONT_LOCK_MTL;
         }
         if (o.name === 'front_mudguard_center_mount_20') {
-          o.material = MUDGUARD_MOUNT_MTL;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'frame_-_Copy_(2)') {
           o.material = MID_FRAME_MTL;
@@ -328,13 +452,13 @@ export class ThreeloaderComponent implements OnInit {
           o.material = CHAINLINK_MTL;
         }
         if (o.name === 'front_mudguard_mount_1') {
-          o.material = FRONT_MUDCAD_MTL;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'steering_cap_reno') {
           o.material = mtl;
         }
         if (o.name === 'front_mudguard_mount_cad') {
-          o.material = FRONT_MUDCAD_MTL;
+          o.material = INVISIBLE_MTL;
         }
 
         if (o.name === 'Remgreep_Saccon') {
@@ -366,10 +490,10 @@ export class ThreeloaderComponent implements OnInit {
         }
 
         if (o.name === 'mudguard_front_3') {
-          o.material = mtl;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'mudguard_rear_3') {
-          o.material = mtl;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'battery_outer_case') {
           o.material = mtl;
@@ -378,7 +502,7 @@ export class ThreeloaderComponent implements OnInit {
           o.material = mtl;
         }
         if (o.name === 'rear_mudguard_mount_cad') {
-          o.material = mtl;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'calliper') {
           o.material = mtl;
@@ -387,10 +511,11 @@ export class ThreeloaderComponent implements OnInit {
           o.material = mtl;
         }
         if (o.name === 'socket_head_cap_screw_am') {
-          o.material = mtl;
+          // lot of screws
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'Reflector') {
-          o.material = REFLECTOR_MTL;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'front_disc_mount') {
           o.material = mtl;
@@ -414,16 +539,16 @@ export class ThreeloaderComponent implements OnInit {
           o.material = mtl;
         }
         if (o.name === 'socket_head_cap_screw_is') {
-          o.material = mtl;
+          o.material = INVISIBLE_MTL;
         }
-        if (o.name === 'hex_flange_nut_am') {
-          o.material = mtl;
-        }
+        // if (o.name === 'hex_flange_nut_am') {
+        //   o.material = mtl;
+        // }
         if (o.name === 'inner_battery_case') {
           o.material = mtl;
         }
         if (o.name === 'mudguard_rear_mount_2') {
-          o.material = mtl;
+          o.material = INVISIBLE_MTL;
         }
         if (o.name === 'hex_flange_nut_am') {
           o.material = mtl;

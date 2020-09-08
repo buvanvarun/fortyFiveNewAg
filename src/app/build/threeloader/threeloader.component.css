@@ -32,7 +32,7 @@
 .gray {
   border: none;
   border-radius: 50%;
-  background-color: #78787878;
+  background-color: #787878;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -49,7 +49,7 @@
 
 .color-btn-container {
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #787878;
   align-items: center;
   width: 50px;
   height: 50px;
@@ -61,6 +61,47 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.fenders {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.build-choice-range-container {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.build-choice-range-text {
+  font-weight: 500;
+  font-size: 28px;
+  color: #1d1d1f;
+}
+.build-choice-range-text > span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #1d1d1f;
+}
+.build-choice-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 28px;
+  color: #1d1d1f;
+}
+
+.build-choice-btn:focus {
+  outline: none;
+}
+.vl {
+  border-left: 1.5px solid black;
+  height: 5vh;
 }
 
 @media screen and (max-width: 595px) {
