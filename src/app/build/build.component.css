@@ -84,12 +84,16 @@ app-threeloader {
 
 .build-price-container {
   position: absolute;
-  top: 90%;
-  left: 75%;
-  width: 20vw;
+  top: 85%;
+  left: 92%;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.specs-build-premium-build-text {
+  font-size: 28px;
 }
 
 .build-buy-btn {
@@ -187,6 +191,26 @@ app-threeloader {
   font-weight: 400;
 }
 
+.specs-build-premium-build-btn {
+  background-color: #1d1d1f;
+  color: #ffffff;
+  padding: 5px 5px;
+  font-size: 30px;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.specs-build-premium-build-btn::after {
+  content: "\2192";
+}
+.specs-build-premium-build-btn:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 595px) {
   main {
     width: 100vw;
@@ -195,6 +219,18 @@ app-threeloader {
   app-threeloader {
     width: 100vw;
     height: 100vh;
+  }
+  .specs-build-premium-build-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+  .specs-build-premium-build-text {
+    font-size: 18px;
+  }
+  .build-price-container {
+    top: 90%;
+    left: 80%;
   }
 }
 @media screen and (min-width: 596px) and (max-width: 1220px) {
@@ -205,5 +241,16 @@ app-threeloader {
   app-threeloader {
     width: 100vw;
     height: 100vh;
+  }
+  .specs-build-premium-build-btn {
+    width: 65px;
+    height: 65px;
+  }
+  .specs-build-premium-build-text {
+    font-size: 24px;
+  }
+  .build-price-container {
+    top: 80%;
+    left: 85%;
   }
 }

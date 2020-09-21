@@ -366,6 +366,8 @@ export class ThreeloaderComponent implements OnInit {
 
         if (window.innerWidth < 595) {
           camera.position.z = 3740;
+        } else if (window.innerWidth < 1220) {
+          camera.position.z = 2200;
         } else {
           camera.position.z = 1540;
         }
