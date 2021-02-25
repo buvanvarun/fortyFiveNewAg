@@ -1,58 +1,14 @@
-<main>
-  <ngx-spinner
-    bdColor="rgba(255,255,255,0.8)"
-    size="medium"
-    color="#1d1d1f"
-    type="ball-newton-cradle"
-    [fullScreen]="true"
-    ><p style="color: #1d1d1f">Loading 3D experience...</p></ngx-spinner
-  >
-  <div class="loader" id="container"></div>
-  <div *ngIf="bikeColor" class="color-btn">
-    <div class="color-black">
-      <div class="color-btn-container">
-        <button (click)="setColor(0)" class="black" id="black"></button>
-      </div>
-      <div class="color-btn-text">Black</div>
-    </div>
-    <div class="color-gray">
-      <div class="color-btn-container">
-        <button (click)="setColor(1)" class="gray" id="gray"></button>
-      </div>
-      <div class="color-btn-text">Gray</div>
+<!-- <main>
+
+
+  <div class="bgClass">
+    <div class="configuratorContainer">
+      <div class="loader" id="container"></div>
     </div>
   </div>
-  <div *ngIf="fenders" class="fenders">
-    <div class="build-choice-range-container">
-      <button (click)="setFenders(1)" class="build-choice-btn" id="fender-yes">
-        Yes
-      </button>
-      <div class="vl"></div>
-      <button (click)="setFenders(0)" class="build-choice-btn" id="fender-no">
-        No
-      </button>
-    </div>
-  </div>
-  <div *ngIf="lock" class="fenders">
-    <div class="build-choice-range-container">
-      <button (click)="setLock(0)" class="build-choice-btn" id="cable">
-        Cable Lock
-      </button>
-      <div class="vl"></div>
-      <button (click)="setLock(1)" class="build-choice-btn" id="smart">
-        Smart Lock
-      </button>
-    </div>
-  </div>
-  <div *ngIf="tpms" class="fenders">
-    <div class="build-choice-range-container">
-      <button (click)="setTpms(1)" class="build-choice-btn" id="tpms-yes">
-        Yes
-      </button>
-      <div class="vl"></div>
-      <button (click)="setTpms(0)" class="build-choice-btn" id="tpms-no">
-        No
-      </button>
-    </div>
-  </div>
-</main>
+</main> -->
+<ngx-spinner bdColor="rgba(255,255,255,0.8)" size="medium" color="#1d1d1f" type="line-scale-party"
+[fullScreen]="false">
+<p style="color: #1d1d1f">Please wait...We are loading your 3D experience...</p>
+</ngx-spinner>
+<div class="loader" id="container"></div>

@@ -1,4 +1,93 @@
-<main>
+
+<div class="container-fluid h-100 no-gutters px-0 backgroundcolor">
+  <div class="row h-100 no-gutters">
+    <div class="col-md-8 template-2-left-container">
+
+      <app-threeloader
+      (sendColor)="eventEmitted($event)"
+      (sendFenders)="eventEmitted($event)"
+      (sendLock)="eventEmitted($event)"
+      [ngStyle]="{ display: display[5] ? 'none' : 'block' }"
+      [bikeColor]="'true'"
+      [fenders]="display[4]"
+      [lock]="display[3]"
+    >
+
+  </app-threeloader>
+
+    </div>
+    <div class="col-md-4 template-2-right-container d-flex justify-content-center align-items-center ">
+  <div class=" d-flex justify-content-center align-items-center template-2-right-subtitle-container">
+    <div class="preorder-link" (click)="preorderpage()">
+  <div class="row  d-flex justify-content-center align-items-center ">
+    <div class="right-arrow ">
+<img width="100%" height="100%" src="assets/icon/arrowright.svg" alt="arrow right">
+    </div>
+  </div>
+  <div class="row  d-flex justify-content-center align-items-center ">
+    <div class="template-2-right-text  preorder-text">
+      Make Payment
+    </div>
+  </div>
+</div>
+
+
+  <!--need to work - revisit-->
+  <!-- <ng-container *ngFor="let feature of features;let i=index">
+
+  <div class="row switch-text-container">
+    <div class="template-2-right-text">{{feature.feature}}</div>
+   </div>
+  <div class="row feature-container">
+        <div class="col-4">
+      <div class="switch-option-text">
+        <div class="switch-option-text-content">{{feature.option1}}</div>
+      </div>
+    </div>
+    <div class="col-4 switch-container">
+      <label class="switch">
+        <input type="checkbox"  [(ngModel)]="isChecked[i]" (change)="checkBoxChange(i,isChecked[i])">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="col-4">
+      <div class="switch-option-text">
+        <div class="switch-option-text-content">{{feature.option2}}</div>
+      </div>
+    </div>
+    </div>
+  </ng-container>
+  <div class="row total-container ">
+  <div class="col-6 d-flex justify-content-center align-items-center">
+  <div class="total-text ">Total</div>
+</div>
+<div class="col-6 d-flex justify-content-center align-items-center" >
+  <div class="total-price">{{this.total | currency:'INR'}}</div>
+</div> -->
+<!--
+</div>
+  </div> -->
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <main>
   <app-threeloader
     (sendColor)="setChoice(0, $event)"
     (sendFenders)="setChoice(4, $event)"
@@ -16,18 +105,6 @@
         Color
       </button>
     </div>
-    <!-- <div class="vl"></div>
-    <div class="build-options-range-container">
-      <button (click)="changeDisplay(1)" class="build-options-btn">
-        Range
-      </button>
-    </div> -->
-    <!-- <div class="vl"></div>
-    <div class="build-options-charge-container">
-      <button (click)="changeDisplay(2)" class="build-options-btn">
-        Charging
-      </button>
-    </div> -->
     <div class="vl"></div>
     <div class="build-options-lock-container">
       <button (click)="changeDisplay(3)" class="build-options-btn">
@@ -40,12 +117,6 @@
         Fenders
       </button>
     </div>
-    <!-- <div class="vl"></div>
-    <div class="build-options-service-container">
-      <button (click)="changeDisplay(5)" class="build-options-btn">
-        Services
-      </button>
-    </div> -->
     <div class="vl"></div>
     <div class="build-options-tpms-container">
       <button (click)="changeDisplay(6)" class="build-options-btn">TPMS</button>
@@ -70,24 +141,6 @@
         <h2 class="build-choice-range-text">75<span>mins</span></h2>
       </button>
     </div>
-    <!-- <div *ngIf="display[3]" class="build-choice-range-container">
-      <button (click)="setChoice(3, 0)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">Cable Lock</h2>
-      </button>
-      <div class="vl"></div>
-      <button (click)="setChoice(3, 1)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">Smart Lock</h2>
-      </button>
-    </div> -->
-    <!-- <div *ngIf="display[4]" class="build-choice-range-container">
-      <button (click)="setChoice(4, 1)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">Yes</h2>
-      </button>
-      <div class="vl"></div>
-      <button (click)="setChoice(4, 0)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">No</h2>
-      </button>
-    </div> -->
     <div *ngIf="display[5]" class="build-choice-service-container">
       <div (click)="setChoice(5, 0)" class="build-choice-service-btn">
         <h1 class="build-basic-head-text">Basic</h1>
@@ -150,34 +203,14 @@
         <h1 class="build-premium-price-text">Rs.6500/-</h1>
       </div>
     </div>
-    <!-- <div *ngIf="display[6]" class="build-choice-range-container">
-      <button (click)="setChoice(6, 1)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">Yes</h2>
-      </button>
-      <div class="vl"></div>
-      <button (click)="setChoice(6, 0)" class="build-choice-btn">
-        <h2 class="build-choice-range-text">No</h2>
-      </button>
-    </div> -->
+
   </div>
   <div class="build-price-container">
-    <!-- <div class="specs-build-premium-build-text-container">
-      <h1 class="specs-build-premium-build-text">PROCEED<br />TO BUY</h1>
-    </div> -->
     <div class="build-buy-btn-container">
-      <!-- routerLink="/buy/{{ buyUrl }}" -->
       <button
         (click)="buyProduct()"
         class="specs-build-premium-build-btn"
       ></button>
     </div>
-    <!-- <button class="build-buy-price-container">
-      <img
-        class="build-buy-rupee"
-        src="/assets/images/rupee-indian.png"
-        alt="rupee"
-      />
-      <h2 class="build-buy-price">{{ formatter.format(total) }}</h2>
-    </button> -->
   </div>
-</main>
+</main> -->

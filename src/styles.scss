@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("//db.onlinewebfonts.com/c/9b62dc86f936227b3f7b367bd0b6c05e?family=Tw+Cen+MT");
+@import "~swiper/swiper-bundle";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@font-face {
+  font-family: "Tw Cen MT";
+  src        : url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.eot");
+  src        : url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/9b62dc86f936227b3f7b367bd0b6c05e.svg#Tw Cen MT") format("svg");
+}
+
+* {
+  font-family: "Tw Cen MT";
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+}
+
+/** Theme **/
+$background      : #d8d8d8;
+$background-dark : #000000;
+$headingPrimary  : #3a3a3a;
+$headingSecondary: #585858;
+$lightBlack      : #33363b;
+
+@mixin custom-device($device) {
+  @if $device==surfaceDuo {
+    @media screen and (min-width: 540px) and (max-width: 540px) and (min-height: 720px) and (max-height: 720px) {
+      @content;
+    }
+  }
+
+  @else if $device==ipadPro {
+    @media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
+      @content;
+    }
+  }
+
+  @else if $device==smalldevice {
+    @media screen and (max-width:360px) and (max-height:650px) {
+      @content;
+    }
+  }
+}
+
+
+@mixin media-breakpoint($size) {
+  @if $size==xs {
+    @media screen and (max-width: 575.98px) {
+      @content;
+    }
+  }
+
+  @else if $size==xxl {
+    @media screen and (min-width: 1400px) and (max-width: 1799.99px) {
+      @content;
+    }
+  }
+
+  @else if $size==xxxl {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+/**
+Size Reference
+X-Small	xs	<576px
+Small	sm	≥576px
+Medium	md	≥768px
+Large	lg	≥992px
+Extra large	xl	≥1200px
+Extra extra large	xxl	≥1400px
+Extra Extra Extra large xxxl >_ 1800px
+**/
+
+// align  (breakpoint (xs,sm,lg,xl,xxl,xxxl),top %,left %,width in vw)
+@mixin align($breakpoint, $top, $left, $width: false) {
+  @if $breakpoint==xs or $breakpoint==xxl or $breakpoint==xxxl {
+    @include media-breakpoint($breakpoint) {
+      top : round(percentage($top/100));
+      left: round(percentage($left/100));
+
+      @if $width {
+        width: #{$width}vw;
+      }
+    }
+  }
+
+  @else {
+    @include media-breakpoint-up($breakpoint) {
+      top : round(percentage($top/100));
+      left: round(percentage($left/100));
+
+      @if $width {
+        width: #{$width}vw;
+      }
+    }
+  }
+}
+
+// elementBreakpoint - Breakpoint, element, value
+@mixin elementBreakpoint($breakpoint, $elementlist) {
+  @if $breakpoint==xs or $breakpoint==xxl or $breakpoint==xxxl {
+    @include media-breakpoint($breakpoint) {
+
+      @each $element,
+      $value in $elementlist {
+        #{$element}: $value;
+      }
+    }
+  }
+
+  @else if $breakpoint==sm or $breakpoint==md or $breakpoint==lg or $breakpoint==xl {
+    @include media-breakpoint-up($breakpoint) {
+
+      @each $element,
+      $value in $elementlist {
+        #{$element}: $value;
+      }
+    }
+  }
+
+  @else {
+    @include custom-device($breakpoint) {
+
+      @each $element,
+      $value in $elementlist {
+        #{$element}: $value;
+      }
+    }
+  }
+}

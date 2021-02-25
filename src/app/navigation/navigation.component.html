@@ -1,27 +1,7 @@
-<main>
-  <div class="nav-home-btn-container">
-    <!-- <img
-      routerLink="/"
-      class="logo-img"
-      src="/assets/images/fortyfivelogo.png"
-      alt="fortyfivelogo"
-    /> -->
-    <h3 routerLink="/" class="nav-home">fortyfive</h3>
+<nav class="navbar navbar-expand-xl fixed-top navbar-light">
+  <div class="container-fluid">
+      <a class="navbar-brand brand" [routerLink]="['/']">fortyfive</a>
+
   </div>
-  <nav>
-    <div (click)="onBtnToggle()" class="hamburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <ul class="nav-links">
-      <div class="nav-container">
-        <li routerLink="/specs">specs</li>
-        <li routerLink="/build">build</li>
-        <li routerLink="/preorder">preorder</li>
-        <li routerLink="/blog">blog</li>
-        <li routerLink="/contactus">contact us</li>
-      </div>
-    </ul>
-  </nav>
-</main>
+</nav>
+

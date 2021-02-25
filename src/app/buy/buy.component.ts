@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.css'],
+  styleUrls: ['./buy.component.scss'],
 })
 export class BuyComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}

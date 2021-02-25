@@ -1,10 +1,607 @@
-<app-navigation></app-navigation>
-<main>
-  <div class="home-fortyfive-img-container">
-    <img
-      src="/assets/images/fortyfive.jpg"
-      alt="fortyfive-bike"
-      class="home-fortyfive-img"
-    />
-  </div>
-</main>
+
+
+<div class="background-color-grey">
+
+  <swiper [slidesPerView]="1" [spaceBetween]="0" (swiper)="onSwipe($event)" (slideChange)="onSlideChange()"
+    [scrollbar]="{ draggable: false, hide: true }" [mousewheel]="{ releaseOnEdges: true }">
+    <ng-template swiperSlide>
+      <div class="specs-container">
+        <div class="home-fortyfive-img-container">
+          <img src="/assets/images/fortyfive.jpg" alt="fortyfive-bike" class="home-fortyfive-img" />
+        </div>
+      </div>
+    </ng-template>
+
+
+
+    <ng-template swiperSlide>
+      <div class="specs-container">
+        <div class="base-text-container spec-0-text-container">
+          <div class="base-title-container">
+            <h1 class="spec-0-title-text">We're putting this straight out there!</h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              the market has a old metallic art, with ofcourse a new tech.
+            </h3>
+          </div>
+        </div>
+        <div class="spec-0-img-container">
+          <img src="/assets/images/specs/fortyfive.jpg" alt="" class="specs-landing-img" />
+        </div>
+      </div>
+    </ng-template>
+
+    <!--introducing 45-->
+    <ng-template swiperSlide>
+      <div class="specs-container background-color-black no-padding">
+        <div class="container-fluid d-flex h-100 no-padding no-gutters">
+          <div class="row h-100 w-100 justify-content-center align-items-center no-gutters">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+
+              <video src="https://storage.googleapis.com/fortyfive-assets/fortyfivevideo.mp4" autoplay muted preload="auto" controls type="video/mp4" >Video tag not supported</video>
+
+              <!-- <span class="hero-text">Introducing fortyfive</span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+
+
+    <!--spec 1-->
+    <!-- <ng-template swiperSlide>
+      <div class="specs-container">
+        <div class="base-text-container">
+          <div class="base-title-container">
+            <h1 class="title-text">And damn, it’s goddamn delicious!</h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="subtitle-text">
+              On a busy street, the bike looks like a retro motorcycle with fat
+              tires & aggressive lighting. It's eye catching, a retro design
+              that's suitable for both men & women making an announcement. The
+              design is not only meant to turn heads, it's a key part of
+              shifting the way commuters think about bikes as an urban
+              transportation.
+            </h3>
+          </div>
+        </div>
+        <div class="base-img-container">
+          <img src="/assets/images/specs/fortyfive-body.jpg" alt="" class="specs-landing-img" />
+        </div>
+      </div>
+    </ng-template> -->
+    <!--spec 2-->
+
+    <!--holds it together -->
+    <ng-template swiperSlide>
+      <div class="specs-container">
+        <div class="container-fluid h-100 px-0">
+          <div class="row h-100 no-gutters">
+            <div class="col-lg-8 template-2-left-container">
+              <div class="row"></div>
+              <div class="row  no-gutters d-flex justify-content-left align-items-center">
+                <div class="justify-content-center template-2-title-container">
+                  <h1 class="title-text template-2-title-text">Holds it together!</h1>
+                </div>
+              </div>
+              <div class="row no-gutters">
+                <div class="template-2-left-img-container">
+                  <img src="/assets/images/specs/frameupdated.png" alt="" class="specs-landing-img" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 template-2-right-container ">
+              <div class="row d-flex  template-2-right-subtitle-container">
+
+                <div class="template-2-right-text">
+                  The ergonomically designed seat mount & frame geometry, combined with height and reach handlebars,
+                  provides comfort levels for a wide range of users.
+                </div>
+
+              </div>
+              <div class="row template-2-right-addon-container ">
+                <!-- addon-->
+                <div class="template-2-addon-container">
+                  <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center">
+                      <div class="col-5 d-flex justify-content-center align-items-center">
+                        <div class="row d-flex justify-content-center align-items-center m-2">
+                          <div class="template-2-left-addon-container">
+                            <img class="w-100 h-100" src="../../assets/images/specs/chromium.svg" alt="chromium-image">
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="vertical-line">
+                      <div class="col-5 d-flex justify-content-center align-items-center ">
+                        <div class="row d-flex justify-content-center align-items-center m-2">
+                          <div class="weight-text"><span class="weight-number">6.8</span><sub>kg</sub></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center">
+                      <div class="template-2-right-addon-image-text">
+                        Made of chromoly steel, the frame has a good structural integrity to withstand a weight of
+                        150Kgs.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <!--hydraulics disc brakes-->
+    <ng-template swiperSlide>
+      <div class="specs-container">
+        <div class="container-fluid h-100 px-0">
+          <div class="row h-100 no-gutters">
+            <div class="col-lg-8 template-2-left-container">
+              <div class="row"></div>
+              <div class="row  d-flex justify-content-left align-items-center">
+                <div class="justify-content-center template-2-title-container hydraulics-title">
+                  <h1 class="title-text template-2-title-text">Hydraulics disk brakes</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="template-2-left-img-container">
+                  <img src="/assets/images/specs/hydraulics.png" alt="" class="specs-landing-img" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 template-2-right-container ">
+              <div class="row d-flex template-2-right-subtitle-container">
+
+                <div class="template-2-right-text">
+                  Hydraulic brakes deliver precision stopping power in all weather conditions & terrains.
+                </div>
+
+              </div>
+              <div class="row template-2-right-addon-container ">
+                <!-- addon-->
+                <div class="template-2-addon-container">
+                  <div class="container">
+                    <div class="row d-flex justify-content-center align-items-center">
+                      <div class="col-12 d-flex justify-content-center align-items-center">
+                        <div class=" hydraulics-image-container">
+                          <img class="w-100 h-100" src="../../assets/images/specs/diskbrake.png" alt="chromium-image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center">
+                      <div class="template-2-right-addon-image-text">
+                        160mm Hydraulic disc brakes on front and rear wheels
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+
+    <!--Simple yet powerful-->
+    <!--spec 3-->
+    <ng-template swiperSlide>
+      <div class="specs-container">
+
+        <!--text-->
+        <div class="base-text-container spec-2-text-container">
+          <div class="spec-2-title-container">
+            <h1 class="title-text">Simple, Yet Powerful!</h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              Tuned for maximum power and a natural ride-feel. The brushless DC motor offers a peak torque of 80Nm,
+              allows to take the steeper roads comfortably.
+            </h3>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <!-- addon-->
+            <div>
+              <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                  <div class="col-5 d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center align-items-center m-2">
+                      <div class="template-2-left-addon-container px-0">
+                        <div class="weight-text weight-text-fix"><span
+                            class="weight-number weight-number-fix">7.5</span><sub>Nm</sub></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center align-items-center">
+                    <hr class="vertical-line">
+                  </div>
+                  <div class="col-5 d-flex justify-content-center align-items-center ">
+                    <div class="row d-flex justify-content-center align-items-center m-2">
+                      <div class="weight-text weight-text-fix"><span
+                          class="weight-number weight-number-fix">25</span><sub>Kph</sub></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container ">
+                <div class="row">
+                  <div class="col-5 d-flex align-items-center justify-content-center">
+                    <div class="template-2-right-addon-image-text addon-text">Torque at the wheel</div>
+                  </div>
+                  <div class="col-2  "></div>
+                  <div class="col-5 d-flex align-items-center justify-content-center">
+                    <div class="template-2-right-addon-image-text addon-text">Speed of vehicle</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--image-->
+        <div class="simple-yet-powerful-image-container">
+          <img src="/assets/images/specs/motor.png" alt="" class="specs-landing-img" />
+        </div>
+      </div>
+    </ng-template>
+
+
+
+
+
+
+    <!--Refuelling Juice -->
+    <ng-template swiperSlide>
+      <div class="specs-container">
+
+        <!--text-->
+        <div class="base-text-container spec-2-text-container ">
+          <div class="spec-2-title-container">
+            <h1 class="title-text">Refueling the juice </h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              The removable battery allows you to refuel the battery anywhere. The 6A charging framework charges the
+              battery in 1Hr 30min. Our light weight 100% electric bikes offer ample range to cover everyday needs on
+              single charge.
+            </h3>
+          </div>
+          <div class="row justify-content-center align-items-center m-5">
+            <!-- addon-->
+            <div class="battery-image-container">
+              <img src="/assets/images/specs/BatteryImage.png" alt="" class="specs-landing-img" />
+            </div>
+          </div>
+        </div>
+
+        <!--image-->
+        <div class="refueling-addon-container m-2">
+
+          <div class="template-2-addon-text-container">
+            <div class="container">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-5 d-flex justify-content-center align-items-center">
+                  <div class="row d-flex justify-content-center align-items-center m-2">
+                    <div class="template-2-left-addon-container px-0">
+                      <div class="weight-text weight-text-fix"><span
+                          class="weight-number weight-number-fix">550</span><sub>Wh</sub></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                  <hr class="vertical-line">
+                </div>
+                <div class="col-5 d-flex justify-content-center align-items-center ">
+                  <div class="row d-flex justify-content-center align-items-center m-2">
+                    <div class="weight-text weight-text-fix"><span
+                        class="weight-number weight-number-fix">65</span><sub>Km</sub></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container ">
+              <div class="row">
+                <div class="col-5 d-flex align-items-center justify-content-center">
+                  <div class="template-2-right-addon-image-text addon-text">Battery Capacity</div>
+                </div>
+                <div class="col-2  "></div>
+                <div class="col-5 d-flex align-items-center justify-content-center">
+                  <div class="template-2-right-addon-image-text addon-text">Range</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- putting brains in bike -->
+    <ng-template swiperSlide>
+      <div class="specs-container">
+
+        <!--text-->
+        <div class="base-text-container spec-2-text-container ">
+          <div class="spec-2-title-container">
+            <h1 class="title-text">Putting the Brains in your Bike! </h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              The Smart system is the most important part
+              of the bike by far. It’s really the brain of the
+              bike it connects the bike’s systems and links
+              them to the rider’s smartphone.
+              <br>
+              The vehicle monitoring system usually monitors
+              the major components of the electric vehicle,
+              battery & motor. The self diagnostic system
+              helps in maintaining the proper health of the
+              vehicle.
+
+            </h3>
+          </div>
+        </div>
+
+        <!--image-->
+        <div class="brain-image-container">
+          <img src="/assets/images/specs/fortyfive-brain.png" alt="" class="specs-landing-img" />
+        </div>
+
+      </div>
+    </ng-template>
+
+    <!--Thats how it rolls-->
+    <!--spec 3-->
+    <ng-template swiperSlide>
+      <div class="specs-container thats-how-it-rolls">
+
+        <!--text-->
+        <div class="base-text-container spec-2-text-container">
+          <div class="spec-2-title-container">
+            <h1 class="title-text">That's how it rolls!</h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              Let suspension never be a worry. The wide 4" tyres offer imroved stability and comfort, whilst giving the
+              smoothest rides even over bumps. With 30psi inflation pressure, you can do away with the need for
+              suspension on any kind of terrain.
+            </h3>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center addon-container">
+            <!-- addon-->
+            <div>
+              <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                  <div class="col-5 d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center align-items-center m-2">
+                      <div class="template-2-left-addon-container px-0">
+                        <div class="weight-text weight-text-fix"><span class="weight-number">20x4"</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center align-items-center">
+                  </div>
+                  <div class="col-5 d-flex justify-content-center align-items-center ">
+                    <div class="row d-flex justify-content-center align-items-center m-2">
+                      <div class="weight-text weight-text-fix"><span class="weight-number ">30</span><sub>psi</sub>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container ">
+                <div class="row">
+                  <div class="col-5 d-flex align-items-center justify-content-center">
+                    <div class="template-2-right-addon-image-text addon-text">Wide & reliable tyres</div>
+                  </div>
+                  <div class="col-2  "></div>
+                  <div class="col-5 d-flex align-items-center justify-content-center">
+                    <div class="template-2-right-addon-image-text addon-text">Tyre pressure</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--image-->
+        <div class="tyre-image-container">
+          <img src="/assets/images/specs/tyreimage.png" alt="" class="specs-landing-img" />
+        </div>
+      </div>
+    </ng-template>
+
+    <!--Theft defence-->
+    <!--spec 3-->
+    <ng-template swiperSlide>
+      <div class="specs-container theft-defence">
+        <!--image-->
+        <div class="base-img-container">
+          <img src="/assets/images/specs/fortyfive-smartlock-crop.png" alt="" class="specs-landing-img" />
+        </div>
+
+        <!--text-->
+        <div class="base-text-container">
+          <div class="spec-2-title-container">
+            <h1 class="title-text">Theft Defence</h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              The electronic locking system comes with an onboard anti-theft alarm, that buzzes whenever there’s tamper.
+            </h3>
+          </div>
+          <div class="addon-container">
+            <div class="container">
+
+
+              <div class="row">
+                <div class="col-2">
+                  <img class="check-icon-size" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>
+                <div class="col-10 spec-0-subtitle-text">
+                  Anti-theft alarm
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-2">
+                  <img class="check-icon-size" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>
+                <div class="col-10 spec-0-subtitle-text">
+                  Tamper detection
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-2">
+                  <img class="check-icon-size" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>
+                <div class="col-10 spec-0-subtitle-text ">
+                  Notification to the user
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </ng-template>
+    <!--Not Required-->
+    <!--spec 3-->
+    <ng-template swiperSlide>
+      <div class="specs-container thats-how-it-rolls">
+
+        <!--text-->
+        <div class="base-text-container spec-2-text-container">
+          <div class="spec-2-title-container">
+            <h1 class="title-text">Not Required</h1>
+          </div>
+          <div class="base-subtitle-container">
+            <h3 class="spec-0-subtitle-text">
+              The components are designed & tested enough for a complete life cycle. We’ve developed the bike & the
+              system around in a way to cut down the service as much as possible.
+              With the fault detection & self- diagnostic system, you can easily detect the problem
+            </h3>
+          </div>
+
+        </div>
+
+        <!--image-->
+        <div class="tyre-image-container">
+          <img src="/assets/images/specs/serviceimage.png" alt="" class="specs-landing-img" />
+        </div>
+      </div>
+    </ng-template>
+
+
+
+    <!--Pricing-->
+    <ng-template swiperSlide>
+      <div class="specs-container pricing">
+        <div class="container-fluid h-100 px-0 ">
+          <div class="row h-100 no-gutters">
+            <div class="col-lg-6 template-2-left-container">
+              <div class="row">
+                <div class="template-2-left-img-container">
+                  <img src="/assets/images/specs/fortyfive-body.jpg" alt="" class="specs-landing-img" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 template-2-right-container d-flex justify-content-center align-items-center ">
+
+              <div class='pricing pricing-palden'>
+                <div class='pricing-item pricing__item--featured'>
+                  <div class='pricing-deco'>
+                    <div class='pricing-price'><span class='pricing-currency'>₹</span>35000
+                    </div>
+                    <h3 class='pricing-title'>BASIC</h3>
+                  </div>
+                  <ul class='pricing-feature-list'>
+                    <li class='pricing-feature'>Life-time warranty on frame</li>
+                    <li class='pricing-feature'>2 years warranty on Battery</li>
+                    <li class='pricing-feature'>A portable charger</li>
+                    <li class='pricing-feature'>Additional accessories</li>
+
+                  </ul>
+                  <button class='pricing-action'>Pre-order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <!--socials-->
+    <ng-template swiperSlide>
+      <div class="specs-container background-color-black no-padding contact-us-slide">
+        <div class="container-fluid h-100">
+          <div class="row w-100 d-flex justify-content-center align-items-center get-ready-container no-gutters">
+            <div class=" text-center">
+              <h1 style="color:white">Get ready for the <span style="color:yellow">Launch</span> of</h1>
+              <span class="hero-text">fortyfive</span>
+
+
+            </div>
+          </div>
+
+          <div class="row w-100 d-flex justify-content-center align-items-center prebook-container no-gutters">
+            <div class="pre-order-container text-center">
+              <h3 style="color:white">Pre-order now at</h3>
+              <app-preorder-button [isDark]="false" [content]="'₹ 9,999'"></app-preorder-button>
+              <h2 style="color:white">[Fully Refundable]</h2>
+            </div>
+          </div>
+
+
+          <div class="row w-100 h-50 d-flex justify-content-center align-items-center contact-us-container no-gutters">
+            <div class=" text-center">
+              <h1 style="color:white">CONTACT US</h1>
+              <div class="container mt-2">
+                <div class="row">
+                  <div class="col">
+                    <img src="assets/icon/facebook.svg" class="social-icons" alt="facebook fortyfive"
+                      (click)="openLink('fb')">
+                  </div>
+                  <div class="col">
+                    <img src="assets/icon/instagram.svg" class="social-icons" alt="instagram fortyfive"
+                      (click)="openLink('ig')">
+                  </div>
+                  <div class="col">
+                    <img src="assets/icon/linkedin.svg" class="social-icons" alt="linkedin fortyfive"
+                      (click)="openLink('li')">
+                  </div>
+                  <div class="col">
+                    <img src="assets/icon/mailicon.svg" class="social-icons" alt="email fortyfive"
+                      (click)="openLink('mail')">
+                  </div>
+                </div>
+                <div class="row w-100 d-flex justify-content-center align-items-center contact-us-container no-gutters mt-4">
+                  <span (click)="openPolicy('refund')" style="cursor:pointer;color: white">Refund Policy | </span>  <span (click)="openPolicy('terms')"  style="cursor:pointer;color: white"> Terms & Conditions |</span> <span (click)="openPolicy('privacy')"  style="cursor:pointer;color: white"> Privacy Policy </span>
+                </div>
+                <div style="color: white" class=" row w-100 d-flex justify-content-center align-items-center contact-us-container no-gutters mt-2">
+                All Rights Reserved | FortyFive 2021
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ng-template>
+
+  </swiper>
+</div>
