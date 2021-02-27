@@ -24,6 +24,7 @@ import { PreorderButtonComponent } from './preorder-button/preorder-button.compo
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
     PrivacyPolicyComponent,
     RefundPolicyComponent,
     TermsConditionsComponent,
+    NewsletterComponent,
   ],
   imports: [
     BrowserModule,

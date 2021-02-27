@@ -12,6 +12,15 @@
         <div class="scroll-down">
         </div>
       </div>
+      <div class="newsletter">
+        <app-newsletter></app-newsletter>
+      </div>
+      <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
+      
     </ng-template>
 
 
@@ -43,7 +52,6 @@
             <div class="col-12 d-flex justify-content-center align-items-center">
 
               <video src="https://storage.googleapis.com/fortyfive-assets/fortyfivevideo.mp4" muted preload="auto" controls type="video/mp4" >Video tag not supported</video>
-
               <!-- <span class="hero-text">Introducing fortyfive</span> -->
             </div>
           </div>
@@ -86,7 +94,19 @@
             <div class="col-lg-8 template-2-left-container">
               <div class="row"></div>
               <div class="row  no-gutters d-flex justify-content-left align-items-center">
-                <div class="justify-content-center template-2-title-container">
+                <div class="holds-options">
+                  <div class="holds-hr-lines">
+                    <div class="holds-hr"></div>
+                    <div class="holds-hr"></div>
+                  </div>
+                  <div class="holds-1">
+                    <span>1. FRAME STRUCTURE</span>
+                  </div>
+                  <div class="holds-2">
+                    <span>2. HYDRAULIC DISK BRAKES</span>
+                  </div>
+                </div>
+                <div class="justify-content-center template-2-title-container holds-text">
                   <h1 class="title-text template-2-title-text">Holds it together!</h1>
                 </div>
               </div>
@@ -94,7 +114,9 @@
                 <div class="template-2-left-img-container">
                   <img src="/assets/images/specs/frameupdated.png" alt="" class="specs-landing-img" />
                 </div>
+                <div class="horizontal-line"> </div>
               </div>
+              
             </div>
             <div class="col-lg-4 template-2-right-container ">
               <div class="row d-flex  template-2-right-subtitle-container">
@@ -113,23 +135,23 @@
                       <div class="col-5 d-flex justify-content-center align-items-center">
                         <div class="row d-flex justify-content-center align-items-center m-2">
                           <div class="template-2-left-addon-container">
-                            <img class="w-100 h-100" src="../../assets/images/specs/chromium.svg" alt="chromium-image">
+                            <img class="w-101 h-101" src="../../assets/images/specs/chromium.svg" alt="chromium-image">
                           </div>
                         </div>
                       </div>
-                      <hr class="vertical-line">
+                      <!-- <hr class="vertical-line"> -->
                       <div class="col-5 d-flex justify-content-center align-items-center ">
                         <div class="row d-flex justify-content-center align-items-center m-2">
                           <div class="weight-text"><span class="weight-number">6.8</span><sub>kg</sub></div>
                         </div>
                       </div>
                     </div>
-                    <div class="row d-flex justify-content-center align-items-center">
+                    <!-- <div class="row d-flex justify-content-center align-items-center">
                       <div class="template-2-right-addon-image-text">
                         Made of chromoly steel, the frame has a good structural integrity to withstand a weight of
                         150Kgs.
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -327,10 +349,9 @@
     </ng-template>
 
     <!-- putting brains in bike -->
-    <ng-template swiperSlide>
+    <!-- <ng-template swiperSlide>
       <div class="specs-container">
 
-        <!--text-->
         <div class="base-text-container spec-2-text-container ">
           <div class="spec-2-title-container">
             <h1 class="title-text">Putting the Brains in your Bike! </h1>
@@ -352,14 +373,13 @@
           </div>
         </div>
 
-        <!--image-->
+       
         <div class="brain-image-container">
           <img src="/assets/images/specs/fortyfive-brain.png" alt="" class="specs-landing-img" />
         </div>
 
       </div>
-    </ng-template>
-
+    </ng-template> -->
     <!--Thats how it rolls-->
     <!--spec 3-->
     <ng-template swiperSlide>

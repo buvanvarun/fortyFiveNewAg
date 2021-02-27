@@ -1,0 +1,28 @@
+<div *ngIf="visibility" class="news-container">
+    <!-- <div class="news-letter"> -->
+        <div class="close-wrapper">
+            <span (click)="clicked()" class="close">X</span>
+        </div>
+        <div class="content">
+            <p class="text" style="font: inerit;color: white;">
+                Join the community & never miss an update & insights.
+            </p>
+        </div>
+        <div class="input-wrapper">
+            <div class="input">
+            <input
+            [(ngModel)]="email" required autocomplete="off" type="email" name="email"  />
+            <label for="email" class="label-email">
+                <span class="content-email">Email Address</span>
+            </label>
+            </div>
+        </div>
+      
+            <div class="button-wrapper">
+                <button class="button">Submit</button>
+            </div>
+        <div class="img-container">
+            <img class="img" src="assets/images/newsletter.png" alt="Newletter-img">
+        </div>
+    <!-- </div> -->
+</div>
