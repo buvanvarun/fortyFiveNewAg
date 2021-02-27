@@ -4,10 +4,7 @@
 @import "~bootstrap/scss/mixins";
 
 $enable-responsive-font-sizes: true;
-$line-height-base            : 1;
-
-
-
+$line-height-base: 1;
 
 .background-color-grey {
   background-color: $background;
@@ -17,22 +14,75 @@ $line-height-base            : 1;
   background-color: #000000;
 }
 
-
 .specs-container {
-  width : 100%;
+  width: 100%;
   height: 100vh;
 }
 
 .preorder-nav {
   position: absolute;
-  right   : 2rem;
-  top     : -0.1rem;
+  right: 2rem;
+  top: -0.1rem;
 }
 
+.scroll-down {
+  height: 50px;
+  width: 50px;
+  // border: 1px solid black;
+  position: absolute;
+  top: 85%;
+  left: 90%;
+  bottom: 30px;
+  // border-radius: 50%;
+  // background-color: #1a1a1a;
+  // cursor: pointer;
+}
+
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  border: 2px solid #1a1a1a;
+  height: 14px;
+  width: 14px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-bottom: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+
+// .scroll-down::after {
+//   left: 35%;
+// }
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .scroll-down {
+    top: 80%;
+    left: 85%;
+  }
+}
 
 /**home screen bike image*/
 .home-fortyfive-img-container {
-  position : absolute;
+  position: absolute;
   transform: translate(-50%, -60%);
   @include align(xs, 50, 50, 100);
   @include align(sm, 60, 50, 100);
@@ -45,107 +95,172 @@ $line-height-base            : 1;
 
 .home-fortyfive-img {
   position: relative;
-  width   : 100%;
-  height  : 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /** introduction **/
 .hero-text {
   line-height: 0.9em;
-  color      : $background;
-  @include elementBreakpoint(xs,
-    (font-size: $display2-size * 0.5,
-    ));
-  @include elementBreakpoint(sm,
-    (font-size: $display2-size * 0.8,
-    ));
-  @include elementBreakpoint(md,
-    (font-size: $display2-size * 0.97,
-    ));
-  @include elementBreakpoint(lg,
-    (font-size: $display2-size * 0.97,
-    ));
-  @include elementBreakpoint(xl,
-    (font-size: $display2-size,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $display2-size,
-    ));
-  @include elementBreakpoint(xxxl,
-    (font-size: $display1-size,
-    ));
+  color: $background;
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $display2-size * 0.5,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $display2-size * 0.8,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $display2-size * 0.97,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $display2-size * 0.97,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $display2-size,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $display2-size,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      font-size: $display1-size,
+    )
+  );
 }
 
 /** title text **/
 .title-text {
   font-weight: $font-weight-bold;
   line-height: 0.9em;
-  color      : $headingPrimary;
-  @include elementBreakpoint(xs,
-    (font-size: $display2-size * 0.4,
-    ));
-  @include elementBreakpoint(sm,
-    (font-size: $display2-size * 0.8,
-    ));
-  @include elementBreakpoint(md,
-    (font-size: $display2-size * 0.97,
-    ));
-  @include elementBreakpoint(lg,
-    (font-size: $display2-size * 0.97,
-    ));
-  @include elementBreakpoint(xl,
-    (font-size: $display2-size,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $display2-size,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $display1-size,
-    ));
+  color: $headingPrimary;
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $display2-size * 0.4,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $display2-size * 0.8,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $display2-size * 0.97,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $display2-size * 0.97,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $display2-size,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $display2-size,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $display1-size,
+    )
+  );
 }
 
 .subtitle-text {
-  color          : $headingSecondary;
-  line-height    : 0.98em;
-  font-weight    : $font-weight-normal;
-  text-align     : justify;
-  text-justify   : distribute;
+  color: $headingSecondary;
+  line-height: 0.98em;
+  font-weight: $font-weight-normal;
+  text-align: justify;
+  text-justify: distribute;
   text-align-last: left;
-  @include elementBreakpoint(xs,
-    (font-size: $font-size-base * 1.2,
-    ));
-  @include elementBreakpoint(sm,
-    (font-size: $font-size-base * 1.2,
-    ));
-  @include elementBreakpoint(md,
-    (font-size: $font-size-base * 1.5,
-    ));
-  @include elementBreakpoint(lg,
-    (font-size: $font-size-base * 1.4,
-    ));
-  @include elementBreakpoint(xl,
-    (font-size: $font-size-base * 1.5,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $font-size-base * 1.6,
-    ));
-  @include elementBreakpoint(xxxl,
-    (font-size: $font-size-base * 4,
-    ));
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $font-size-base * 1.2,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $font-size-base * 1.2,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $font-size-base * 1.5,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $font-size-base * 1.4,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $font-size-base * 1.5,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $font-size-base * 1.6,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      font-size: $font-size-base * 4,
+    )
+  );
   //ipad fix
-  @include elementBreakpoint(ipadPro, (font-size: $font-size-base * 1.7));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      font-size: $font-size-base * 1.7,
+    )
+  );
 }
-
-
-
 
 /** base **/
 
 /**base 1 text**/
 .base-text-container {
   position: absolute;
-  z-index : 10;
-  margin  : 1rem;
+  z-index: 10;
+  margin: 1rem;
   // below 576
   @include align(xs, 50, 2);
   @include align(sm, 50, 2);
@@ -156,63 +271,122 @@ $line-height-base            : 1;
   @include align(xxxl, 30, 5);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top    : 65%, left:7%));
-  @include elementBreakpoint(surfaceDuo, (top : 65%, left:2%));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 65%,
+      left: 7%,
+    )
+  );
+  @include elementBreakpoint(
+    surfaceDuo,
+    (
+      top: 65%,
+      left: 2%,
+    )
+  );
 
   // title and sub title width
   .base-title-container {
-    @include elementBreakpoint(xs,
-      (width: 90vw,
-      ));
-    @include elementBreakpoint(sm,
-      (width: 90vw,
-      ));
-    @include elementBreakpoint(md,
-      (width: 90vw,
-      ));
-    @include elementBreakpoint(lg,
-      (width: 70vw,
-      ));
-    @include elementBreakpoint(xl,
-      (width: 55vw,
-      ));
-    @include elementBreakpoint(xxl,
-      (width: 60vw,
-      ));
-    @include elementBreakpoint(xxxl,
-      (width: 50vw,
-      ));
+    @include elementBreakpoint(
+      xs,
+      (
+        width: 90vw,
+      )
+    );
+    @include elementBreakpoint(
+      sm,
+      (
+        width: 90vw,
+      )
+    );
+    @include elementBreakpoint(
+      md,
+      (
+        width: 90vw,
+      )
+    );
+    @include elementBreakpoint(
+      lg,
+      (
+        width: 70vw,
+      )
+    );
+    @include elementBreakpoint(
+      xl,
+      (
+        width: 55vw,
+      )
+    );
+    @include elementBreakpoint(
+      xxl,
+      (
+        width: 60vw,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        width: 50vw,
+      )
+    );
   }
 
   .base-subtitle-container {
     margin-top: 2rem;
-    @include elementBreakpoint(xs,
-      (width: 88vw,
+    @include elementBreakpoint(
+      xs,
+      (
+        width: 88vw,
         margin-top: 1rem,
-      ));
+      )
+    );
 
-    @include elementBreakpoint(sm,
-      (width: 80vw,
-      ));
-    @include elementBreakpoint(md,
-      (width: 80vw,
-      ));
-    @include elementBreakpoint(lg,
-      (width: 50vw,
-      ));
-    @include elementBreakpoint(xl,
-      (width: 40vw,
+    @include elementBreakpoint(
+      sm,
+      (
+        width: 80vw,
+      )
+    );
+    @include elementBreakpoint(
+      md,
+      (
+        width: 80vw,
+      )
+    );
+    @include elementBreakpoint(
+      lg,
+      (
+        width: 50vw,
+      )
+    );
+    @include elementBreakpoint(
+      xl,
+      (
+        width: 40vw,
         margin-top: 4rem,
-      ));
-    @include elementBreakpoint(xxl,
-      (width: 50vw,
-      ));
-    @include elementBreakpoint(xxxl,
-      (width: 45vw,
-      ));
+      )
+    );
+    @include elementBreakpoint(
+      xxl,
+      (
+        width: 50vw,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        width: 45vw,
+      )
+    );
 
     //ipad fix
-    @include elementBreakpoint(ipadPro, (width: 80vw));
+    @include elementBreakpoint(
+      ipadPro,
+      (
+        width: 80vw,
+      )
+    );
   }
 }
 
@@ -229,55 +403,223 @@ $line-height-base            : 1;
   @include align(xxxl, 20, 50, 55);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top : 10%, left:0%, width:100vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 10%,
+      left: 0%,
+      width: 100vw,
+    )
+  );
 }
 
 /**  Template 2- grey and white ones    **/
 
 .template-2-left-container {
-  @include elementBreakpoint(xs, (height  :54%));
-  @include elementBreakpoint(sm, (height  :54%));
-  @include elementBreakpoint(md, (height  :56%));
-  @include elementBreakpoint(lg, (height  :100%));
-  @include elementBreakpoint(xl, (height  :100%));
-  @include elementBreakpoint(xxl, (height :100%));
-  @include elementBreakpoint(xxxl, (height:100%));
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 54%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      height: 54%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      height: 56%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      height: 100%,
+    )
+  );
 }
 
 .template-2-right-container {
-  @include elementBreakpoint(xs, (height  :46%));
-  @include elementBreakpoint(sm, (height  :46%));
-  @include elementBreakpoint(md, (height  :44%));
-  @include elementBreakpoint(lg, (height  :100%));
-  @include elementBreakpoint(xl, (height  :100%));
-  @include elementBreakpoint(xxl, (height :100%));
-  @include elementBreakpoint(xxxl, (height:100%));
-  background-color                        : #33363b;
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 46%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      height: 46%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      height: 44%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      height: 100%,
+    )
+  );
+  background-color: #33363b;
 }
 
 .template-2-left-img-container {
   // position: absolute;
   // below 576
-  @include elementBreakpoint(xs, (padding  :0rem 0rem 0rem, width:100vw));
-  @include elementBreakpoint(sm, (padding  :0rem 5rem 0rem, width:30vw));
-  @include elementBreakpoint(md, (padding  :0rem 5rem 0rem, width:90vw));
-  @include elementBreakpoint(lg, (padding  :0rem 5rem 0rem, width:80vw));
-  @include elementBreakpoint(xl, (padding  :0rem 5rem 0rem, width:70vw));
-  @include elementBreakpoint(xxl, (padding :0rem 5rem 0rem, width:70vw));
-  @include elementBreakpoint(xxxl, (padding:0rem 5rem 0rem, width:60vw));
+  @include elementBreakpoint(
+    xs,
+    (
+      padding: 0rem 0rem 0rem,
+      width: 100vw,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      padding: 0rem 5rem 0rem,
+      width: 30vw,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      padding: 0rem 5rem 0rem,
+      width: 90vw,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      padding: 0rem 5rem 0rem,
+      width: 80vw,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      padding: 0rem 5rem 0rem,
+      width: 70vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      padding: 0rem 5rem 0rem,
+      width: 70vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      padding: 0rem 5rem 0rem,
+      width: 60vw,
+    )
+  );
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top : 10%, left:0%, width:100vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 10%,
+      left: 0%,
+      width: 100vw,
+    )
+  );
 }
 
 .template-2-title-container {
-  @include elementBreakpoint(xs, (padding  :5rem 2rem 0rem, width:100vw));
-  @include elementBreakpoint(sm, (padding  :5rem 5rem 0rem, width:50vw));
-  @include elementBreakpoint(md, (padding  :5rem 5rem 0rem, width:60vw));
-  @include elementBreakpoint(lg, (padding  :5rem 5rem 0rem, width:45vw));
-  @include elementBreakpoint(xl, (padding  :5rem 5rem 0rem, width:40vw));
-  @include elementBreakpoint(xxl, (padding :5rem 8rem 0rem, width:40vw));
-  @include elementBreakpoint(xxxl, (padding:5rem 10rem 0rem, width:40vw));
+  @include elementBreakpoint(
+    xs,
+    (
+      padding: 5rem 2rem 0rem,
+      width: 100vw,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      padding: 5rem 5rem 0rem,
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      padding: 5rem 5rem 0rem,
+      width: 60vw,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      padding: 5rem 5rem 0rem,
+      width: 45vw,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      padding: 5rem 5rem 0rem,
+      width: 40vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      padding: 5rem 8rem 0rem,
+      width: 40vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      padding: 5rem 10rem 0rem,
+      width: 40vw,
+    )
+  );
 }
 
 .template-2-title-text {
@@ -285,61 +627,243 @@ $line-height-base            : 1;
 }
 
 video {
-  @include elementBreakpoint(xs, (width  :100%));
-  @include elementBreakpoint(sm, (width  :100%));
-  @include elementBreakpoint(md, (width  :100%));
-  @include elementBreakpoint(lg, (width  :100%));
-  @include elementBreakpoint(xl, (width  :100%));
-  @include elementBreakpoint(xxl, (width :100%));
-  @include elementBreakpoint(xxxl, (width:90%));
-
+  @include elementBreakpoint(
+    xs,
+    (
+      width: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      width: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      width: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      width: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      width: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      width: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      width: 90%,
+    )
+  );
 }
 
 .template-2-right-subtitle-container {
-  @include elementBreakpoint(xs, (padding          :0rem 3rem 2rem, height:45%, justify-content : center, align-items : center));
-  @include elementBreakpoint(sm, (padding          :0rem 2rem 0rem, height:30%, justify-content : center, align-items : center));
-  @include elementBreakpoint(md, (padding          :0rem 2.5rem 0rem, height:35%, justify-content : center, align-items : center));
-  @include elementBreakpoint(lg, (padding          :3rem 4rem 3rem, height:50%, justify-content : flex-end, align-items : flex-end));
-  @include elementBreakpoint(xl, (padding          :0rem 6rem 3rem, height:50%, justify-content : flex-end, align-items : flex-end));
-  @include elementBreakpoint(xxl, (padding         :0rem 6rem 3rem, height:50%, justify-content : flex-end, align-items : flex-end));
-  @include elementBreakpoint(xxxl, (padding        :0rem 8rem 3rem, height:50%, justify-content : flex-end, align-items : flex-end));
-  @include elementBreakpoint(smalldevice, (padding :1rem 2rem 0rem, height:35%, justify-content : center, align-items : center));
+  @include elementBreakpoint(
+    xs,
+    (
+      padding: 0rem 3rem 2rem,
+      height: 45%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      padding: 0rem 2rem 0rem,
+      height: 30%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      padding: 0rem 2.5rem 0rem,
+      height: 35%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      padding: 3rem 4rem 3rem,
+      height: 50%,
+      justify-content: flex-end,
+      align-items: flex-end,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      padding: 0rem 6rem 3rem,
+      height: 50%,
+      justify-content: flex-end,
+      align-items: flex-end,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      padding: 0rem 6rem 3rem,
+      height: 50%,
+      justify-content: flex-end,
+      align-items: flex-end,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      padding: 0rem 8rem 3rem,
+      height: 50%,
+      justify-content: flex-end,
+      align-items: flex-end,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      padding: 1rem 2rem 0rem,
+      height: 35%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
 }
 
 .template-2-right-addon-container {
-  @include elementBreakpoint(xs, (height   :55%));
-  @include elementBreakpoint(sm, (height   :70%));
-  @include elementBreakpoint(md, (height   :65%));
-  @include elementBreakpoint(lg, (height   :50%));
-  @include elementBreakpoint(xl, (height   :50%));
-  @include elementBreakpoint(xxl, (height  :50%));
-  @include elementBreakpoint(xxxl, (height :50%));
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 55%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      height: 70%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      height: 65%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      height: 50%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      height: 50%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      height: 50%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      height: 50%,
+    )
+  );
 
-  @include elementBreakpoint(smalldevice, (height:65%))
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      height: 65%,
+    )
+  );
 }
 
 .c {
-  align-items    : flex-end;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
-
 .template-2-right-text {
-  font-weight                                       : $font-weight-normal;
-  text-align                                        : left;
-  text-align-last                                   : left;
-  color                                             : #808284;
-  @include elementBreakpoint(xs, (line-height       :$line-height-base, font-size :$font-size-base*1.2));
-  @include elementBreakpoint(sm, (line-height       :$line-height-base, font-size :$font-size-base*1.2));
-  @include elementBreakpoint(md, (line-height       :$line-height-base, font-size :$font-size-base*1.8));
-  @include elementBreakpoint(lg, (line-height       :$line-height-base, font-size :$font-size-base*1.6));
-  @include elementBreakpoint(xl, (line-height       :$line-height-base, font-size :$font-size-base*1.6));
-  @include elementBreakpoint(xxl, (line-height      :$line-height-base, font-size:$font-size-base*1.8));
-  @include elementBreakpoint(xxxl, (line-height     :$line-height-base, font-size:$font-size-base*1.8));
-  @include elementBreakpoint(smalldevice, (font-size:$font-size-base*1.2))
+  font-weight: $font-weight-normal;
+  text-align: left;
+  text-align-last: left;
+  color: #808284;
+  @include elementBreakpoint(
+    xs,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.2,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.2,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.6,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.6,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      font-size: $font-size-base * 1.2,
+    )
+  );
 }
-
-
 
 /** additional dataA **/
 .template-2-addon-container {
@@ -347,106 +871,291 @@ video {
 }
 
 .template-2-left-addon-container {
-  @include elementBreakpoint(xs, (width         :60%));
-  @include elementBreakpoint(sm, (width         :60%));
-  @include elementBreakpoint(md, (width         :60%));
-  @include elementBreakpoint(lg, (padding-left  :1rem, width :90%));
-  @include elementBreakpoint(xl, (padding-left  :1rem, width :80%));
-  @include elementBreakpoint(xxl, (padding-left :2rem, width :70%));
-  @include elementBreakpoint(xxxl, (padding-left:3rem, width:80%));
+  @include elementBreakpoint(
+    xs,
+    (
+      width: 60%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      width: 60%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      width: 60%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      padding-left: 1rem,
+      width: 90%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      padding-left: 1rem,
+      width: 80%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      padding-left: 2rem,
+      width: 70%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      padding-left: 3rem,
+      width: 80%,
+    )
+  );
 }
 
-.template-2-addon-text-container {}
+.template-2-addon-text-container {
+}
 
 .vertical-line {
-  margin-left                           : 5px;
-  margin-right                          : 5px;
-  width                                 : 1px;
-  height                                : 7rem;
-  background-color                      : $headingSecondary;
-  @include elementBreakpoint(xs, (height:4rem));
-
-
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 1px;
+  height: 7rem;
+  background-color: $headingSecondary;
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 4rem,
+    )
+  );
 }
 
 .weight-text {
-  color    : #727698;
+  color: #727698;
   font-size: 2.5rem;
 }
 
 .weight-number {
   font-weight: $font-weight-bold;
   line-height: 0.9em;
-  @include elementBreakpoint(xs,
-    (font-size: $display2-size * 0.4,
-    ));
-  @include elementBreakpoint(sm,
-    (font-size: $display2-size * 0.8,
-    ));
-  @include elementBreakpoint(md,
-    (font-size: $display2-size * 0.90,
-    ));
-  @include elementBreakpoint(lg,
-    (font-size: $display2-size * 0.90,
-    ));
-  @include elementBreakpoint(xl,
-    (font-size: $display2-size * 0.90,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $display2-size * 0.90,
-    ));
-  @include elementBreakpoint(xxxl,
-    (font-size: $display2-size,
-    ));
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $display2-size * 0.4,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $display2-size * 0.8,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $display2-size * 0.9,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $display2-size * 0.9,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $display2-size * 0.9,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $display2-size * 0.9,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      font-size: $display2-size,
+    )
+  );
 }
 
 .weight-text-fix {
   color: #33363b;
 }
 
-
-
 .template-2-right-addon-image-text {
-  font-weight                                        : $font-weight-normal;
-  text-align                                         : center;
-  text-align-last                                    : center;
-  color                                              : #808284;
-  line-height                                        : $line-height-base;
-  @include elementBreakpoint(xs, (font-size          :$font-size-base*1.2, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(sm, (font-size          :$font-size-base*1.2, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(md, (font-size          :$font-size-base*1.4, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(lg, (font-size          :$font-size-base*1.4, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(xl, (font-size          :$font-size-base*1.4, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(xxl, (font-size         :$font-size-base*1.4, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(xxxl, (font-size        :$font-size-base*1.4, padding:0rem 4rem 0rem));
-  @include elementBreakpoint(smalldevice, (font-size :$font-size-base*1.0))
+  font-weight: $font-weight-normal;
+  text-align: center;
+  text-align-last: center;
+  color: #808284;
+  line-height: $line-height-base;
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $font-size-base * 1.2,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $font-size-base * 1.2,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $font-size-base * 1.4,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $font-size-base * 1.4,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $font-size-base * 1.4,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $font-size-base * 1.4,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      font-size: $font-size-base * 1.4,
+      padding: 0rem 4rem 0rem,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      font-size: $font-size-base * 1,
+    )
+  );
 }
 
 .addon-text {
-  color  : #33363b;
+  color: #33363b;
   padding: 0 !important;
 }
 
 .hydraulics-title {
-  @include elementBreakpoint(xs, (width  :100vw));
-  @include elementBreakpoint(sm, (width  :50vw));
-  @include elementBreakpoint(md, (width  :60vw));
-  @include elementBreakpoint(lg, (width  :55vw));
-  @include elementBreakpoint(xl, (width  :50vw));
-  @include elementBreakpoint(xxl, (width :50vw));
-  @include elementBreakpoint(xxxl, (width:50vw));
+  @include elementBreakpoint(
+    xs,
+    (
+      width: 100vw,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      width: 60vw,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      width: 55vw,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      width: 50vw,
+    )
+  );
 }
 
 .hydraulics-image-container {
-  @include elementBreakpoint(xs, (padding  :0rem 0 1rem, width :20%));
-  @include elementBreakpoint(sm, (padding  :0rem 0 1rem, width :20%));
-  @include elementBreakpoint(md, (padding  :0rem 0 2rem, width :20%));
-  @include elementBreakpoint(lg, (padding  :0rem 0 2rem, width :25%));
-  @include elementBreakpoint(xl, (padding  :0rem 0 2rem, width :20%));
-  @include elementBreakpoint(xxl, (padding :0rem 0 2rem, width :20%));
-  @include elementBreakpoint(xxxl, (padding:0rem 0 2rem, width:20%));
+  @include elementBreakpoint(
+    xs,
+    (
+      padding: 0rem 0 1rem,
+      width: 20%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      padding: 0rem 0 1rem,
+      width: 20%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      padding: 0rem 0 2rem,
+      width: 20%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      padding: 0rem 0 2rem,
+      width: 25%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      padding: 0rem 0 2rem,
+      width: 20%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      padding: 0rem 0 2rem,
+      width: 20%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      padding: 0rem 0 2rem,
+      width: 20%,
+    )
+  );
 }
-
 
 .battery-image-container {
   position: absolute;
@@ -460,13 +1169,25 @@ video {
   @include align(xxxl, 30, 39, 65);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top     : -150%, left:7%, width:70vw));
-  @include elementBreakpoint(smalldevice, (top : -80%, left:5%, width:80vw));
-
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: -150%,
+      left: 7%,
+      width: 70vw,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      top: -80%,
+      left: 5%,
+      width: 80vw,
+    )
+  );
 }
 
 .refueling-addon-container {
-
   position: absolute;
   // below 576
   @include align(xs, 75, 5, 80);
@@ -478,9 +1199,22 @@ video {
   @include align(xxxl, 30, 60, 30);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top     : 30%, left:23%, width:50vw));
-  @include elementBreakpoint(smalldevice, (top : 75%, left:5%, width:80vw));
-
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 30%,
+      left: 23%,
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      top: 75%,
+      left: 5%,
+      width: 80vw,
+    )
+  );
 }
 
 .simple-yet-powerful-image-container {
@@ -493,7 +1227,14 @@ video {
   @include align(xxl, 15, 60, 40);
   @include align(xxxl, 15, 60, 40);
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top : 10%, left:0%, width:100vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 10%,
+      left: 0%,
+      width: 100vw,
+    )
+  );
 }
 
 .brain-image-container {
@@ -508,7 +1249,14 @@ video {
   @include align(xxxl, 20, 55, 40);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top : 1%, left:9%, width:80vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 1%,
+      left: 9%,
+      width: 80vw,
+    )
+  );
 }
 
 .thats-how-it-rolls {
@@ -522,15 +1270,42 @@ video {
     @include align(xxl, 10, 60, 30);
     @include align(xxxl, 10, 60, 30);
     //ipad pro fix
-    @include elementBreakpoint(ipadPro, (top : 13%, left:26%, width:40vw));
+    @include elementBreakpoint(
+      ipadPro,
+      (
+        top: 13%,
+        left: 26%,
+        width: 40vw,
+      )
+    );
   }
 
   .addon-container {
-    margin                                  : 1rem;
-    @include elementBreakpoint(xl, (margin  :3rem));
-    @include elementBreakpoint(xl, (margin  :4rem));
-    @include elementBreakpoint(xxl, (margin :5rem));
-    @include elementBreakpoint(xxxl, (margin:5rem));
+    margin: 1rem;
+    @include elementBreakpoint(
+      xl,
+      (
+        margin: 3rem,
+      )
+    );
+    @include elementBreakpoint(
+      xl,
+      (
+        margin: 4rem,
+      )
+    );
+    @include elementBreakpoint(
+      xxl,
+      (
+        margin: 5rem,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        margin: 5rem,
+      )
+    );
   }
 }
 
@@ -543,22 +1318,51 @@ video {
     @include align(xl, 15, 45);
     @include align(xxl, 15, 45);
     @include align(xxxl, 15, 45);
-
   }
 
   .check-icon-size {
-    height                                 : 40%;
-    width                                  : 150%;
-    @include elementBreakpoint(xxl, (width :100%));
-    @include elementBreakpoint(xxxl, (width:100%));
+    height: 40%;
+    width: 150%;
+    @include elementBreakpoint(
+      xxl,
+      (
+        width: 100%,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        width: 100%,
+      )
+    );
   }
 
   .addon-container {
-    margin                                  : 1rem;
-    @include elementBreakpoint(xl, (margin  :3rem));
-    @include elementBreakpoint(xl, (margin  :4rem));
-    @include elementBreakpoint(xxl, (margin :5rem));
-    @include elementBreakpoint(xxxl, (margin:5rem));
+    margin: 1rem;
+    @include elementBreakpoint(
+      xl,
+      (
+        margin: 3rem,
+      )
+    );
+    @include elementBreakpoint(
+      xl,
+      (
+        margin: 4rem,
+      )
+    );
+    @include elementBreakpoint(
+      xxl,
+      (
+        margin: 5rem,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        margin: 5rem,
+      )
+    );
   }
 
   .base-img-container {
@@ -570,88 +1374,187 @@ video {
     @include align(xl, 15, 0, 30);
     @include align(xxl, 15, 0, 25);
     @include align(xxxl, 15, 0, 25);
-    @include elementBreakpoint(ipadPro, (top :45%, left:0%, width:50vw));
-
+    @include elementBreakpoint(
+      ipadPro,
+      (
+        top: 45%,
+        left: 0%,
+        width: 50vw,
+      )
+    );
   }
 }
 
 .pricing {
   .check-icon-size {
-    height                                 : 40%;
-    width                                  : 200%;
-    @include elementBreakpoint(xxl, (width :120%));
-    @include elementBreakpoint(xxxl, (width:120%));
+    height: 40%;
+    width: 200%;
+    @include elementBreakpoint(
+      xxl,
+      (
+        width: 120%,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        width: 120%,
+      )
+    );
   }
 
   .spec-0-subtitle-text {
     text-align: left;
-    color     : #c6c8ca;
+    color: #c6c8ca;
   }
 
   .template-2-left-img-container {
-    position                                 : absolute;
-    z-index                                  : 2;
-    top                                      : 10%;
+    position: absolute;
+    z-index: 2;
+    top: 10%;
     // below 576
-    @include elementBreakpoint(xs, (padding  :0rem 0rem 0rem, width:0vw));
-    @include elementBreakpoint(sm, (padding  :0rem 5rem 0rem, width:0vw));
-    @include elementBreakpoint(md, (padding  :0rem 5rem 0rem, width:90vw));
-    @include elementBreakpoint(lg, (padding  :0rem 5rem 0rem, width:80vw));
-    @include elementBreakpoint(xl, (padding  :0rem 5rem 0rem, width:70vw));
-    @include elementBreakpoint(xxl, (padding :0rem 5rem 0rem, width:70vw));
-    @include elementBreakpoint(xxxl, (padding:0rem 5rem 0rem, width:60vw));
+    @include elementBreakpoint(
+      xs,
+      (
+        padding: 0rem 0rem 0rem,
+        width: 0vw,
+      )
+    );
+    @include elementBreakpoint(
+      sm,
+      (
+        padding: 0rem 5rem 0rem,
+        width: 0vw,
+      )
+    );
+    @include elementBreakpoint(
+      md,
+      (
+        padding: 0rem 5rem 0rem,
+        width: 90vw,
+      )
+    );
+    @include elementBreakpoint(
+      lg,
+      (
+        padding: 0rem 5rem 0rem,
+        width: 80vw,
+      )
+    );
+    @include elementBreakpoint(
+      xl,
+      (
+        padding: 0rem 5rem 0rem,
+        width: 70vw,
+      )
+    );
+    @include elementBreakpoint(
+      xxl,
+      (
+        padding: 0rem 5rem 0rem,
+        width: 70vw,
+      )
+    );
+    @include elementBreakpoint(
+      xxxl,
+      (
+        padding: 0rem 5rem 0rem,
+        width: 60vw,
+      )
+    );
 
     //ipad pro fix
-    @include elementBreakpoint(ipadPro, (top : 10%, left:0%, width:100vw));
+    @include elementBreakpoint(
+      ipadPro,
+      (
+        top: 10%,
+        left: 0%,
+        width: 100vw,
+      )
+    );
   }
 
   .template-2-left-container {
-
-    @include elementBreakpoint(xs, (height :20%));
-    @include elementBreakpoint(sm, (height :20%));
-    @include elementBreakpoint(md, (height :20%));
-    @include elementBreakpoint(lg, (height :100%));
-
-
+    @include elementBreakpoint(
+      xs,
+      (
+        height: 20%,
+      )
+    );
+    @include elementBreakpoint(
+      sm,
+      (
+        height: 20%,
+      )
+    );
+    @include elementBreakpoint(
+      md,
+      (
+        height: 20%,
+      )
+    );
+    @include elementBreakpoint(
+      lg,
+      (
+        height: 100%,
+      )
+    );
   }
 
   .template-2-right-container {
-    background-color                       : $background;
-    @include elementBreakpoint(xs, (height :80%));
-    @include elementBreakpoint(sm, (height :80%));
-    @include elementBreakpoint(md, (height :80%));
-    @include elementBreakpoint(lg, (height :100%));
-
-
+    background-color: $background;
+    @include elementBreakpoint(
+      xs,
+      (
+        height: 80%,
+      )
+    );
+    @include elementBreakpoint(
+      sm,
+      (
+        height: 80%,
+      )
+    );
+    @include elementBreakpoint(
+      md,
+      (
+        height: 80%,
+      )
+    );
+    @include elementBreakpoint(
+      lg,
+      (
+        height: 100%,
+      )
+    );
   }
 
-
   .pricing {
-    display                : -webkit-flex;
-    display                : flex;
-    -webkit-flex-wrap      : wrap;
-    flex-wrap              : wrap;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-justify-content: center;
-    justify-content        : center;
-    width                  : 100%;
-    margin                 : 0 auto 3em;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 3em;
 
     &-item {
-      position              : relative;
-      display               : -webkit-flex;
-      display               : flex;
+      position: relative;
+      display: -webkit-flex;
+      display: flex;
       -webkit-flex-direction: column;
-      flex-direction        : column;
-      -webkit-align-items   : stretch;
-      align-items           : stretch;
-      text-align            : center;
-      -webkit-flex          : 0 1 360px;
-      flex                  : 0 1 360px;
+      flex-direction: column;
+      -webkit-align-items: stretch;
+      align-items: stretch;
+      text-align: center;
+      -webkit-flex: 0 1 360px;
+      flex: 0 1 360px;
     }
 
     &-action {
-      color     : inherit;
-      border    : none;
+      color: inherit;
+      border: none;
       background: none;
 
       &:focus {
@@ -660,93 +1563,118 @@ video {
     }
   }
 
-
-
-
   .pricing-feature-list {
     text-align: left;
   }
 
-
-
-
-
-
-
   .pricing-palden .pricing-item {
-    font-family  : 'Open Sans', sans-serif;
-    cursor       : default;
-    color        : #2e292c;
-    background   : #fff;
-    box-shadow   : 0 0 10px rgba(89, 90, 95, 0.23);
+    font-family: "Open Sans", sans-serif;
+    cursor: default;
+    color: #2e292c;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(89, 90, 95, 0.23);
     border-radius: 20px 20px 10px 10px;
-    margin       : 1em;
+    margin: 1em;
   }
 
-  @media screen and (min-width: 66.250em) {
+  @media screen and (min-width: 66.25em) {
     .pricing-palden .pricing-item {
       margin: 1em -0.5em;
     }
 
     .pricing-palden .pricing__item--featured {
-      margin    : 0;
-      z-index   : 10;
+      margin: 0;
+      z-index: 10;
       box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
     }
   }
 
   .pricing-palden {
     .pricing-deco {
-      border-radius                             : 10px 10px 0 0;
-      background                                : #232526;
+      border-radius: 10px 10px 0 0;
+      background: #232526;
       /* fallback for old browsers */
-      background                                : -webkit-linear-gradient(to right, #414345, #232526);
+      background: -webkit-linear-gradient(to right, #414345, #232526);
       /* Chrome 10-25, Safari 5.1-6 */
-      background                                : linear-gradient(to right, #414345, #232526);
+      background: linear-gradient(to right, #414345, #232526);
       /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      @include elementBreakpoint(xs, (padding   : 2em 0 2em));
-      @include elementBreakpoint(sm, (padding   : 2em 0 2em));
-      @include elementBreakpoint(md, (padding   : 2em 0 2em));
-      @include elementBreakpoint(lg, (padding   : 8em 0 8em));
-      @include elementBreakpoint(xl, (padding   : 8em 0 8em));
-      @include elementBreakpoint(xxl, (padding  : 8em 0 8em));
-      @include elementBreakpoint(xxxl, (padding : 8em 0 8em));
-
+      @include elementBreakpoint(
+        xs,
+        (
+          padding: 2em 0 2em,
+        )
+      );
+      @include elementBreakpoint(
+        sm,
+        (
+          padding: 2em 0 2em,
+        )
+      );
+      @include elementBreakpoint(
+        md,
+        (
+          padding: 2em 0 2em,
+        )
+      );
+      @include elementBreakpoint(
+        lg,
+        (
+          padding: 8em 0 8em,
+        )
+      );
+      @include elementBreakpoint(
+        xl,
+        (
+          padding: 8em 0 8em,
+        )
+      );
+      @include elementBreakpoint(
+        xxl,
+        (
+          padding: 8em 0 8em,
+        )
+      );
+      @include elementBreakpoint(
+        xxxl,
+        (
+          padding: 8em 0 8em,
+        )
+      );
 
       position: relative;
     }
 
     .pricing-deco-img {
       position: absolute;
-      bottom  : 0;
-      left    : 0;
-      width   : 100%;
-      height  : 160px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 160px;
     }
 
     .pricing-title {
-      font-size     : 0.75em;
-      margin        : 0;
+      font-size: 0.75em;
+      margin: 0;
       text-transform: uppercase;
       letter-spacing: 5px;
-      color         : #fff;
+      color: #fff;
     }
 
     .deco-layer {
       -webkit-transition: -webkit-transform 0.5s;
-      transition        : transform 0.5s;
+      transition: transform 0.5s;
     }
 
     .pricing-item {
       &:hover {
         .deco-layer--1 {
           -webkit-transform: translate3d(15px, 0, 0);
-          transform        : translate3d(15px, 0, 0);
+          transform: translate3d(15px, 0, 0);
         }
 
         .deco-layer--2 {
           -webkit-transform: translate3d(-15px, 0, 0);
-          transform        : translate3d(-15px, 0, 0);
+          transform: translate3d(-15px, 0, 0);
         }
       }
     }
@@ -756,109 +1684,92 @@ video {
     }
 
     .pricing-price {
-      font-size  : 5em;
+      font-size: 5em;
       font-weight: bold;
-      padding    : 0;
-      color      : #fff;
-      margin     : 0 0 0.25em 0;
+      padding: 0;
+      color: #fff;
+      margin: 0 0 0.25em 0;
       line-height: 0.75;
     }
 
     .pricing-currency {
-      font-size     : 0.4em;
+      font-size: 0.4em;
       vertical-align: top;
-
     }
 
     .pricing-period {
       font-size: 0.15em;
-      padding  : 0 0 0 0.5em;
+      padding: 0 0 0 0.5em;
 
       font-style: italic;
     }
 
     .pricing__sentence {
       font-weight: bold;
-      margin     : 0 0 1em 0;
-      padding    : 0 0 0.5em;
+      margin: 0 0 1em 0;
+      padding: 0 0 0.5em;
     }
 
     .pricing-feature-list {
-      margin                                  : 0;
-      padding                                 : 0.25em 0 2.5em;
-      @include elementBreakpoint(xs, (padding : 1.5em 0 1.5em));
-      @include elementBreakpoint(sm, (padding : 1.5em 0 1.5em));
+      margin: 0;
+      padding: 0.25em 0 2.5em;
+      @include elementBreakpoint(
+        xs,
+        (
+          padding: 1.5em 0 1.5em,
+        )
+      );
+      @include elementBreakpoint(
+        sm,
+        (
+          padding: 1.5em 0 1.5em,
+        )
+      );
 
       list-style: none;
       text-align: center;
     }
 
     .pricing-feature {
-      padding  : 0.2em 0;
+      padding: 0.2em 0;
       font-size: 1.4rem;
     }
 
     .pricing-action {
-      font-weight  : bold;
-      margin       : auto 3em 2em 3em;
-      padding      : 1em 2em;
-      color        : #fff;
+      font-weight: bold;
+      margin: auto 3em 2em 3em;
+      padding: 1em 2em;
+      color: #fff;
       border-radius: 30px;
-      background   : #232526;
+      background: #232526;
       /* fallback for old browsers */
-      background   : -webkit-linear-gradient(to right, #414345, #232526);
+      background: -webkit-linear-gradient(to right, #414345, #232526);
       /* Chrome 10-25, Safari 5.1-6 */
-      background   : linear-gradient(to right, #414345, #232526);
+      background: linear-gradient(to right, #414345, #232526);
       /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
       -webkit-transition: background-color 0.3s;
-      transition        : background-color 0.3s;
+      transition: background-color 0.3s;
 
       &:hover,
       &:focus {
-
-        background-color: #100A13;
-
+        background-color: #100a13;
       }
     }
-
   }
-
-
-
-
 
   .pricing-palden .pricing-item--featured .pricing-deco {
     padding: 5em 0 8.885em 0;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 .contact-us-slide {
-
   .get-ready-container {
     height: 40%;
   }
 
   .prebook-container {
-    height: 20%
+    height: 20%;
   }
 
   .contact-us-container {
@@ -866,7 +1777,7 @@ video {
   }
 
   .social-icons {
-    width : 70%;
+    width: 70%;
     cursor: pointer;
   }
 }
@@ -883,69 +1794,128 @@ video {
   @include align(xxxl, 20, 60, 27);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top : 10%, left:20%, width:50vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 10%,
+      left: 20%,
+      width: 50vw,
+    )
+  );
 }
 
 /** title text **/
 .spec-0-title-text {
   font-weight: $font-weight-bold;
   line-height: 0.9em;
-  color      : $headingPrimary;
-  @include elementBreakpoint(xs,
-    (font-size: $display2-size * 0.4,
-    ));
-  @include elementBreakpoint(sm,
-    (font-size: $display2-size * 0.8,
-    ));
-  @include elementBreakpoint(md,
-    (font-size: $display2-size * 0.97,
-    ));
-  @include elementBreakpoint(lg,
-    (font-size: $display2-size * 0.97,
-    ));
-  @include elementBreakpoint(xl,
-    (font-size: $display2-size,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $display2-size,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $display1-size,
-    ));
+  color: $headingPrimary;
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $display2-size * 0.4,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $display2-size * 0.8,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $display2-size * 0.97,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $display2-size * 0.97,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $display2-size,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $display2-size,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $display1-size,
+    )
+  );
 }
 
 .spec-0-subtitle-text {
-  color          : $headingSecondary;
-  line-height    : 0.98em;
-  font-weight    : $font-weight-normal;
-  text-align     : justify;
-  text-justify   : distribute;
+  color: $headingSecondary;
+  line-height: 0.98em;
+  font-weight: $font-weight-normal;
+  text-align: justify;
+  text-justify: distribute;
   text-align-last: left;
 
-  @include elementBreakpoint(xs,
-    (font-size: $font-size-base * 1.4,
-    ));
-  @include elementBreakpoint(sm,
-    (font-size: $font-size-base * 1.4,
-    ));
-  @include elementBreakpoint(md,
-    (font-size: $font-size-base * 1.4,
-    ));
-  @include elementBreakpoint(lg,
-    (font-size: $font-size-base * 1.8,
-    ));
-  @include elementBreakpoint(xl,
-    (font-size: $font-size-base * 1.8,
-    ));
-  @include elementBreakpoint(xxl,
-    (font-size: $font-size-base * 2.0,
-    ));
-  @include elementBreakpoint(xxxl,
-    (font-size: $font-size-base * 2.0,
-    ));
+  @include elementBreakpoint(
+    xs,
+    (
+      font-size: $font-size-base * 1.4,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      font-size: $font-size-base * 1.4,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      font-size: $font-size-base * 1.4,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      font-size: $font-size-base * 2,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      font-size: $font-size-base * 2,
+    )
+  );
   //ipad fix
-  @include elementBreakpoint(ipadPro, (font-size    : $font-size-base * 3));
-  @include elementBreakpoint(smalldevice, (font-size:$font-size-base*1));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      font-size: $font-size-base * 3,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      font-size: $font-size-base * 1,
+    )
+  );
 }
 
 .spec-0-text-container {
@@ -958,18 +1928,28 @@ video {
   @include align(xxxl, 30, 5);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top    : 65%, left:7%));
-  @include elementBreakpoint(surfaceDuo, (top : 65%, left:2%));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 65%,
+      left: 7%,
+    )
+  );
+  @include elementBreakpoint(
+    surfaceDuo,
+    (
+      top: 65%,
+      left: 2%,
+    )
+  );
 }
 
-
 .specs-landing-img {
-  width : 100%;
+  width: 100%;
   height: 100%;
 }
 
 /**spec 2 **/
-
 
 .spec-2-text-container {
   @include align(xs, 45, 2);
@@ -979,15 +1959,31 @@ video {
   @include align(xl, 17, 2);
   @include align(xxl, 17, 3);
   @include align(xxxl, 17, 5);
-  @include elementBreakpoint(ipadPro, (top    : 58%, left:7%, width:100vw));
-  @include elementBreakpoint(surfaceDuo, (top : 52%, left:2%));
-
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 58%,
+      left: 7%,
+      width: 100vw,
+    )
+  );
+  @include elementBreakpoint(
+    surfaceDuo,
+    (
+      top: 52%,
+      left: 2%,
+    )
+  );
 }
 
 .spec-2-title-container {
-  @include elementBreakpoint(ipadPro, (width: 90vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      width: 90vw,
+    )
+  );
 }
-
 
 .spec-2-img-container {
   position: absolute;
@@ -1001,25 +1997,59 @@ video {
   @include align(xxxl, 20, 50, 55);
 
   //ipad pro fix
-  @include elementBreakpoint(ipadPro, (top : 10%, left:0%, width:100vw));
+  @include elementBreakpoint(
+    ipadPro,
+    (
+      top: 10%,
+      left: 0%,
+      width: 100vw,
+    )
+  );
 }
 
-
-
-
-
-
-
 .addon-wrapper {
-  @include elementBreakpoint(xs, (width  :60vw));
-  @include elementBreakpoint(sm, (width  :60vw));
-  @include elementBreakpoint(md, (width  :60vw));
-  @include elementBreakpoint(lg, (width  :60vw));
-  @include elementBreakpoint(xl, (width  :50vw));
-  @include elementBreakpoint(xxl, (width :50vw));
-  @include elementBreakpoint(xxxl, (width:60vw));
-
-
+  @include elementBreakpoint(
+    xs,
+    (
+      width: 60vw,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      width: 60vw,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      width: 60vw,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      width: 60vw,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      width: 50vw,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      width: 60vw,
+    )
+  );
 }
 
 .chromium-container {
@@ -1030,12 +2060,10 @@ video {
   @include align(xl, 0, 0, 10);
   @include align(xxl, 0, 0, 10);
   @include align(xxxl, 0, 0, 15);
-
 }
 
-
 .chromium-image {
-  width : 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -1059,9 +2087,8 @@ video {
   height: 70% !important;
 }
 
-
-
-.weight-container {}
+.weight-container {
+}
 
 // /** spec 1 */
 // .specs-outer-wrapper {

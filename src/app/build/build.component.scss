@@ -5,72 +5,303 @@
 @import "~bootstrap/scss/mixins";
 
 .backgroundcolor {
-  background-color:
-    D8D8D8;
+  background-color: D8D8D8;
 }
 
 .right-arrow {
   width: 60%;
 }
 
+@media screen and (max-width: 500px) {
+  .mobile-only-3d {
+    height: 80% !important;
+  }
+  .mobile-only-buy {
+    height: 20% !important;
+  }
+  .mobile-only-right-arrow {
+    top: 10% !important;
+  }
+}
 
 .template-2-left-container {
-  @include elementBreakpoint(xs, (height  :54%));
-  @include elementBreakpoint(sm, (height  :54%));
-  @include elementBreakpoint(md, (height  :56%));
-  @include elementBreakpoint(lg, (height  :100%));
-  @include elementBreakpoint(xl, (height  :100%));
-  @include elementBreakpoint(xxl, (height :100%));
-  @include elementBreakpoint(xxxl, (height:100%));
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 54%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      height: 54%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      height: 56%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      height: 100%,
+    )
+  );
 }
 
 .template-2-right-container {
-  @include elementBreakpoint(xs, (height  :46%));
-  @include elementBreakpoint(sm, (height  :46%));
-  @include elementBreakpoint(md, (height  :44%));
-  @include elementBreakpoint(lg, (height  :100%));
-  @include elementBreakpoint(xl, (height  :100%));
-  @include elementBreakpoint(xxl, (height :100%));
-  @include elementBreakpoint(xxxl, (height:100%));
-  background-color                        : #33363b;
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 46%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      height: 46%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      height: 44%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      height: 100%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      height: 100%,
+    )
+  );
+  background-color: #33363b;
 }
 
 .template-2-right-text {
-  font-weight                                       : $font-weight-normal;
-  text-align                                        : left;
-  text-align-last                                   : left;
-  color                                             : #ccc;
-  @include elementBreakpoint(xs, (line-height       :$line-height-base, font-size :$font-size-base*1.2));
-  @include elementBreakpoint(sm, (line-height       :$line-height-base, font-size :$font-size-base*1.2));
-  @include elementBreakpoint(md, (line-height       :$line-height-base, font-size :$font-size-base*1.8));
-  @include elementBreakpoint(lg, (line-height       :$line-height-base, font-size :$font-size-base*1.6));
-  @include elementBreakpoint(xl, (line-height       :$line-height-base, font-size :$font-size-base*1.6));
-  @include elementBreakpoint(xxl, (line-height      :$line-height-base, font-size:$font-size-base*1.8));
-  @include elementBreakpoint(xxxl, (line-height     :$line-height-base, font-size:$font-size-base*1.8));
-  @include elementBreakpoint(smalldevice, (font-size:$font-size-base*1.2))
+  font-weight: $font-weight-normal;
+  text-align: left;
+  text-align-last: left;
+  color: #ccc;
+  @include elementBreakpoint(
+    xs,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.2,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.2,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.6,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.6,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      line-height: $line-height-base,
+      font-size: $font-size-base * 1.8,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      font-size: $font-size-base * 1.2,
+    )
+  );
 }
 
 .template-2-right-subtitle-container {
-  @include elementBreakpoint(xs, (padding          :0rem 3rem 2rem, height:45%, justify-content : center, align-items : center));
-  @include elementBreakpoint(sm, (padding          :0rem 2rem 0rem, height:30%, justify-content : center, align-items : center));
-  @include elementBreakpoint(md, (padding          :0rem 2.5rem 0rem, height:35%, justify-content : center, align-items : center));
-  @include elementBreakpoint(lg, (padding          :1rem 2rem 0rem, height:100%, justify-content : center, align-items : center));
-  @include elementBreakpoint(xl, (padding          :0rem 2rem 3rem, height:100%, justify-content : center, align-items : center));
-  @include elementBreakpoint(xxl, (padding         :0rem 2rem 3rem, height:100%, justify-content : center, align-items : center));
-  @include elementBreakpoint(xxxl, (padding        :0rem 2rem 3rem, height:100%, justify-content : center, align-items : center));
-  @include elementBreakpoint(smalldevice, (padding :1rem 2rem 0rem, height:35%, justify-content : center, align-items : center));
+  @include elementBreakpoint(
+    xs,
+    (
+      padding: 0rem 3rem 2rem,
+      height: 45%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      padding: 0rem 2rem 0rem,
+      height: 30%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      padding: 0rem 2.5rem 0rem,
+      height: 35%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      padding: 1rem 2rem 0rem,
+      height: 100%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      padding: 0rem 2rem 3rem,
+      height: 100%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      padding: 0rem 2rem 3rem,
+      height: 100%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      padding: 0rem 2rem 3rem,
+      height: 100%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      padding: 1rem 2rem 0rem,
+      height: 35%,
+      justify-content: center,
+      align-items: center,
+    )
+  );
 }
 
 .template-2-right-addon-container {
-  @include elementBreakpoint(xs, (height   :55%));
-  @include elementBreakpoint(sm, (height   :70%));
-  @include elementBreakpoint(md, (height   :65%));
-  @include elementBreakpoint(lg, (height   :50%));
-  @include elementBreakpoint(xl, (height   :50%));
-  @include elementBreakpoint(xxl, (height  :50%));
-  @include elementBreakpoint(xxxl, (height :50%));
+  @include elementBreakpoint(
+    xs,
+    (
+      height: 55%,
+    )
+  );
+  @include elementBreakpoint(
+    sm,
+    (
+      height: 70%,
+    )
+  );
+  @include elementBreakpoint(
+    md,
+    (
+      height: 65%,
+    )
+  );
+  @include elementBreakpoint(
+    lg,
+    (
+      height: 50%,
+    )
+  );
+  @include elementBreakpoint(
+    xl,
+    (
+      height: 50%,
+    )
+  );
+  @include elementBreakpoint(
+    xxl,
+    (
+      height: 50%,
+    )
+  );
+  @include elementBreakpoint(
+    xxxl,
+    (
+      height: 50%,
+    )
+  );
 
-  @include elementBreakpoint(smalldevice, (height:65%))
+  @include elementBreakpoint(
+    smalldevice,
+    (
+      height: 65%,
+    )
+  );
 }
 
 .feature-container {
@@ -78,27 +309,26 @@
 }
 
 .switch-text-container {
-  display        : flex;
+  display: flex;
   justify-content: center;
-  align-items    : center;
+  align-items: center;
 }
 
 .switch-container {
-  display        : flex;
+  display: flex;
   justify-content: center;
-  align-items    : center;
+  align-items: center;
 }
 
 .switch-option-text {
-
-  display        : flex;
+  display: flex;
   justify-content: center;
-  align-items    : center;
-  padding        : 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
 }
 
 .switch-option-text-content {
-  color    : #808284;
+  color: #808284;
   font-size: 1.4rem;
 }
 
@@ -109,55 +339,55 @@
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display : inline-block;
-  width   : 60px;
-  height  : 34px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
-  width  : 0;
-  height : 0;
+  width: 0;
+  height: 0;
 }
 
 /* The slider */
 .slider {
-  position          : absolute;
-  cursor            : pointer;
-  top               : 0;
-  left              : 0;
-  right             : 0;
-  bottom            : 0;
-  background-color  : #81b29a;
-  -webkit-transition: .4s;
-  transition        : .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #81b29a;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-  position          : absolute;
-  content           : "";
-  height            : 26px;
-  width             : 26px;
-  left              : 4px;
-  bottom            : 4px;
-  background-color  : #f4f1de;
-  -webkit-transition: .4s;
-  transition        : .4s;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #f4f1de;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #e07a5f;
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px #e07a5f;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(26px);
-  -ms-transform    : translateX(26px);
-  transform        : translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders */
@@ -171,14 +401,14 @@ input:checked+.slider:before {
 
 .total-container {
   .total-text {
-    color     : #808284;
-    font-size : 2rem;
+    color: #808284;
+    font-size: 2rem;
     margin-top: 2rem;
   }
 
   .total-price {
-    font-size : 2rem;
-    color     : #ccc;
+    font-size: 2rem;
+    color: #ccc;
     margin-top: 2rem;
   }
 }
