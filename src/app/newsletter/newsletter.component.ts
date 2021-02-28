@@ -19,5 +19,10 @@ export class NewsletterComponent implements OnInit {
     this.visibility= false;
   }
 
+  onSubmit(){
+    console.log(this.email);
+    this.visibility=false;
+  }
+
 
 }
