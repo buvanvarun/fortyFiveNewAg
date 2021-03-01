@@ -286,6 +286,10 @@ app-threeloader {
   .vl {
     height: 3.5vh;
   }
+  .build-choice-container {
+    top: 93%;
+    left: 20%;
+  }
 }
 @media screen and (min-width: 596px) and (max-width: 1220px) {
   main {

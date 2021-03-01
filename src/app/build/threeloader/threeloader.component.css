@@ -79,7 +79,7 @@
 .build-choice-range-container {
   display: flex;
   flex-direction: row;
-  width: 30vw;
+  /* width: 30vw; */
   justify-content: space-evenly;
   align-items: center;
 }
@@ -177,6 +177,14 @@
   .fenders {
     left: 2%;
     width: 65vw;
+    top: 93%;
+  }
+  .vl {
+    height: 3.5vh;
+  }
+  .color-btn-container {
+    width: 40px;
+    height: 40px;
   }
 }
 
