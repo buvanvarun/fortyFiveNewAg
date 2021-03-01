@@ -16,7 +16,7 @@ $line-height-base: 1;
   // display: block;
   position: absolute;
   width: 35%;
-  height: 40vh;
+  height: 45vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -104,6 +104,31 @@ $line-height-base: 1;
   transform: translateY(-15%);
 }
 
+.contactus-img {
+  width: 20%;
+  position: absolute;
+  top: 13%;
+  left: 0%;
+}
+
+.contactus-img-2 {
+  width: 20%;
+  position: absolute;
+  top: 25%;
+  right: 0%;
+}
+
+.specs-landing-contactus {
+  width: 100%;
+}
+
+.terms {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 // media queries.........................................
 
 @media screen and (max-width: 309px) {
@@ -187,6 +212,22 @@ $line-height-base: 1;
   .prev-dev-is-bad-again {
     width: 100%;
   }
+  .contactus-img-2 {
+    width: 45%;
+    top: 40%;
+  }
+  .contactus-img {
+    width: 45%;
+    top: 31%;
+  }
+  .contact-mobile {
+    position: absolute;
+    top: 27%;
+  }
+  .terms {
+    top: 85%;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 501px) and (max-width: 1000px) {
   .newsletter {
@@ -202,6 +243,14 @@ $line-height-base: 1;
   .template-2-right-addon-image-text {
     padding: 0 0 0 !important;
     width: 75% !important;
+  }
+  .contactus-img-2 {
+    width: 45%;
+    top: 35%;
+  }
+  .contactus-img {
+    width: 45%;
+    top: 25%;
   }
 }
 @media screen and (min-height: 500px) and (max-height: 649px) and (min-width: 361px) {
@@ -285,8 +334,21 @@ $line-height-base: 1;
   .newsletter {
     width: 60%;
   }
+  .contactus-img-2 {
+    width: 45%;
+    top: 35%;
+  }
+  .contactus-img {
+    width: 45%;
+    top: 25%;
+  }
 }
 
+@media screen and (min-width: 1001px) {
+  .have-margin {
+    margin-top: 2rem;
+  }
+}
 // his code from here ...../////////////
 
 .background-color-black {
@@ -1694,6 +1756,71 @@ video {
     text-align: left;
     color: #c6c8ca;
   }
+  // .contactus-img {
+  //   position: absolute;
+  //   z-index: 2;
+  //   top: 10%;
+  //   // below 576
+  //   @include elementBreakpoint(
+  //     xs,
+  //     (
+  //       padding: 0rem 0rem 0rem,
+  //       width: 0vw,
+  //     )
+  //   );
+  //   @include elementBreakpoint(
+  //     sm,
+  //     (
+  //       padding: 0rem 5rem 0rem,
+  //       width: 0vw,
+  //     )
+  //   );
+  //   @include elementBreakpoint(
+  //     md,
+  //     (
+  //       padding: 0rem 5rem 0rem,
+  //       width: 50vw,
+  //     )
+  //   );
+  //   @include elementBreakpoint(
+  //     lg,
+  //     (
+  //       padding: 0rem 5rem 0rem,
+  //       width: 60vw,
+  //     )
+  //   );
+  //   @include elementBreakpoint(
+  //     xl,
+  //     (
+  //       padding: 0rem 5rem 0rem,
+  //       width: 10vw,
+  //     )
+  //   );
+  //   @include elementBreakpoint(
+  //     xxl,
+  //     (
+  //       padding: 0rem 5rem 0rem,
+  //       width: 60vw,
+  //     )
+  //   );
+  //   @include elementBreakpoint(
+  //     xxxl,
+  //     (
+  //       padding: 0rem 5rem 0rem,
+  //       width: 60vw,
+  //     )
+  //   );
+
+  //   //ipad pro fix
+  //   @include elementBreakpoint(
+  //     ipadPro,
+  //     (
+  //       top: 10%,
+  //       left: 0%,
+  //       width: 100vw,
+  //     )
+  //   );
+  // }
 
   .template-2-left-img-container {
     position: absolute;

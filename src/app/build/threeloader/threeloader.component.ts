@@ -10,21 +10,29 @@ import { Color } from 'three';
   templateUrl: './threeloader.component.html',
   styleUrls: ['./threeloader.component.css'],
 })
+
 export class ThreeloaderComponent implements OnInit {
+ 
   @Input() bikeColor;
   @Input() fenders;
   @Input() lock;
   @Input() tpms;
-  constructor(private spinner: NgxSpinnerService) {}
+  constructor(private spinner: NgxSpinnerService) {
+  }
   // 0 is black
   @Output() sendColor = new EventEmitter();
   @Output() sendFenders = new EventEmitter();
   @Output() sendTpms = new EventEmitter();
   @Output() sendLock = new EventEmitter();
   ngOnInit(): void {
+    
     this.bike();
     this.spinner.show();
+    
   }
+   fender_class = "toggle-btn";
+   fender_state =0;
+   fender_id = "fender-yes";
 
   setColor(val) {
     this.sendColor.emit(val);
@@ -38,9 +46,28 @@ export class ThreeloaderComponent implements OnInit {
   setLock(val) {
     this.sendLock.emit(val);
   }
+
+  setFenderClass(){
+    if(this.fender_state==0)
+    {
+      this.fender_state=1;
+      this.setFenders(this.fender_state);
+      this.fender_class = "toggle-btn active"
+      this.fender_id = "fender-yes";
+    }
+    else{
+      this.fender_state=0;
+      this.setFenders(this.fender_state);
+      this.fender_class="toggle-btn";
+      this.fender_id="fender-no";
+    }
+  }
+  
+
+  
   bike = () => {
     window.addEventListener('click', (e) => {
-      let id = (<HTMLButtonElement>e.target).id;
+      let id = (<HTMLButtonElement>e.target).id || (<HTMLDivElement>e.target).id;
       console.log(id);
       if (id === 'gray') {
         let frame;
