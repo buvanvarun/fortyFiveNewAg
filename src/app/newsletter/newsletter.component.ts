@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
-const instance = axios.create();
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
@@ -33,15 +31,17 @@ export class NewsletterComponent implements OnInit {
     //   console.log(err);
     // })
 
-    instance({
-      method: 'post',
-      url:`https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/viewform?usp=pp_url&entry.2047198105=${this.email}`,
-    })
-    .then(res=>{
-      this.visibility=false;
-    }).catch(err=>{
-      console.log(err);
-    })
+    // instance({
+    //   method: 'post',
+    //   url:`https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/viewform?usp=pp_url&entry.2047198105=${this.email}`,
+    // })
+    // .then(res=>{
+    //   this.visibility=false;
+    // }).catch(err=>{
+    //   console.log(err);
+    // })
+
+    this.visibility=false;
 
     
   }
