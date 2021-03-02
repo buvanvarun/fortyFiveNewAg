@@ -19,8 +19,20 @@ export class NewsletterComponent implements OnInit {
   }
 
   onSubmit(){
-    // fetch(
-    //   `https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/viewform?usp=pp_url&entry.2047198105=${this.email}`,
+    fetch(
+      `https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/formResponse?usp=pp_url&entry.2047198105=${this.email}`,
+      {
+        method:"POST",
+        headers:{Content:"xml"},
+      })
+    .then(res=>{
+      this.visibility=false;
+    }).catch(err=>{
+      console.log(err);
+    })
+
+        // fetch(
+    //   `https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/formResponse?usp=pp_url&entry.2047198105=${this.email}`,
     //   {
     //     method:"POST",
     //     headers:{Content:"xml"},
@@ -41,7 +53,7 @@ export class NewsletterComponent implements OnInit {
     //   console.log(err);
     // })
 
-    this.visibility=false;
+    // this.visibility=false;
 
     
   }
