@@ -1,4 +1,4 @@
-<div *ngIf="visibility" class="news-container">
+<div *ngIf="visibility" [ngClass]="transition_classes">
     <!-- <div class="news-letter"> -->
         <div class="close-wrapper">
             <span (click)="clicked()" class="close">X</span>

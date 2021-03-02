@@ -4,7 +4,25 @@
   background-color: black;
   display: block;
   position: relative;
+  transform: translateY(-170%);
 }
+
+.news-container.transform {
+  transform: translateY(0%);
+}
+
+/* .transition {
+  animation: transform 1s linear;
+}
+
+@keyframes transfrom {
+  0% {
+    transform: translateY(-170%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+} */
 
 .content {
   width: 65%;

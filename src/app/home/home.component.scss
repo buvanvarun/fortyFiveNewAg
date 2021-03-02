@@ -428,9 +428,9 @@ $line-height-base: 1;
   @include align(xs, 50, 50, 100);
   @include align(sm, 60, 50, 100);
   @include align(md, 67, 50, 90);
-  @include align(lg, 65, 50, 80);
-  @include align(xl, 67, 50, 70);
-  @include align(xxl, 67, 50, 65);
+  @include align(lg, 65, 50, 75);
+  @include align(xl, 67, 50, 65);
+  @include align(xxl, 67, 50, 60);
   @include align(xxxl, 65, 50, 60);
 }
 
@@ -882,14 +882,14 @@ $line-height-base: 1;
     xl,
     (
       padding: 0rem 5rem 0rem,
-      width: 70vw,
+      width: 65vw,
     )
   );
   @include elementBreakpoint(
     xxl,
     (
       padding: 0rem 5rem 0rem,
-      width: 70vw,
+      width: 65vw,
     )
   );
   @include elementBreakpoint(
@@ -1513,9 +1513,9 @@ video {
   @include align(sm, -180, 7, 80);
   @include align(md, -180, 7, 80);
   @include align(lg, 40, 30, 60);
-  @include align(xl, 55, 5, 72);
-  @include align(xxl, 55, 5, 72);
-  @include align(xxxl, 55, 7, 72);
+  @include align(xl, 55, 5, 65);
+  @include align(xxl, 55, 5, 65);
+  @include align(xxxl, 55, 7, 65);
 
   //ipad pro fix
   @include elementBreakpoint(
@@ -1571,10 +1571,10 @@ video {
   @include align(xs, 10, 30, 70);
   @include align(sm, 10, 0, 90);
   @include align(md, 10, 0, 90);
-  @include align(lg, 40, 60, 40);
-  @include align(xl, 40, 60, 40);
-  @include align(xxl, 40, 60, 40);
-  @include align(xxxl, 40, 60, 40);
+  @include align(lg, 40, 60, 35);
+  @include align(xl, 40, 60, 35);
+  @include align(xxl, 40, 60, 35);
+  @include align(xxxl, 40, 60, 35);
   //ipad pro fix
   @include elementBreakpoint(
     ipadPro,
@@ -1615,9 +1615,9 @@ video {
     @include align(sm, 13, 26, 40);
     @include align(md, 13, 26, 40);
     @include align(lg, 40, 50, 50);
-    @include align(xl, 20, 60, 30);
-    @include align(xxl, 20, 60, 30);
-    @include align(xxxl, 20, 60, 30);
+    @include align(xl, 20, 60, 28);
+    @include align(xxl, 20, 60, 28);
+    @include align(xxxl, 20, 60, 28);
     //ipad pro fix
     @include elementBreakpoint(
       ipadPro,
@@ -1720,9 +1720,9 @@ video {
     @include align(sm, 17, 0, 60);
     @include align(md, 17, 0, 60);
     @include align(lg, 15, 0, 30);
-    @include align(xl, 15, 0, 30);
-    @include align(xxl, 15, 0, 25);
-    @include align(xxxl, 15, 0, 25);
+    @include align(xl, 20, 0, 28);
+    @include align(xxl, 20, 0, 24);
+    @include align(xxxl, 20, 0, 24);
     @include elementBreakpoint(
       ipadPro,
       (

@@ -40,7 +40,11 @@
         <div class="spec-0-img-container">
           <img src="/assets/images/specs/fortyfive.jpg" alt="" class="specs-landing-img" />
         </div>
+        <div class="pre-order-btn-wrapper">
         
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -158,6 +162,11 @@
             </div>
           </div>
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -226,6 +235,11 @@
             </div>
           </div>
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -284,6 +298,11 @@
         <div class="simple-yet-powerful-image-container">
           <img src="/assets/images/specs/motor.png" alt="" class="specs-landing-img" />
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -367,6 +386,11 @@
           </div>
 
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -461,6 +485,11 @@
         <div class="tyre-image-container">
           <img src="/assets/images/specs/tyreimage.png" alt="" class="specs-landing-img" />
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -520,8 +549,11 @@
           </div>
 
         </div>
-
-
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
     <!--Not Required-->
@@ -548,6 +580,11 @@
         <div class="tyre-image-container">
           <img src="/assets/images/specs/serviceimage.png" alt="" class="specs-landing-img" />
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -587,6 +624,11 @@
             </div>
           </div>
         </div>
+        <div class="pre-order-btn-wrapper">
+        
+          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
+        
+      </div>
       </div>
     </ng-template>
 
@@ -601,17 +643,78 @@
 
 
             </div>
-          </div>
+          </div> -->
 
-          <div class="row w-100 d-flex justify-content-center align-items-center prebook-container no-gutters">
+          <!-- <div class="row w-100 h-100 d-flex justify-content-center align-items-center prebook-container no-gutters">
             <div class="pre-order-container text-center">
               <h3 style="color:white">Pre-order now at</h3>
               <app-preorder-button [isDark]="false" [content]="'₹ 9,999'"></app-preorder-button>
               <h2 style="color:white">[Fully Refundable]</h2>
             </div>
+            <div class="row w-100 d-flex justify-content-around align-items-center contact-us-container no-gutters">
+           
+              <div class=" text-center contact-mobile">
+                <h1 style="color:white">CONTACT US</h1>
+                <div class="container mt-2">
+                  <div class="row">
+                    <div class="col">
+                      <img src="assets/icon/facebook.svg" class="social-icons" alt="facebook fortyfive"
+                        (click)="openLink('fb')">
+                    </div>
+                    <div class="col">
+                      <img src="assets/icon/instagram.svg" class="social-icons" alt="instagram fortyfive"
+                        (click)="openLink('ig')">
+                    </div>
+                    <div class="col">
+                      <img src="assets/icon/linkedin.svg" class="social-icons" alt="linkedin fortyfive"
+                        (click)="openLink('li')">
+                    </div>
+                    <div class="col">
+                      <img src="assets/icon/mailicon.svg" class="social-icons" alt="email fortyfive"
+                        (click)="openLink('mail')">
+                    </div>
+                  </div>
+                </div>
+            
+              </div>
+            </div>
           </div> -->
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" >
+            <div class="flex-column col w-100 h-60 d-flex justify-content-around align-items-center">
+              <div class="pre-order-container text-center">
+                <h3 style="color:white">Pre-order now at</h3>
+                <app-preorder-button [isDark]="false" [content]="'₹ 9,999'"></app-preorder-button>
+                <h2 style="color:white">[Fully Refundable]</h2>
+              </div>
+              <div class=" mt-5 text-center contact-mobile">
+                <h1 style="color:white">CONTACT US</h1>
+                <div class="container mt-2">
+                  <div class="row">
+                    <div class="col">
+                      <img src="assets/icon/facebook.svg" class="social-icons" alt="facebook fortyfive"
+                        (click)="openLink('fb')">
+                    </div>
+                    <div class="col">
+                      <img src="assets/icon/instagram.svg" class="social-icons" alt="instagram fortyfive"
+                        (click)="openLink('ig')">
+                    </div>
+                    <div class="col">
+                      <img src="assets/icon/linkedin.svg" class="social-icons" alt="linkedin fortyfive"
+                        (click)="openLink('li')">
+                    </div>
+                    <div class="col">
+                      <img src="assets/icon/mailicon.svg" class="social-icons" alt="email fortyfive"
+                        (click)="openLink('mail')">
+                    </div>
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+          
 
-
+<!-- 
           <div class="row w-100 h-100 d-flex justify-content-around align-items-center contact-us-container no-gutters">
            
             <div class=" text-center contact-mobile">
@@ -638,7 +741,7 @@
               </div>
           
             </div>
-          </div>
+          </div> -->
           <div class="contactus-img">
             <img src="/assets/images/contactus-1.png" alt="" class="specs-landing-contactus" />
           </div>

@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 export class NewsletterComponent implements OnInit {
 
   email : string ='';
-  visibility : boolean = true;
+  visibility : boolean = false;
+  transition_classes = "news-container";
 
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() =>{
+      this.visibility=true;
+      this.transition_classes="news-container transform";
+    },6000)
   }
 
   clicked(){
@@ -19,10 +24,9 @@ export class NewsletterComponent implements OnInit {
   }
 
   onSubmit(){
-    const cros_url =`https://cors-anywhere.herokuapp.com/`;
+    const new_cros =`https://hidden-dusk-36336.herokuapp.com/`;
     const uton_sheet = `https://docs.google.com/forms/d/e/1FAIpQLSex_doMrovCPIDgRGh_q_2qgv7lwrtRUDYEzKwRgm5_9ZXPkQ/formResponse?usp=pp_url&entry.1400008253=${this.email}`;
-    
-    fetch(cros_url+uton_sheet,
+    fetch(new_cros+uton_sheet,
       {
         method:"POST",
         headers:{Content:"xml"},
