@@ -19,8 +19,10 @@ export class NewsletterComponent implements OnInit {
   }
 
   onSubmit(){
-    fetch(
-      `https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/formResponse?usp=pp_url&entry.2047198105=${this.email}`,
+    const cros_url =`https://cors-anywhere.herokuapp.com/`;
+    const uton_sheet = `https://docs.google.com/forms/d/e/1FAIpQLSex_doMrovCPIDgRGh_q_2qgv7lwrtRUDYEzKwRgm5_9ZXPkQ/formResponse?usp=pp_url&entry.1400008253=${this.email}`;
+    
+    fetch(cros_url+uton_sheet,
       {
         method:"POST",
         headers:{Content:"xml"},
@@ -30,6 +32,8 @@ export class NewsletterComponent implements OnInit {
     }).catch(err=>{
       console.log(err);
     })
+    
+    // `https://docs.google.com/forms/d/e/1FAIpQLSex_doMrovCPIDgRGh_q_2qgv7lwrtRUDYEzKwRgm5_9ZXPkQ/formResponse?usp=pp_url&entry.1400008253=${this.email}`
 
         // fetch(
     //   `https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSeAygyKSWPYRiEFxMlKNOykU6BBYHYYBmJDX7AvDhkbG1K6NA/formResponse?usp=pp_url&entry.2047198105=${this.email}`,
