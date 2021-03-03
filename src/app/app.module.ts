@@ -25,6 +25,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     SwiperModule,
   ],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
