@@ -129,6 +129,19 @@ $line-height-base: 1;
   transform: translateX(-50%);
 }
 
+.contact-us-pre-order-container {
+  position: absolute;
+  // width: 80%;
+  // left: 10%;
+  height: 70vh;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
 // media queries.........................................
 
 @media screen and (max-width: 309px) {
@@ -306,7 +319,7 @@ $line-height-base: 1;
     transform: translateY(-8%) !important;
   }
   .horizontal-line {
-    top: 87%;
+    top: 95%;
   }
   .specs-landing-img-hydraulic {
     transform: translateY(-8%);
@@ -327,6 +340,17 @@ $line-height-base: 1;
   }
   .prev-dev-is-bad-again {
     width: 170%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .mobile-pre-order {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+  .horizontal-line {
+    top: 95%;
   }
 }
 
@@ -861,7 +885,7 @@ $line-height-base: 1;
     sm,
     (
       padding: 0rem 5rem 0rem,
-      width: 30vw,
+      width: 90vw,
     )
   );
   @include elementBreakpoint(
@@ -923,7 +947,7 @@ $line-height-base: 1;
     sm,
     (
       padding: 5rem 5rem 0rem,
-      width: 50vw,
+      width: 65vw,
     )
   );
   @include elementBreakpoint(
@@ -944,14 +968,14 @@ $line-height-base: 1;
     xl,
     (
       padding: 5rem 5rem 0rem,
-      width: 40vw,
+      width: 42vw,
     )
   );
   @include elementBreakpoint(
     xxl,
     (
       padding: 5rem 8rem 0rem,
-      width: 40vw,
+      width: 42vw,
     )
   );
   @include elementBreakpoint(
@@ -1416,7 +1440,7 @@ video {
   @include elementBreakpoint(
     sm,
     (
-      width: 50vw,
+      width: 82vw,
     )
   );
   @include elementBreakpoint(
@@ -1509,7 +1533,7 @@ video {
 .battery-image-container {
   position: absolute;
   // below 576
-  @include align(xs, -45, 5, 80);
+  @include align(xs, -50, 5, 80);
   @include align(sm, -180, 7, 80);
   @include align(md, -180, 7, 80);
   @include align(lg, 40, 30, 60);
@@ -1529,7 +1553,7 @@ video {
   @include elementBreakpoint(
     smalldevice,
     (
-      top: -80%,
+      top: -50%,
       left: 5%,
       width: 80vw,
     )
@@ -1539,9 +1563,9 @@ video {
 .refueling-addon-container {
   position: absolute;
   // below 576
-  @include align(xs, 75, 5, 80);
-  @include align(sm, 70, 5, 80);
-  @include align(md, 30, 5, 80);
+  @include align(xs, 70, 5, 80);
+  @include align(sm, 76, 0, 85);
+  @include align(md, 80, 5, 80);
   @include align(lg, 30, 60, 34);
   @include align(xl, 30, 60, 30);
   @include align(xxl, 30, 60, 30);
@@ -1559,7 +1583,7 @@ video {
   @include elementBreakpoint(
     smalldevice,
     (
-      top: 75%,
+      top: 70%,
       left: 5%,
       width: 80vw,
     )
@@ -1568,9 +1592,9 @@ video {
 
 .simple-yet-powerful-image-container {
   position: absolute;
-  @include align(xs, 10, 30, 70);
-  @include align(sm, 10, 0, 90);
-  @include align(md, 10, 0, 90);
+  @include align(xs, 15, 30, 70);
+  @include align(sm, 15, 15, 65);
+  @include align(md, 15, 15, 65);
   @include align(lg, 40, 60, 35);
   @include align(xl, 40, 60, 35);
   @include align(xxl, 40, 60, 35);
@@ -1717,8 +1741,8 @@ video {
   .base-img-container {
     // below 576
     @include align(xs, 17, 0, 60);
-    @include align(sm, 17, 0, 60);
-    @include align(md, 17, 0, 60);
+    @include align(sm, 17, 0, 50);
+    @include align(md, 17, 0, 50);
     @include align(lg, 15, 0, 30);
     @include align(xl, 20, 0, 28);
     @include align(xxl, 20, 0, 24);
@@ -2199,9 +2223,9 @@ video {
 .spec-0-img-container {
   position: absolute;
   // below 576
-  @include align(xs, 15, 20, 50);
-  @include align(sm, 15, 0, 90);
-  @include align(md, 15, 22, 45);
+  @include align(xs, 20, 20, 50);
+  @include align(sm, 20, 15, 62);
+  @include align(md, 20, 22, 45);
   @include align(lg, 40, 50, 50);
   @include align(xl, 25, 60, 27);
   @include align(xxl, 20, 60, 27);
@@ -2333,9 +2357,9 @@ video {
 }
 
 .spec-0-text-container {
-  @include align(xs, 65, 2);
-  @include align(sm, 50, 2);
-  @include align(md, 65, 2);
+  @include align(xs, 65, 5);
+  @include align(sm, 65, 5);
+  @include align(md, 65, 5);
   @include align(lg, 20, 2);
   @include align(xl, 20, 2);
   @include align(xxl, 25, 3);
