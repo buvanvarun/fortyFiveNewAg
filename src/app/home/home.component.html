@@ -593,7 +593,7 @@
     <!--Pricing-->
     <ng-template swiperSlide>
       <div class="specs-container pricing">
-        <div class="container-fluid h-100 px-0 ">
+        <!-- <div class="container-fluid h-100 px-0 ">
           <div class="row h-100 no-gutters">
             <div class="col-lg-6 template-2-left-container">
               <div class="row">
@@ -618,19 +618,62 @@
                     <li class='pricing-feature'>Additional accessories</li>
 
                   </ul>
-                  <!-- <button class='pricing-action'>Pre-order</button> -->
+                  
                 </div>
               </div>
             </div>
           </div>
+        </div> -->
+        <div class="summary-pricing-container">
+          <p class="summary-pricing">Pricing</p>
+          <div class="summary-price-container">
+            <img
+                class="summary-price-rupee"
+                src="/assets/images/rupee-indian.png"
+                alt="rupee"
+              />
+              <h2 class="summary-price">35000</h2>
+          </div>
         </div>
-        <div class="pre-order-btn-wrapper">
-        
-          <button [routerLink]="['/build']" class="pre-order-btn">pre-order</button>
-        
-      </div>
+        <div class="summary-details-container">
+          <div class="summary-details-img-container">
+            <img src="/assets/images/fortyfive-summary.jpg" alt="fortyfive" class="summary-details-img">
+          </div>
+          <div class="summary-details">
+            <div class="summary-details-features">
+              <ul class='summary-pricing-feature-list'>
+                <li class='summary-pricing-feature'><div class="col-2">
+                  <img class="check-icon-size-def" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>Life-time warranty on frame</li>
+                <li class='summary-pricing-feature'><div class="col-2">
+                  <img class="check-icon-size-def" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>2 years warranty on Battery</li>
+                <li class='summary-pricing-feature'><div class="col-2">
+                  <img class="check-icon-size-def" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>A portable charger</li>
+                <li class='summary-pricing-feature'><div class="col-2">
+                  <img class="check-icon-size-def" src="../../assets/icon/check-circle-fill.svg" alt="check">
+                </div>Additional accessories</li>
+              </ul>
+            </div>
+            <div class="summary-details-price-container">
+             <p>PRE-ORDER NOW</p>
+             <div class="summary-details-pre-order-btn-container">
+               <button [routerLink]="['/build']" class="summary-details-pre-order-btn">
+                <img
+                class="build-buy-rupee"
+                src="/assets/images/rupee-indian.png"
+                alt="rupee"
+              />
+              <h2 class="build-buy-price">9999</h2>
+               </button>
+             </div>
+            </div>
+          </div>
+        </div>
       </div>
     </ng-template>
+    <!-- <button class='pricing-action'>Pre-order</button> -->
 
     <!--socials-->
     <ng-template swiperSlide>
