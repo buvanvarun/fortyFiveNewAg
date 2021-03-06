@@ -201,7 +201,7 @@ $line-height-base: 1;
   padding: 5px;
   width: 85%;
   height: 100%;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .summary-details-price-container {
   align-items: center;
@@ -215,6 +215,7 @@ $line-height-base: 1;
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding-bottom: 0.5rem;
 }
 
 .summary-details-pre-order-btn {
@@ -298,7 +299,7 @@ $line-height-base: 1;
     font-size: 2.5rem;
   }
   .summary-pricing-feature-list {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   .summary-price-rupee {
     width: 25px;
@@ -323,7 +324,7 @@ $line-height-base: 1;
     font-size: 2.5rem;
   }
   .summary-pricing-feature-list {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .summary-details-features {
     height: 60%;
@@ -354,7 +355,7 @@ $line-height-base: 1;
     font-size: 2rem;
   }
   .summary-pricing-feature-list {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .summary-details-features {
     height: 50%;
@@ -367,6 +368,8 @@ $line-height-base: 1;
 @media screen and (min-width: 360px) and (max-width: 499px) {
   .summary-details {
     width: 80%;
+    height: 85% !important;
+    margin-top: 0;
   }
   .check-icon-def-size {
     width: 100%;
@@ -385,7 +388,7 @@ $line-height-base: 1;
     font-size: 2rem;
   }
   .summary-pricing-feature-list {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
   .summary-details-features {
     height: 50%;
@@ -436,7 +439,7 @@ $line-height-base: 1;
     font-size: 1rem;
   }
   .summary-pricing-feature-list {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
   .summary-details-features {
     height: 50%;
@@ -596,7 +599,7 @@ $line-height-base: 1;
     top: 93%;
   }
   .specs-landing-img-hydraulic {
-    transform: translateY(-25%) !important;
+    transform: translateY(-20%) !important;
   }
   .template-2-right-subtitle-container {
     padding: 1rem 3rem 2rem !important;
@@ -1200,7 +1203,7 @@ $line-height-base: 1;
     xs,
     (
       padding: 0rem 0rem 0rem,
-      width: 100vw,
+      width: 75vw,
     )
   );
   @include elementBreakpoint(
@@ -1875,7 +1878,7 @@ video {
   @include elementBreakpoint(
     smalldevice,
     (
-      top: -50%,
+      top: -40%,
       left: 5%,
       width: 80vw,
     )
@@ -1905,7 +1908,7 @@ video {
   @include elementBreakpoint(
     smalldevice,
     (
-      top: 70%,
+      top: 65%,
       left: 5%,
       width: 80vw,
     )
@@ -1914,7 +1917,7 @@ video {
 
 .simple-yet-powerful-image-container {
   position: absolute;
-  @include align(xs, 15, 30, 70);
+  @include align(xs, 17, 30, 55);
   @include align(sm, 15, 15, 65);
   @include align(md, 15, 15, 65);
   @include align(lg, 40, 60, 35);
@@ -1976,7 +1979,7 @@ video {
   }
 
   .addon-container {
-    margin: 1rem;
+    margin: 0rem;
     @include elementBreakpoint(
       xl,
       (
@@ -2062,7 +2065,7 @@ video {
 
   .base-img-container {
     // below 576
-    @include align(xs, 17, 0, 60);
+    @include align(xs, 20, 0, 45);
     @include align(sm, 17, 0, 50);
     @include align(md, 17, 0, 50);
     @include align(lg, 26, 0, 30);
@@ -2624,13 +2627,13 @@ video {
   @include elementBreakpoint(
     xs,
     (
-      font-size: $font-size-base * 1.4,
+      font-size: $font-size-base * 1,
     )
   );
   @include elementBreakpoint(
     sm,
     (
-      font-size: $font-size-base * 1.4,
+      font-size: $font-size-base * 1.2,
     )
   );
   @include elementBreakpoint(
@@ -2713,7 +2716,7 @@ video {
 /**spec 2 **/
 
 .spec-2-text-container {
-  @include align(xs, 45, 2);
+  @include align(xs, 40, 2);
   @include align(sm, 45, 2);
   @include align(md, 55, 2);
   @include align(lg, 17, 2);
@@ -2763,6 +2766,7 @@ video {
 }
 
 .spec-2-title-container {
+  margin-top: 20px;
   @include elementBreakpoint(
     ipadPro,
     (
