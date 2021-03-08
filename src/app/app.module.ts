@@ -26,6 +26,7 @@ import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { FaqComponent } from './faq/faq.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     RefundPolicyComponent,
     TermsConditionsComponent,
     NewsletterComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,

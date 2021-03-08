@@ -103,8 +103,10 @@ export class BuildComponent implements OnInit {
   };
   buyProduct = () => {
     const color = this.choices[0] ? 'Grey' : 'Black';
-    const goToUrl = `https://pages.razorpay.com/fortyfivebike?bike_color=${color}&range_plus=${this.choices[1]}&charging_plus=${this.choices[2]}&electronic_locking=${this.choices[3]}&intelligent_systems_service=${this.choices[5]}&tyre_pressure_monitoring=${this.choices[6]}&fenders=${this.choices[4]}`;
+    const goToUrl = `https://pages.razorpay.com/fortyfivebike?color=${color}&range=${this.choices[1]}&charging_time=${this.choices[2]}&smart_lock=${this.choices[3]}&fenders=${this.choices[4]}`;
     window.open(goToUrl, '_self');
   };
   ngOnInit(): void {}
 }
+
+// &intelligent_systems_service=${this.choices[5]}&tyre_pressure_monitoring=${this.choices[6]}

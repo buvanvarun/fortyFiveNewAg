@@ -10,6 +10,7 @@ import { BuyComponent } from './buy/buy.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { RefundPolicyComponent } from './refund-policy/refund-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import {FaqComponent} from './faq/faq.component'
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'build', component: BuildComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'contactus', component: ContactUsComponent },
   { path: 'buy/:id', component: BuyComponent },
+  {path: 'faq', component: FaqComponent}
 ];
 
 @NgModule({
