@@ -3,15 +3,75 @@
         <div (click)="clicked('vehicle')" [ngClass]="class_heading_vehicle">
             <p class="faq-heading faq-heading-vehicle">VEHICLE</p>
         </div>
+        <div [ngClass]="class_faq_accordion_vehicle">
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">I DON’T SEE THE SUSPENSION ON THE VEHICLE. WILL THE RIDE BE COMFORTABLE?</div>
+                <div class="faq-accordion-content">
+                    Wide and high aspect ratio tires offer improved stability while assuring a smooth ride over bumps. With proper inflation pressure, there is no need for suspension on any kinds of terrain. Also, a sensor is being incorporated into tires which notifies the user whenever the pressure is not optimum.
+                </div>
+            </div>
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">WON’T THE FAT TIRES HAVE TROUBLE ACCELERATING?</div>
+                <div class="faq-accordion-content">
+                    With good inflation pressure, tires provide enough grip for the bike to accelerate. Apart from this, the motor itself generates enough torque to accelerate the bike effortlessly.
+                </div>
+            </div>
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">WILL I NEED ANY SPECIAL PERMITS, REGISTRATION OR LICENSE TO RIDE THIS BIKE?</div>
+                <div class="faq-accordion-content">
+                    No, you won’t need any special permits, registration and license to ride this bike. As per government norms, electric bikes equipped with motor of 250W power and speed limited to 25kmph don’t require any special permits, registration or license.
+                </div>
+            </div>
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">WHAT ARE THE BIKE SPECIFICATIONS?</div>
+                <div class="faq-accordion-content">
+                    The dimensions for the bike are 60’’ x 38’’x15’’. Standard model has a 250W motor and a 500WH battery. The top speed of bike is 25kmph and it reaches top speed in 5 seconds.
+                </div>
+            </div>
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">I SEE THAT THE BATTERY IS EXPOSED. IS IT SAFE IF IT RAINS OR IN CASE OF A CRASH?</div>
+                <div class="faq-accordion-content">
+                    The battery case is designed to withstand crash or harsh weather conditions such as rain, dust, temperature etc. The battery also has a layer of thick foam wrapped around it in order to protect it from shocks and impacts.
+                </div>
+            </div>
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">DOES THE BATTERY DRAIN WHEN THE BIKE IS NOT RUNNING?</div>
+                <div class="faq-accordion-content">
+                    The battery consumes power only during throttle. However, when other devices such as head lights etc. are switched on, minimal power will be drawn.
+                </div>
+            </div>
+        </div>
     </div>
     <div (click)="clicked('ownership')" [ngClass]="class_ownership">
         <div (click)="clicked('ownership')" [ngClass]="class_heading_ownership">
             <p class="faq-heading faq-heading-ownership">OWNERSHIP</p>
         </div>
+        <div [ngClass]="class_faq_accordion_ownership">
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label  faq-accordion-ownership-label">HOW DO I BUY THE VEHICLE?</div>
+                <div class="faq-accordion-content faq-accordion-ownership-content">
+                    You can reserve the vehicle by pre-ordering the bike here. If any assistance is required, you can contact our team and we will guide you through the process.
+                </div>
+            </div>
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label faq-accordion-ownership-label">IS IT OBLIGATORY TO ENLIST SOME TIME RECENTLY I PRE-ORDER, SO AS TO BUY THE VEHICLE?</div>
+                <div class="faq-accordion-content faq-accordion-ownership-content">
+                    Yes. Currently, you must pre-order the bike to buy it. Reason being, right now we are manufacturing only limited number of vehicles and following a pre-order first sales process
+                </div>
+            </div>
+        </div>
     </div>
     <div (click)="clicked('customization')" [ngClass]="class_customization">
         <div (click)="clicked('customization')" [ngClass]="class_heading_customization">
             <p class="faq-heading  faq-heading-customization">CUSTOMIZATION</p>
+        </div>
+        <div [ngClass]="class_faq_accordion_customization">
+            <div class="faq-accordion-content-container">
+                <div class="faq-accordion-label">ARE THERE ANY CUSTOMIZATIONS AVAILABLE?</div>
+                <div class="faq-accordion-content">
+                    We currently provide options in battery (for extended range), storage and colour.
+                </div>
+            </div>
         </div>
     </div>
 </div>

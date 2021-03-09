@@ -34,6 +34,15 @@ export class FaqComponent implements OnInit {
   class_heading_vehicle =this.class_heading_vehicle_cl;
   class_heading_ownership =this.class_heading_ownership_cl;
   class_heading_customization =this.class_heading_customization_cl;
+
+  class_faq_accordion_vehicle_cl="faq-accordion faq-accordion-vehicle";
+  class_faq_accordion_ownership_cl="faq-accordion faq-accordion-ownership";
+  class_faq_accordion_customization_cl="faq-accordion faq-accordion-customization";
+
+
+  class_faq_accordion_vehicle = this.class_faq_accordion_vehicle_cl + " "+this.class_hide;
+  class_faq_accordion_ownership = this.class_faq_accordion_ownership_cl + " "+this.class_hide;
+  class_faq_accordion_customization = this.class_faq_accordion_customization_cl + " "+this.class_hide;
   
 
   clicked(id){
@@ -46,6 +55,10 @@ export class FaqComponent implements OnInit {
       this.class_heading_vehicle = this.class_heading_vehicle_cl+" "+this.class_hide;
       this.class_heading_customization= this.class_heading_customization_cl+" "+this.class_hide;
       this.class_heading_ownership=this.class_heading_ownership_cl+" "+this.class_hide;
+
+      this.class_faq_accordion_vehicle=this.class_faq_accordion_vehicle_cl;
+      this.class_faq_accordion_ownership = this.class_faq_accordion_ownership_cl+" "+this.class_hide;
+      this.class_faq_accordion_customization = this.class_faq_accordion_customization_cl + " "+this.class_hide;
     }
     else if(id==="ownership")
     {
@@ -56,6 +69,10 @@ export class FaqComponent implements OnInit {
       this.class_heading_vehicle = this.class_heading_vehicle_cl+" "+this.class_hide;
       this.class_heading_customization= this.class_heading_customization_cl+" "+this.class_hide;
       this.class_heading_ownership=this.class_heading_ownership_cl+" "+this.class_hide;
+
+      this.class_faq_accordion_vehicle=this.class_faq_accordion_vehicle_cl +" " +this.class_hide;
+      this.class_faq_accordion_ownership = this.class_faq_accordion_ownership_cl;
+      this.class_faq_accordion_customization = this.class_faq_accordion_customization_cl + " "+this.class_hide;
     }
     else if(id==="customization")
     {
@@ -66,6 +83,10 @@ export class FaqComponent implements OnInit {
       this.class_heading_vehicle = this.class_heading_vehicle_cl+" "+this.class_hide;
       this.class_heading_customization= this.class_heading_customization_cl+" "+this.class_hide;
       this.class_heading_ownership=this.class_heading_ownership_cl+" "+this.class_hide;
+
+      this.class_faq_accordion_vehicle=this.class_faq_accordion_vehicle_cl +" " +this.class_hide;
+      this.class_faq_accordion_ownership = this.class_faq_accordion_ownership_cl+" "+this.class_hide;
+      this.class_faq_accordion_customization = this.class_faq_accordion_customization_cl;
     }
   }
 

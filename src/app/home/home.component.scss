@@ -24,13 +24,24 @@ $line-height-base: 1;
 
 .pre-order-btn-wrapper {
   position: absolute;
-  right: 5%;
+  right: 8%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
   transform: translateX(+40%);
   top: 20px;
   width: 50%;
   max-width: 200px;
 }
 
+.faq-text-al {
+  font-size: 1rem;
+  margin: 0 !important;
+  margin-top: 6px !important;
+  color: #1a1a1f;
+  cursor: pointer;
+}
 .pre-order-btn {
   padding: 5px 25px;
   border: none;
@@ -265,6 +276,18 @@ $line-height-base: 1;
 .check-icon-size-def {
   width: 120%;
 }
+.faq-container {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+.faq-text {
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
 // media queries.........................................
 
 @media screen and (min-width: 1000px) and (max-width: 1450px) {
@@ -471,13 +494,14 @@ $line-height-base: 1;
 }
 @media screen and (max-width: 309px) {
   .pre-order-btn-wrapper {
-    right: 15%;
+    right: 25%;
+    width: 60%;
   }
 }
 
 @media screen and (min-width: 310px) and (max-width: 360px) {
   .pre-order-btn-wrapper {
-    right: 10%;
+    right: 23%;
   }
   .prev-dev-is-bad {
     padding-top: 25% !important;
@@ -499,6 +523,9 @@ $line-height-base: 1;
   }
 }
 @media screen and (max-width: 500px) {
+  .pre-order-btn-wrapper {
+    right: 20%;
+  }
   .newsletter {
     width: 80%;
   }
