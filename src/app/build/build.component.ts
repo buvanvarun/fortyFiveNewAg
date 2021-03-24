@@ -75,7 +75,7 @@ export class BuildComponent implements OnInit {
       } else if (index === 3) {
         this.total += 2000;
       } else if (index === 4) {
-        this.total += 1500;
+        this.total += 0;
       } else if (index === 5) {
         this.total += 6500;
       } else if (index === 6) {
@@ -91,7 +91,7 @@ export class BuildComponent implements OnInit {
       } else if (index === 3) {
         this.total -= 2000;
       } else if (index === 4) {
-        this.total -= 1500;
+        this.total -= 0;
       } else if (index === 5) {
         this.total -= 6500;
       } else if (index === 6) {
