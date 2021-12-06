@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ghbuild_init":"ng build --prod --base-href https://buvanvarun.github.io/fortyFiveNewAg/",
+    "ghbuild":"ng build --prod",
+    "ghdeploy":"ngh --dir=dist/forty-five-website"
   },
   "private": true,
   "dependencies": {
