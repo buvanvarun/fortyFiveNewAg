@@ -228,7 +228,7 @@ export class ThreeloaderComponent implements OnInit {
     controls.enableZoom = false;
     controls.maxPolarAngle = Math.PI / 2;
     let loader = new GLTFLoader();
-    let url = 'assets/3d/bike.glb';
+    let url = '/assets/3d/bike.glb';
 
     const TYRE_MTL = new THREE.MeshPhongMaterial({
       color: 0x000000,
