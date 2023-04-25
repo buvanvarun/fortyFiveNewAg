@@ -3,7 +3,7 @@
 <div class="background-color-grey">
 
   <swiper [slidesPerView]="1" [spaceBetween]="0" (swiper)="onSwipe($event)" (slideChange)="onSlideChange()"
-    [scrollbar]="{ draggable: false, hide: true }" [mousewheel]="{ releaseOnEdges: true }">
+    [scrollbar]="{ draggable: false, hide: true }" [mousewheel]="{ releaseOnEdges: true }" [config]="{direction:'vertical'}">
     <ng-template swiperSlide>
       <div class="specs-container">
         <div class="home-fortyfive-img-container">
